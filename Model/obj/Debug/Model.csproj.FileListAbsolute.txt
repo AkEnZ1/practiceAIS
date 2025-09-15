@@ -1,0 +1,6 @@
+C:\Users\neart\source\repos\ConsoleApp\Model\bin\Debug\Model.dll
+C:\Users\neart\source\repos\ConsoleApp\Model\bin\Debug\Model.pdb
+C:\Users\neart\source\repos\ConsoleApp\Model\obj\Debug\Model.csproj.AssemblyReference.cache
+C:\Users\neart\source\repos\ConsoleApp\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+C:\Users\neart\source\repos\ConsoleApp\Model\obj\Debug\Model.dll
+C:\Users\neart\source\repos\ConsoleApp\Model\obj\Debug\Model.pdb

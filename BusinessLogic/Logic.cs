@@ -41,7 +41,7 @@ namespace BusinessLogic
                 Employees[index].Vacancy = vacancy;
                 return true;
             }
-            return false;
+            throw new Exception("Такого индекса нет");
         } 
         public void DeleteEmployee(int index)
         {

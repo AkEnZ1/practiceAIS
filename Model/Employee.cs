@@ -14,8 +14,13 @@ namespace Model
     }
     public class Employee
     {
-        public int WorkExp {  get; set; }
+        public int WorkExp { get; set; }
         public string Name { get; set; }
         public VacancyType Vacancy { get; set; }
+
+        public override string ToString()
+        {
+            return $"Имя: {Name}, Должность: {Vacancy}, Опыт: {WorkExp} лет";
+        }
     }
 }
