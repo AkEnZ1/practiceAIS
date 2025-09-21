@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "C:\\Users\\neart\\source\\repos\\ConsoleApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A37334CB-FE11-43EC-A6A9-895303272BD2}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\neart\\source\\repos\\ConsoleApp\\windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A37334CB-FE11-43EC-A6A9-895303272BD2}|WindowsFormsApp1\\WindowsFormsApp1.csproj|c:\\users\\neart\\source\\repos\\consoleapp\\windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A37334CB-FE11-43EC-A6A9-895303272BD2}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A37334CB-FE11-43EC-A6A9-895303272BD2}|WindowsFormsApp1\\WindowsFormsApp1.csproj|c:\\users\\neart\\source\\repos\\consoleapp\\windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{A37334CB-FE11-43EC-A6A9-895303272BD2}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\neart\\source\\repos\\ConsoleApp\\windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{A37334CB-FE11-43EC-A6A9-895303272BD2}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -15,11 +15,11 @@
       "RelativeMoniker": "D:0:0:{C575483C-43BF-45AF-998E-ECCC854B0BDD}|ConsoleApp\\ConsoleApp.csproj|solutionrelative:consoleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F12970A2-8CF3-4226-968C-4FF6C3083C57}|LogicAndModel\\LogicAndModel.csproj|c:\\users\\neart\\source\\repos\\consoleapp\\logicandmodel\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F12970A2-8CF3-4226-968C-4FF6C3083C57}|LogicAndModel\\LogicAndModel.csproj|C:\\Users\\neart\\source\\repos\\ConsoleApp\\logicandmodel\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F12970A2-8CF3-4226-968C-4FF6C3083C57}|LogicAndModel\\LogicAndModel.csproj|solutionrelative:logicandmodel\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F12970A2-8CF3-4226-968C-4FF6C3083C57}|LogicAndModel\\LogicAndModel.csproj|c:\\users\\neart\\source\\repos\\consoleapp\\logicandmodel\\logic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F12970A2-8CF3-4226-968C-4FF6C3083C57}|LogicAndModel\\LogicAndModel.csproj|C:\\Users\\neart\\source\\repos\\ConsoleApp\\logicandmodel\\logic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F12970A2-8CF3-4226-968C-4FF6C3083C57}|LogicAndModel\\LogicAndModel.csproj|solutionrelative:logicandmodel\\logic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -50,8 +50,7 @@
               "RelativeToolTip": "LogicAndModel\\Employee.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-21T11:42:58.054Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-21T11:42:58.054Z"
             },
             {
               "$type": "Document",
@@ -63,8 +62,7 @@
               "RelativeToolTip": "LogicAndModel\\Logic.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAFQAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-21T11:41:52.792Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-21T11:41:52.792Z"
             },
             {
               "$type": "Document",
@@ -88,8 +86,7 @@
               "ToolTip": "C:\\Users\\neart\\source\\repos\\ConsoleApp\\WindowsFormsApp1\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "RelativeToolTip": "WindowsFormsApp1\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-21T11:22:51.929Z",
-              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
+              "WhenOpened": "2025-09-21T11:22:51.929Z"
             },
             {
               "$type": "Document",
@@ -113,8 +110,7 @@
               "RelativeToolTip": "ConsoleApp\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-13T16:55:56.776Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-13T16:55:56.776Z"
             }
           ]
         }
