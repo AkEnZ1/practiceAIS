@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Model;
 
-namespace BusinessLogic
+namespace LogicAndModel
 {
     public class Logic
     {
         List<Employee> Employees = new List<Employee>();
+
         public void AddEmployee(string name, int workExp, VacancyType vacancy)
         {
             Employee employee = new Employee()
@@ -18,23 +18,26 @@ namespace BusinessLogic
                 WorkExp = workExp,
                 Vacancy = vacancy,
             };
-            Employees.Add(employee);          
+            Employees.Add(employee);
         }
+
         public List<Employee> GetEmployees()
         {
             return Employees;
         }
+
         public Employee GetEmployeeByIndex(int index)
         {
-            if (index >= 0 &&  index < Employees.Count)
+            if (index >= 0 && index < Employees.Count)
             {
                 return Employees[index];
             }
-            throw new Exception("Нет сотрудника с заданным индексом");         
+            throw new Exception("Нет сотрудника с заданным индексом");
         }
+
         public bool UpdateEmployee(int index, string name, VacancyType vacancy, int workExp)
         {
-            if (index >= 0 && index <= Employees.Count)
+            if (index >= 0 && index < Employees.Count)
             {
                 Employees[index].Name = name;
                 Employees[index].WorkExp = workExp;
@@ -42,11 +45,20 @@ namespace BusinessLogic
                 return true;
             }
             throw new Exception("Такого индекса нет");
-        } 
+        }
+
         public void DeleteEmployee(int index)
         {
-            Employees.RemoveAt(index);
+            if (index >= 0 && index < Employees.Count)
+            {
+                Employees.RemoveAt(index);
+            }
+            else
+            {
+                throw new Exception("Неверный индекс для удаления");
+            }
         }
+
         public double CalculateSalary(Employee employee)
         {
             var multipliers = new Dictionary<VacancyType, double>()
@@ -55,15 +67,17 @@ namespace BusinessLogic
                 { VacancyType.Manager, 1.25 },
                 { VacancyType.Intern, 1.1 }
             };
+
             if (multipliers.TryGetValue(employee.Vacancy, out double vacancyMultiplier))
             {
-                return employee.WorkExp * vacancyMultiplier;
+                return employee.WorkExp * vacancyMultiplier * 10000;
             }
             else
             {
-                return employee.WorkExp;
+                return employee.WorkExp * 10000;
             }
         }
+
         public void AddWorkExp(Employee employee)
         {
             employee.WorkExp++;

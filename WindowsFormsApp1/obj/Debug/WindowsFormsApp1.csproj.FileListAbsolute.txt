@@ -1,10 +1,6 @@
 C:\Users\neart\source\repos\ConsoleApp\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
 C:\Users\neart\source\repos\ConsoleApp\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
 C:\Users\neart\source\repos\ConsoleApp\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
-C:\Users\neart\source\repos\ConsoleApp\WindowsFormsApp1\bin\Debug\BusinessLogic.dll
-C:\Users\neart\source\repos\ConsoleApp\WindowsFormsApp1\bin\Debug\Model.dll
-C:\Users\neart\source\repos\ConsoleApp\WindowsFormsApp1\bin\Debug\BusinessLogic.pdb
-C:\Users\neart\source\repos\ConsoleApp\WindowsFormsApp1\bin\Debug\Model.pdb
 C:\Users\neart\source\repos\ConsoleApp\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
 C:\Users\neart\source\repos\ConsoleApp\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
 C:\Users\neart\source\repos\ConsoleApp\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
@@ -14,3 +10,5 @@ C:\Users\neart\source\repos\ConsoleApp\WindowsFormsApp1\obj\Debug\WindowsFormsAp
 C:\Users\neart\source\repos\ConsoleApp\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
 C:\Users\neart\source\repos\ConsoleApp\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe.config
 C:\Users\neart\source\repos\ConsoleApp\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\neart\source\repos\ConsoleApp\WindowsFormsApp1\bin\Debug\LogicAndModel.dll
+C:\Users\neart\source\repos\ConsoleApp\WindowsFormsApp1\bin\Debug\LogicAndModel.pdb

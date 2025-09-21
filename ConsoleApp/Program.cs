@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Model;
-using BusinessLogic;
+using LogicAndModel;
 
 namespace ConsoleApp
 {
@@ -23,7 +22,8 @@ namespace ConsoleApp
                 Console.WriteLine("4. Изменить сотрудника");
                 Console.WriteLine("5. Удалить сотрудника");
                 Console.WriteLine("6. Рассчитать зарплату");
-                Console.WriteLine("7. Выход");
+                Console.WriteLine("7. Добавить стаж");
+                Console.WriteLine("8. Выход");
                 Console.Write("Выберите действие: ");
 
                 string choice = Console.ReadLine();
@@ -49,6 +49,9 @@ namespace ConsoleApp
                         CalculateSalary();
                         break;
                     case "7":
+                        AddWorkExp();
+                        break;
+                    case "8":
                         exit = true;
                         break;
                     default:
@@ -239,6 +242,22 @@ namespace ConsoleApp
             }
 
             Console.ReadLine();
+        }
+        static void AddWorkExp()
+        {
+            Console.Clear();
+            Console.WriteLine("Введите индекс сотрудника");
+            int index = int.Parse(Console.ReadLine());
+            var employees = logic.GetEmployees();
+            if (index >= 0 && index <= employees.Count)
+            {
+                logic.AddWorkExp(employees[index]);
+                Console.WriteLine($"Сотруднику {employees[index].Name} добавлен 1 год стажа"); Console.ReadLine();
+            }
+            else
+            {
+                Console.WriteLine("Несуществующий индекс"); Console.ReadLine();
+            }
         }
     }
 }

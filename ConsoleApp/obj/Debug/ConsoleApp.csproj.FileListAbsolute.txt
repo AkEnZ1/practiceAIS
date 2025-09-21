@@ -1,13 +1,11 @@
 C:\Users\neart\source\repos\ConsoleApp\ConsoleApp\bin\Debug\ConsoleApp.exe.config
 C:\Users\neart\source\repos\ConsoleApp\ConsoleApp\bin\Debug\ConsoleApp.exe
 C:\Users\neart\source\repos\ConsoleApp\ConsoleApp\bin\Debug\ConsoleApp.pdb
-C:\Users\neart\source\repos\ConsoleApp\ConsoleApp\bin\Debug\BusinessLogic.dll
-C:\Users\neart\source\repos\ConsoleApp\ConsoleApp\bin\Debug\Model.dll
-C:\Users\neart\source\repos\ConsoleApp\ConsoleApp\bin\Debug\BusinessLogic.pdb
-C:\Users\neart\source\repos\ConsoleApp\ConsoleApp\bin\Debug\Model.pdb
 C:\Users\neart\source\repos\ConsoleApp\ConsoleApp\obj\Debug\ConsoleApp.csproj.AssemblyReference.cache
 C:\Users\neart\source\repos\ConsoleApp\ConsoleApp\obj\Debug\ConsoleApp.csproj.CoreCompileInputs.cache
 C:\Users\neart\source\repos\ConsoleApp\ConsoleApp\obj\Debug\ConsoleApp.csproj.Up2Date
 C:\Users\neart\source\repos\ConsoleApp\ConsoleApp\obj\Debug\ConsoleApp.exe
 C:\Users\neart\source\repos\ConsoleApp\ConsoleApp\obj\Debug\ConsoleApp.pdb
 C:\Users\neart\source\repos\ConsoleApp\ConsoleApp\obj\Debug\ConsoleApp.exe.config
+C:\Users\neart\source\repos\ConsoleApp\ConsoleApp\bin\Debug\LogicAndModel.dll
+C:\Users\neart\source\repos\ConsoleApp\ConsoleApp\bin\Debug\LogicAndModel.pdb
