@@ -130,15 +130,18 @@ namespace WindowsFormsApp1
         /// </summary>
         private string GetVacancyRussianName(VacancyType vacancy)
         {
-            return vacancy switch
+            switch (vacancy)
             {
-                VacancyType.Head => "Руководитель",
-                VacancyType.Manager => "Менеджер",
-                VacancyType.Intern => "Стажер",
-                _ => "Неизвестно"
-            };
-        }
-
+                case VacancyType.Head:
+                    return "Руководитель";
+                case VacancyType.Manager:
+                    return "Менеджер";
+                case VacancyType.Intern:
+                    return "Стажер";
+                default:
+                    return "Неизвестно";
+            }
+       } 
         /// <summary>
         /// Обработчик изменения выбранной строки в таблице
         /// </summary>
