@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Windows.Forms;
 using LogicAndModel;
 
@@ -7,7 +7,7 @@ namespace WindowsFormsApp1
     public partial class Form1 : Form
     {
         private Logic logic = new Logic();
-        private ListBox listBoxEmployees;
+        private DataGridView dataGridViewEmployees;
         private Button btnAdd;
         private Button btnUpdate;
         private Button btnDelete;
@@ -26,7 +26,7 @@ namespace WindowsFormsApp1
 
         private void InitializeComponent()
         {
-            this.listBoxEmployees = new System.Windows.Forms.ListBox();
+            this.dataGridViewEmployees = new System.Windows.Forms.DataGridView();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -36,134 +36,135 @@ namespace WindowsFormsApp1
             this.txtIndex = new System.Windows.Forms.TextBox();
             this.btnFindByIndex = new System.Windows.Forms.Button();
             this.lblIndex = new System.Windows.Forms.Label();
-            this.SuspendLayout();
-            // 
-            // listBoxEmployees
-            // 
-            this.listBoxEmployees.FormattingEnabled = true;
-            this.listBoxEmployees.Location = new System.Drawing.Point(12, 12);
-            this.listBoxEmployees.Name = "listBoxEmployees";
-            this.listBoxEmployees.Size = new System.Drawing.Size(540, 199);
-            this.listBoxEmployees.TabIndex = 0;
-            this.listBoxEmployees.SelectedIndexChanged += new System.EventHandler(this.listBoxEmployees_SelectedIndexChanged);
-            // 
-            // btnAdd
-            // 
+            
+            // DataGridView
+            this.dataGridViewEmployees.Location = new System.Drawing.Point(12, 12);
+            this.dataGridViewEmployees.Size = new System.Drawing.Size(640, 200);
+            this.dataGridViewEmployees.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewEmployees.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewEmployees.MultiSelect = false;
+            this.dataGridViewEmployees.ReadOnly = true;
+            this.dataGridViewEmployees.AllowUserToAddRows = false;
+            this.dataGridViewEmployees.AllowUserToDeleteRows = false;
+            
+            // Настраиваем колонки
+            dataGridViewEmployees.Columns.Add("Name", "Имя");
+            dataGridViewEmployees.Columns.Add("Vacancy", "Должность");
+            dataGridViewEmployees.Columns.Add("WorkExp", "Опыт работы (лет)");
+            
+            // Кнопки
             this.btnAdd.Location = new System.Drawing.Point(12, 220);
-            this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(100, 30);
-            this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "Добавить";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnUpdate
-            // 
+            
             this.btnUpdate.Location = new System.Drawing.Point(118, 220);
-            this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(100, 30);
-            this.btnUpdate.TabIndex = 2;
             this.btnUpdate.Text = "Изменить";
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // btnDelete
-            // 
+            
             this.btnDelete.Location = new System.Drawing.Point(224, 220);
-            this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(100, 30);
-            this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "Удалить";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnCalculateSalary
-            // 
+            
             this.btnCalculateSalary.Location = new System.Drawing.Point(330, 220);
-            this.btnCalculateSalary.Name = "btnCalculateSalary";
             this.btnCalculateSalary.Size = new System.Drawing.Size(120, 30);
-            this.btnCalculateSalary.TabIndex = 4;
             this.btnCalculateSalary.Text = "Рассчитать зарплату";
             this.btnCalculateSalary.Click += new System.EventHandler(this.btnCalculateSalary_Click);
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Location = new System.Drawing.Point(12, 260);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(120, 30);
-            this.btnRefresh.TabIndex = 6;
-            this.btnRefresh.Text = "Обновить список";
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-            // 
-            // btnAddExperience
-            // 
+            
             this.btnAddExperience.Location = new System.Drawing.Point(456, 220);
-            this.btnAddExperience.Name = "btnAddExperience";
             this.btnAddExperience.Size = new System.Drawing.Size(100, 30);
-            this.btnAddExperience.TabIndex = 5;
             this.btnAddExperience.Text = "Добавить стаж";
             this.btnAddExperience.Click += new System.EventHandler(this.btnAddExperience_Click);
-            // 
-            // txtIndex
-            // 
-            this.txtIndex.Location = new System.Drawing.Point(328, 269);
-            this.txtIndex.Name = "txtIndex";
-            this.txtIndex.Size = new System.Drawing.Size(50, 20);
-            this.txtIndex.TabIndex = 7;
-            // 
-            // btnFindByIndex
-            // 
+            
+            this.btnRefresh.Location = new System.Drawing.Point(12, 260);
+            this.btnRefresh.Size = new System.Drawing.Size(120, 30);
+            this.btnRefresh.Text = "Обновить список";
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            
             this.btnFindByIndex.Location = new System.Drawing.Point(194, 260);
-            this.btnFindByIndex.Name = "btnFindByIndex";
             this.btnFindByIndex.Size = new System.Drawing.Size(130, 30);
-            this.btnFindByIndex.TabIndex = 8;
             this.btnFindByIndex.Text = "Найти по индексу";
             this.btnFindByIndex.Click += new System.EventHandler(this.btnFindByIndex_Click);
-            // 
-            // lblIndex
-            // 
+            
+            // Текстовое поле и метка для индекса
+            this.txtIndex.Location = new System.Drawing.Point(328, 269);
+            this.txtIndex.Size = new System.Drawing.Size(50, 20);
+            
             this.lblIndex.AutoSize = true;
             this.lblIndex.Location = new System.Drawing.Point(330, 253);
-            this.lblIndex.Name = "lblIndex";
             this.lblIndex.Size = new System.Drawing.Size(48, 13);
-            this.lblIndex.TabIndex = 9;
             this.lblIndex.Text = "Индекс:";
-            // 
-            // Form1
-            // 
-            this.ClientSize = new System.Drawing.Size(564, 301);
-            this.Controls.Add(this.lblIndex);
-            this.Controls.Add(this.btnFindByIndex);
-            this.Controls.Add(this.txtIndex);
-            this.Controls.Add(this.btnRefresh);
-            this.Controls.Add(this.btnAddExperience);
-            this.Controls.Add(this.btnCalculateSalary);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.listBoxEmployees);
+            
+            // Форма
+            this.ClientSize = new System.Drawing.Size(664, 301);
+            this.Controls.AddRange(new Control[] {
+                dataGridViewEmployees, btnAdd, btnUpdate, btnDelete, btnCalculateSalary,
+                btnAddExperience, btnRefresh, txtIndex, btnFindByIndex, lblIndex
+            });
             this.Name = "Form1";
             this.Text = "Управление сотрудниками";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
         }
 
+        /// <summary>
+        /// Обновляет таблицу сотрудников
+        /// </summary>
         private void RefreshEmployeeList()
         {
-            listBoxEmployees.Items.Clear();
+            dataGridViewEmployees.Rows.Clear();
             var employees = logic.GetEmployees();
+            
             foreach (var employee in employees)
             {
-                listBoxEmployees.Items.Add(employee);
+                dataGridViewEmployees.Rows.Add(
+                    employee.Name,
+                    GetVacancyRussianName(employee.Vacancy),
+                    employee.WorkExp
+                );
             }
         }
 
-        private void listBoxEmployees_SelectedIndexChanged(object sender, EventArgs e)
+        /// <summary>
+        /// Преобразует enum VacancyType в русское название
+        /// </summary>
+        private string GetVacancyRussianName(VacancyType vacancy)
         {
-            if (listBoxEmployees.SelectedIndex >= 0)
+            return vacancy switch
             {
-                txtIndex.Text = listBoxEmployees.SelectedIndex.ToString();
+                VacancyType.Head => "Руководитель",
+                VacancyType.Manager => "Менеджер",
+                VacancyType.Intern => "Стажер",
+                _ => "Неизвестно"
+            };
+        }
+
+        /// <summary>
+        /// Обработчик изменения выбранной строки в таблице
+        /// </summary>
+        private void dataGridViewEmployees_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridViewEmployees.SelectedRows.Count > 0)
+            {
+                txtIndex.Text = dataGridViewEmployees.SelectedRows[0].Index.ToString();
             }
         }
 
+        /// <summary>
+        /// Получает индекс выбранного сотрудника
+        /// </summary>
+        private int GetSelectedEmployeeIndex()
+        {
+            if (dataGridViewEmployees.SelectedRows.Count > 0)
+            {
+                return dataGridViewEmployees.SelectedRows[0].Index;
+            }
+            return -1;
+        }
+
+        /// <summary>
+        /// Обработчик кнопки "Добавить"
+        /// </summary>
         private void btnAdd_Click(object sender, EventArgs e)
         {
             using (var form = new AddForm())
@@ -177,11 +178,15 @@ namespace WindowsFormsApp1
             }
         }
 
+        /// <summary>
+        /// Обработчик кнопки "Изменить"
+        /// </summary>
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (listBoxEmployees.SelectedIndex >= 0)
+            int selectedIndex = GetSelectedEmployeeIndex();
+            if (selectedIndex >= 0)
             {
-                var selectedEmployee = logic.GetEmployeeByIndex(listBoxEmployees.SelectedIndex);
+                var selectedEmployee = logic.GetEmployeeByIndex(selectedIndex);
                 using (var form = new AddForm())
                 {
                     form.SetEmployeeData(selectedEmployee.Name, selectedEmployee.WorkExp, selectedEmployee.Vacancy);
@@ -189,7 +194,7 @@ namespace WindowsFormsApp1
                     if (form.ShowDialog() == DialogResult.OK)
                     {
                         bool success = logic.UpdateEmployee(
-                            listBoxEmployees.SelectedIndex,
+                            selectedIndex,
                             form.EmployeeName,
                             form.Vacancy,
                             form.WorkExperience
@@ -213,9 +218,13 @@ namespace WindowsFormsApp1
             }
         }
 
+        /// <summary>
+        /// Обработчик кнопки "Удалить"
+        /// </summary>
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (listBoxEmployees.SelectedIndex >= 0)
+            int selectedIndex = GetSelectedEmployeeIndex();
+            if (selectedIndex >= 0)
             {
                 var result = MessageBox.Show(
                     "Вы уверены, что хотите удалить этого сотрудника?",
@@ -225,7 +234,7 @@ namespace WindowsFormsApp1
 
                 if (result == DialogResult.Yes)
                 {
-                    logic.DeleteEmployee(listBoxEmployees.SelectedIndex);
+                    logic.DeleteEmployee(selectedIndex);
                     RefreshEmployeeList();
                     MessageBox.Show("Сотрудник удален!");
                 }
@@ -236,13 +245,17 @@ namespace WindowsFormsApp1
             }
         }
 
+        /// <summary>
+        /// Обработчик кнопки "Рассчитать зарплату"
+        /// </summary>
         private void btnCalculateSalary_Click(object sender, EventArgs e)
         {
-            if (listBoxEmployees.SelectedIndex >= 0)
+            int selectedIndex = GetSelectedEmployeeIndex();
+            if (selectedIndex >= 0)
             {
                 try
                 {
-                    var employee = logic.GetEmployeeByIndex(listBoxEmployees.SelectedIndex);
+                    var employee = logic.GetEmployeeByIndex(selectedIndex);
                     double salary = logic.CalculateSalary(employee);
                     MessageBox.Show($"Зарплата сотрудника {employee.Name}: {salary:C}");
                 }
@@ -257,13 +270,17 @@ namespace WindowsFormsApp1
             }
         }
 
+        /// <summary>
+        /// Обработчик кнопки "Добавить стаж"
+        /// </summary>
         private void btnAddExperience_Click(object sender, EventArgs e)
         {
-            if (listBoxEmployees.SelectedIndex >= 0)
+            int selectedIndex = GetSelectedEmployeeIndex();
+            if (selectedIndex >= 0)
             {
                 try
                 {
-                    var employee = logic.GetEmployeeByIndex(listBoxEmployees.SelectedIndex);
+                    var employee = logic.GetEmployeeByIndex(selectedIndex);
                     int oldExp = employee.WorkExp;
                     logic.AddWorkExp(employee);
                     RefreshEmployeeList();
@@ -280,6 +297,9 @@ namespace WindowsFormsApp1
             }
         }
 
+        /// <summary>
+        /// Обработчик кнопки "Найти по индексу"
+        /// </summary>
         private void btnFindByIndex_Click(object sender, EventArgs e)
         {
             if (int.TryParse(txtIndex.Text, out int index))
@@ -289,9 +309,11 @@ namespace WindowsFormsApp1
                     var employee = logic.GetEmployeeByIndex(index);
                     MessageBox.Show($"Найден сотрудник: {employee}", "Результат поиска");
 
-                    if (index >= 0 && index < listBoxEmployees.Items.Count)
+                    if (index >= 0 && index < dataGridViewEmployees.Rows.Count)
                     {
-                        listBoxEmployees.SelectedIndex = index;
+                        dataGridViewEmployees.ClearSelection();
+                        dataGridViewEmployees.Rows[index].Selected = true;
+                        dataGridViewEmployees.FirstDisplayedScrollingRowIndex = index;
                     }
                 }
                 catch (Exception ex)
@@ -305,20 +327,20 @@ namespace WindowsFormsApp1
             }
         }
 
+        /// <summary>
+        /// Обработчик кнопки "Обновить список"
+        /// </summary>
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             RefreshEmployeeList();
         }
 
-        private void lblIndex_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void txtIndex_TextChanged(object sender, EventArgs e)
-        {
-        }
+        // Остальные методы остаются без изменений
+        private void lblIndex_Click(object sender, EventArgs e) { }
+        private void txtIndex_TextChanged(object sender, EventArgs e) { }
     }
 
+    // Класс AddForm остается без изменений
     public class AddForm : Form
     {
         private TextBox txtName;
