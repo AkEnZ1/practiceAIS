@@ -8,7 +8,10 @@ namespace ConsoleApp
     class Program
     {
         static Logic logic = new Logic();
-
+        /// <summary>
+        /// Главная точка входа в приложение. Запускает меню управления сотрудниками.
+        /// </summary>
+        /// <param name="args">Аргументы командной строки.</param>
         static void Main(string[] args)
         {
             bool exit = false;
@@ -61,7 +64,10 @@ namespace ConsoleApp
                 }
             }
         }
-
+        /// <summary>
+        /// Добавляет нового сотрудника через консольный интерфейс.
+        /// Запрашивает у пользователя имя, опыт работы и должность.
+        ///</summary>
         static void AddEmployee()
         {
             Console.Clear();
@@ -92,7 +98,9 @@ namespace ConsoleApp
             Console.WriteLine("Сотрудник добавлен!");
             Console.ReadLine();
         }
-
+        /// <summary>
+        /// Отображает список всех сотрудников в системе.
+        /// </summary>
         static void ShowAllEmployees()
         {
             Console.Clear();
@@ -114,7 +122,9 @@ namespace ConsoleApp
 
             Console.ReadLine();
         }
-
+        /// <summary>
+        /// Находит и отображает сотрудника по указанному индексу.
+        /// </summary>
         static void FindEmployeeByIndex()
         {
             Console.Clear();
@@ -143,7 +153,10 @@ namespace ConsoleApp
 
             Console.ReadLine();
         }
-
+        /// <summary>
+        /// Обновляет информацию о сотруднике по указанному индексу.
+        /// Запрашивает новые данные у пользователя.
+        /// </summary>
         static void UpdateEmployee()
         {
             Console.Clear();
@@ -192,7 +205,9 @@ namespace ConsoleApp
 
             Console.ReadLine();
         }
-
+        /// <summary>
+        /// Удаляет сотрудника из системы по указанному индексу.
+        /// </summary>
         static void DeleteEmployee()
         {
             Console.Clear();
@@ -213,7 +228,9 @@ namespace ConsoleApp
             Console.WriteLine("Сотрудник удален!");
             Console.ReadLine();
         }
-
+        /// <summary>
+        /// Рассчитывает и отображает зарплату для выбранного сотрудника.
+        /// </summary>
         static void CalculateSalary()
         {
             Console.Clear();
@@ -243,6 +260,9 @@ namespace ConsoleApp
 
             Console.ReadLine();
         }
+        /// <summary>
+        /// Добавляет один год стажа выбранному сотруднику.
+        /// </summary>
         static void AddWorkExp()
         {
             Console.Clear();
