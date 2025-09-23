@@ -119,5 +119,15 @@ namespace LogicAndModel
         {
             employee.WorkExp++;
         }
+        /// <summary>
+        /// Возвращает список сотрудников с указанной должностью.
+        /// </summary>
+        /// <param name="vacancy">Должность для фильтрации сотрудников.</param>
+        /// <returns>Список сотрудников с указанной должностью.</returns>
+        public List<Employee> GetEmployeesByVacancy(VacancyType vacancy)
+        {
+            return Employees.Where(e => e.Vacancy == vacancy).ToList();
+        }
+
     }
 }
