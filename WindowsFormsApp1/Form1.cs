@@ -17,6 +17,7 @@ namespace WindowsFormsApp1
         private TextBox txtIndex;
         private Button btnFindByIndex;
         private Label lblIndex;
+        private Button btnFilterManagers;
 
         public Form1()
         {
@@ -36,7 +37,14 @@ namespace WindowsFormsApp1
             this.txtIndex = new System.Windows.Forms.TextBox();
             this.btnFindByIndex = new System.Windows.Forms.Button();
             this.lblIndex = new System.Windows.Forms.Label();
-            
+
+            this.btnFilterManagers = new System.Windows.Forms.Button();
+            this.btnFilterManagers.Location = new System.Drawing.Point(330, 260);
+            this.btnFilterManagers.Size = new System.Drawing.Size(120, 30);
+            this.btnFilterManagers.Text = "Показать менеджеров";
+            this.btnFilterManagers.Click += new System.EventHandler(this.btnFilterManagers_Click);
+            this.Controls.Add(this.btnFilterManagers);
+
             // DataGridView
             this.dataGridViewEmployees.Location = new System.Drawing.Point(12, 12);
             this.dataGridViewEmployees.Size = new System.Drawing.Size(640, 200);
@@ -107,6 +115,26 @@ namespace WindowsFormsApp1
             this.Text = "Управление сотрудниками";
         }
 
+        private void btnFilterManagers_Click(object sender, EventArgs e)
+        {
+    // Получаем список сотрудников с должностью Manager
+            var managers = logic.GetEmployeesByVacancy(VacancyType.Manager);
+
+    // Очищаем таблицу и заполняем только выбранных сотрудников
+            dataGridViewEmployees.Rows.Clear();
+            foreach (var employee in managers)
+            {
+                dataGridViewEmployees.Rows.Add(
+                    employee.Name,
+                    GetVacancyRussianName(employee.Vacancy),
+                    employee.WorkExp
+                );
+            }
+
+            MessageBox.Show($"Показаны {managers.Count} менеджера(ов)");
+        }
+
+        
         /// <summary>
         /// Обновляет таблицу сотрудников
         /// </summary>
