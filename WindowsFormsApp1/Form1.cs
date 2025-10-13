@@ -1,32 +1,68 @@
-﻿using System;
-using System.Windows.Forms;
+﻿using DataAccessLayer;
 using LogicAndModel;
+using System;
+using System.Data.SQLite;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
-        private Logic logic = new Logic();
-        private ListBox listBoxEmployees;
-        private Button btnAdd;
-        private Button btnUpdate;
-        private Button btnDelete;
-        private Button btnCalculateSalary;
-        private Button btnRefresh;
-        private Button btnAddExperience;
-        private TextBox txtIndex;
-        private Button btnFindByIndex;
-        private Label lblIndex;
+        private Logic logic;
 
         public Form1()
         {
             InitializeComponent();
+
+            InitializeDatabase();
+
+            IRepository<Employee> repository = new DapperRepository();
+            logic = new Logic(repository);
+
             RefreshEmployeeList();
+        }
+
+        private void InitializeDatabase()
+        {
+            try
+            {
+                // Создаем файл БД если не существует
+                if (!System.IO.File.Exists("EmployeeDatabase.sqlite"))
+                {
+                    SQLiteConnection.CreateFile("EmployeeDatabase.sqlite");
+                }
+
+                // Создаем таблицу через чистый SQLite
+                using (var connection = new SQLiteConnection("Data Source=EmployeeDatabase.sqlite"))
+                {
+                    connection.Open();
+
+                    // Создаем таблицу
+                    using (var command = new SQLiteCommand(@"
+                CREATE TABLE IF NOT EXISTS Employees (
+                    ID INTEGER PRIMARY KEY AUTOINCREMENT,
+                    Name TEXT NOT NULL,
+                    Vacancy INTEGER NOT NULL,
+                    WorkExp INTEGER NOT NULL
+                )", connection))
+                    {
+                        command.ExecuteNonQuery();
+                    }
+
+                    
+                    
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка инициализации БД: {ex.Message}");
+            }
         }
 
         private void InitializeComponent()
         {
-            this.listBoxEmployees = new System.Windows.Forms.ListBox();
+            this.dataGridViewEmployees = new System.Windows.Forms.DataGridView();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -36,16 +72,33 @@ namespace WindowsFormsApp1
             this.txtIndex = new System.Windows.Forms.TextBox();
             this.btnFindByIndex = new System.Windows.Forms.Button();
             this.lblIndex = new System.Windows.Forms.Label();
+            this.btnFilterManagers = new System.Windows.Forms.Button();
+            this.btnShowAll = new System.Windows.Forms.Button();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmployees)).BeginInit();
             this.SuspendLayout();
             // 
-            // listBoxEmployees
+            // dataGridViewEmployees
             // 
-            this.listBoxEmployees.FormattingEnabled = true;
-            this.listBoxEmployees.Location = new System.Drawing.Point(12, 12);
-            this.listBoxEmployees.Name = "listBoxEmployees";
-            this.listBoxEmployees.Size = new System.Drawing.Size(540, 199);
-            this.listBoxEmployees.TabIndex = 0;
-            this.listBoxEmployees.SelectedIndexChanged += new System.EventHandler(this.listBoxEmployees_SelectedIndexChanged);
+            this.dataGridViewEmployees.AllowUserToAddRows = false;
+            this.dataGridViewEmployees.AllowUserToDeleteRows = false;
+            this.dataGridViewEmployees.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewEmployees.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+            this.dataGridViewEmployees.Location = new System.Drawing.Point(12, 12);
+            this.dataGridViewEmployees.MultiSelect = false;
+            this.dataGridViewEmployees.Name = "dataGridViewEmployees";
+            this.dataGridViewEmployees.ReadOnly = true;
+            this.dataGridViewEmployees.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewEmployees.Size = new System.Drawing.Size(640, 200);
+            this.dataGridViewEmployees.TabIndex = 12;
+            this.dataGridViewEmployees.SelectionChanged += new System.EventHandler(this.dataGridViewEmployees_SelectionChanged);
             // 
             // btnAdd
             // 
@@ -85,7 +138,7 @@ namespace WindowsFormsApp1
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(12, 260);
+            this.btnRefresh.Location = new System.Drawing.Point(86, 260);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(120, 30);
             this.btnRefresh.TabIndex = 6;
@@ -94,7 +147,7 @@ namespace WindowsFormsApp1
             // 
             // btnAddExperience
             // 
-            this.btnAddExperience.Location = new System.Drawing.Point(456, 220);
+            this.btnAddExperience.Location = new System.Drawing.Point(224, 259);
             this.btnAddExperience.Name = "btnAddExperience";
             this.btnAddExperience.Size = new System.Drawing.Size(100, 30);
             this.btnAddExperience.TabIndex = 5;
@@ -103,14 +156,14 @@ namespace WindowsFormsApp1
             // 
             // txtIndex
             // 
-            this.txtIndex.Location = new System.Drawing.Point(328, 269);
+            this.txtIndex.Location = new System.Drawing.Point(597, 234);
             this.txtIndex.Name = "txtIndex";
             this.txtIndex.Size = new System.Drawing.Size(50, 20);
             this.txtIndex.TabIndex = 7;
             // 
             // btnFindByIndex
             // 
-            this.btnFindByIndex.Location = new System.Drawing.Point(194, 260);
+            this.btnFindByIndex.Location = new System.Drawing.Point(456, 220);
             this.btnFindByIndex.Name = "btnFindByIndex";
             this.btnFindByIndex.Size = new System.Drawing.Size(130, 30);
             this.btnFindByIndex.TabIndex = 8;
@@ -120,15 +173,59 @@ namespace WindowsFormsApp1
             // lblIndex
             // 
             this.lblIndex.AutoSize = true;
-            this.lblIndex.Location = new System.Drawing.Point(330, 253);
+            this.lblIndex.Location = new System.Drawing.Point(599, 218);
             this.lblIndex.Name = "lblIndex";
             this.lblIndex.Size = new System.Drawing.Size(48, 13);
             this.lblIndex.TabIndex = 9;
             this.lblIndex.Text = "Индекс:";
             // 
+            // btnFilterManagers
+            // 
+            this.btnFilterManagers.Location = new System.Drawing.Point(348, 259);
+            this.btnFilterManagers.Name = "btnFilterManagers";
+            this.btnFilterManagers.Size = new System.Drawing.Size(133, 30);
+            this.btnFilterManagers.TabIndex = 10;
+            this.btnFilterManagers.Text = "Показать менеджеров";
+            this.btnFilterManagers.Click += new System.EventHandler(this.btnFilterManagers_Click);
+            // 
+            // btnShowAll
+            // 
+            this.btnShowAll.Location = new System.Drawing.Point(487, 260);
+            this.btnShowAll.Name = "btnShowAll";
+            this.btnShowAll.Size = new System.Drawing.Size(120, 30);
+            this.btnShowAll.TabIndex = 11;
+            this.btnShowAll.Text = "Показать всех";
+            this.btnShowAll.Click += new System.EventHandler(this.btnShowAll_Click);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Имя";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Должность";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Опыт работы (лет)";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
             // Form1
             // 
-            this.ClientSize = new System.Drawing.Size(564, 301);
+            this.ClientSize = new System.Drawing.Size(664, 301);
+            this.Controls.Add(this.btnShowAll);
+            this.Controls.Add(this.btnFilterManagers);
             this.Controls.Add(this.lblIndex);
             this.Controls.Add(this.btnFindByIndex);
             this.Controls.Add(this.txtIndex);
@@ -138,30 +235,70 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.listBoxEmployees);
+            this.Controls.Add(this.dataGridViewEmployees);
             this.Name = "Form1";
             this.Text = "Управление сотрудниками";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmployees)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
+        private DataGridView dataGridViewEmployees;
+        private Button btnAdd;
+        private Button btnUpdate;
+        private Button btnDelete;
+        private Button btnCalculateSalary;
+        private Button btnRefresh;
+        private Button btnAddExperience;
+        private TextBox txtIndex;
+        private Button btnFindByIndex;
+        private Label lblIndex;
+        private Button btnFilterManagers;
+        private Button btnShowAll;
+
         private void RefreshEmployeeList()
         {
-            listBoxEmployees.Items.Clear();
+            dataGridViewEmployees.Rows.Clear();
             var employees = logic.GetEmployees();
+
             foreach (var employee in employees)
             {
-                listBoxEmployees.Items.Add(employee);
+                dataGridViewEmployees.Rows.Add(
+                    employee.ID,
+                    employee.Name,
+                    GetVacancyRussianName(employee.Vacancy),
+                    employee.WorkExp
+                );
             }
         }
 
-        private void listBoxEmployees_SelectedIndexChanged(object sender, EventArgs e)
+        private string GetVacancyRussianName(VacancyType vacancy)
         {
-            if (listBoxEmployees.SelectedIndex >= 0)
+            switch (vacancy)
             {
-                txtIndex.Text = listBoxEmployees.SelectedIndex.ToString();
+                case VacancyType.Head: return "Руководитель";
+                case VacancyType.Manager: return "Менеджер";
+                case VacancyType.Intern: return "Стажер";
+                default: return "Неизвестно";
             }
+        }
+
+        private void dataGridViewEmployees_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridViewEmployees.SelectedRows.Count > 0)
+            {
+                txtIndex.Text = dataGridViewEmployees.SelectedRows[0].Index.ToString();
+            }
+        }
+
+        private int GetSelectedEmployeeIndex()
+        {
+            if (dataGridViewEmployees.SelectedRows.Count > 0)
+            {
+                return dataGridViewEmployees.SelectedRows[0].Index;
+            }
+            return -1;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -179,9 +316,10 @@ namespace WindowsFormsApp1
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (listBoxEmployees.SelectedIndex >= 0)
+            int selectedIndex = GetSelectedEmployeeIndex();
+            if (selectedIndex >= 0)
             {
-                var selectedEmployee = logic.GetEmployeeByIndex(listBoxEmployees.SelectedIndex);
+                var selectedEmployee = logic.GetEmployeeByIndex(selectedIndex);
                 using (var form = new AddForm())
                 {
                     form.SetEmployeeData(selectedEmployee.Name, selectedEmployee.WorkExp, selectedEmployee.Vacancy);
@@ -189,7 +327,7 @@ namespace WindowsFormsApp1
                     if (form.ShowDialog() == DialogResult.OK)
                     {
                         bool success = logic.UpdateEmployee(
-                            listBoxEmployees.SelectedIndex,
+                            selectedIndex,
                             form.EmployeeName,
                             form.Vacancy,
                             form.WorkExperience
@@ -215,7 +353,8 @@ namespace WindowsFormsApp1
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (listBoxEmployees.SelectedIndex >= 0)
+            int selectedIndex = GetSelectedEmployeeIndex();
+            if (selectedIndex >= 0)
             {
                 var result = MessageBox.Show(
                     "Вы уверены, что хотите удалить этого сотрудника?",
@@ -225,7 +364,7 @@ namespace WindowsFormsApp1
 
                 if (result == DialogResult.Yes)
                 {
-                    logic.DeleteEmployee(listBoxEmployees.SelectedIndex);
+                    logic.DeleteEmployee(selectedIndex);
                     RefreshEmployeeList();
                     MessageBox.Show("Сотрудник удален!");
                 }
@@ -238,11 +377,12 @@ namespace WindowsFormsApp1
 
         private void btnCalculateSalary_Click(object sender, EventArgs e)
         {
-            if (listBoxEmployees.SelectedIndex >= 0)
+            int selectedIndex = GetSelectedEmployeeIndex();
+            if (selectedIndex >= 0)
             {
                 try
                 {
-                    var employee = logic.GetEmployeeByIndex(listBoxEmployees.SelectedIndex);
+                    var employee = logic.GetEmployeeByIndex(selectedIndex);
                     double salary = logic.CalculateSalary(employee);
                     MessageBox.Show($"Зарплата сотрудника {employee.Name}: {salary:C}");
                 }
@@ -259,11 +399,12 @@ namespace WindowsFormsApp1
 
         private void btnAddExperience_Click(object sender, EventArgs e)
         {
-            if (listBoxEmployees.SelectedIndex >= 0)
+            int selectedIndex = GetSelectedEmployeeIndex();
+            if (selectedIndex >= 0)
             {
                 try
                 {
-                    var employee = logic.GetEmployeeByIndex(listBoxEmployees.SelectedIndex);
+                    var employee = logic.GetEmployeeByIndex(selectedIndex);
                     int oldExp = employee.WorkExp;
                     logic.AddWorkExp(employee);
                     RefreshEmployeeList();
@@ -289,9 +430,11 @@ namespace WindowsFormsApp1
                     var employee = logic.GetEmployeeByIndex(index);
                     MessageBox.Show($"Найден сотрудник: {employee}", "Результат поиска");
 
-                    if (index >= 0 && index < listBoxEmployees.Items.Count)
+                    if (index >= 0 && index < dataGridViewEmployees.Rows.Count)
                     {
-                        listBoxEmployees.SelectedIndex = index;
+                        dataGridViewEmployees.ClearSelection();
+                        dataGridViewEmployees.Rows[index].Selected = true;
+                        dataGridViewEmployees.FirstDisplayedScrollingRowIndex = index;
                     }
                 }
                 catch (Exception ex)
@@ -310,13 +453,39 @@ namespace WindowsFormsApp1
             RefreshEmployeeList();
         }
 
-        private void lblIndex_Click(object sender, EventArgs e)
+        private void btnFilterManagers_Click(object sender, EventArgs e)
         {
+            try
+            {
+                dataGridViewEmployees.Rows.Clear();
+                var employees = logic.GetEmployees();
+                var managers = employees.Where(emp => emp.Vacancy == VacancyType.Manager).ToList();
+
+                foreach (var employee in managers)
+                {
+                    dataGridViewEmployees.Rows.Add(
+                        employee.ID,
+                        employee.Name,
+                        GetVacancyRussianName(employee.Vacancy),
+                        employee.WorkExp
+                    );
+                }
+
+                MessageBox.Show($"Показаны {managers.Count} менеджера(ов)");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка при фильтрации: {ex.Message}");
+            }
+        }
+        private void btnShowAll_Click(object sender, EventArgs e)
+        {
+            RefreshEmployeeList();
+            MessageBox.Show("Показаны все сотрудники");
         }
 
-        private void txtIndex_TextChanged(object sender, EventArgs e)
-        {
-        }
+        private void lblIndex_Click(object sender, EventArgs e) { }
+        private void txtIndex_TextChanged(object sender, EventArgs e) { }
     }
 
     public class AddForm : Form

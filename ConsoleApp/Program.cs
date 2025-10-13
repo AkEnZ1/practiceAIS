@@ -2,15 +2,26 @@
 using System.Collections.Generic;
 using System.Linq;
 using LogicAndModel;
+using DataAccessLayer;
 
 namespace ConsoleApp
 {
+    /// <summary>
+    /// Главный класс консольного приложения для управления сотрудниками
+    /// </summary>
     class Program
     {
-        static Logic logic = new Logic();
+        static Logic logic;
 
+        /// <summary>
+        /// Точка входа в приложение
+        /// </summary>
+        /// <param name="args">Аргументы командной строки</param>
         static void Main(string[] args)
         {
+            IRepository<Employee> repository = new DapperRepository();
+            logic = new Logic(repository);
+
             bool exit = false;
             while (!exit)
             {
@@ -62,6 +73,9 @@ namespace ConsoleApp
             }
         }
 
+        /// <summary>
+        /// Добавляет нового сотрудника в систему
+        /// </summary>
         static void AddEmployee()
         {
             Console.Clear();
@@ -69,9 +83,21 @@ namespace ConsoleApp
 
             Console.Write("Введите имя: ");
             string name = Console.ReadLine();
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                Console.WriteLine("Имя не может быть пустым!");
+                Console.ReadLine();
+                return;
+            }
 
+            int workExp;
             Console.Write("Введите опыт работы (лет): ");
-            int workExp = int.Parse(Console.ReadLine());
+            if (!int.TryParse(Console.ReadLine(), out workExp) || workExp < 0)
+            {
+                Console.WriteLine("Опыт работы должен быть неотрицательным числом!");
+                Console.ReadLine();
+                return;
+            }
 
             Console.WriteLine("Выберите должность:");
             Console.WriteLine("1. Руководитель");
@@ -80,12 +106,23 @@ namespace ConsoleApp
             Console.Write("Ваш выбор: ");
 
             VacancyType vacancy;
-            switch (Console.ReadLine())
+            string vacancyChoice = Console.ReadLine();
+
+            switch (vacancyChoice)
             {
-                case "1": vacancy = VacancyType.Head; break;
-                case "2": vacancy = VacancyType.Manager; break;
-                case "3": vacancy = VacancyType.Intern; break;
-                default: vacancy = VacancyType.Intern; break;
+                case "1":
+                    vacancy = VacancyType.Head;
+                    break;
+                case "2":
+                    vacancy = VacancyType.Manager;
+                    break;
+                case "3":
+                    vacancy = VacancyType.Intern;
+                    break;
+                default:
+                    Console.WriteLine("Неверный выбор должности! Выберите 1, 2 или 3.");
+                    Console.ReadLine();
+                    return;
             }
 
             logic.AddEmployee(name, workExp, vacancy);
@@ -93,6 +130,9 @@ namespace ConsoleApp
             Console.ReadLine();
         }
 
+        /// <summary>
+        /// Отображает список всех сотрудников
+        /// </summary>
         static void ShowAllEmployees()
         {
             Console.Clear();
@@ -110,11 +150,21 @@ namespace ConsoleApp
                 {
                     Console.WriteLine($"{i}. {employees[i]}");
                 }
+
+                // Дополнительная информация о БД
+                Console.WriteLine($"\nВсего сотрудников в базе: {employees.Count}");
+
+                // Проверка ID сотрудников (должны быть уникальными)
+                var ids = employees.Select(e => e.ID).ToList();
+                Console.WriteLine($"ID сотрудников: {string.Join(", ", ids)}");
             }
 
             Console.ReadLine();
         }
 
+        /// <summary>
+        /// Находит сотрудника по индексу в списке
+        /// </summary>
         static void FindEmployeeByIndex()
         {
             Console.Clear();
@@ -144,6 +194,9 @@ namespace ConsoleApp
             Console.ReadLine();
         }
 
+        /// <summary>
+        /// Обновляет данные существующего сотрудника
+        /// </summary>
         static void UpdateEmployee()
         {
             Console.Clear();
@@ -181,18 +234,28 @@ namespace ConsoleApp
                 default: vacancy = VacancyType.Intern; break;
             }
 
-            if (logic.UpdateEmployee(index, name, vacancy, workExp))
+            try
             {
-                Console.WriteLine("Сотрудник обновлен!");
+                if (logic.UpdateEmployee(index, name, vacancy, workExp))
+                {
+                    Console.WriteLine("Сотрудник обновлен!");
+                }
+                else
+                {
+                    Console.WriteLine("Неверный индекс!");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                Console.WriteLine("Неверный индекс!");
+                Console.WriteLine($"Ошибка: {ex.Message}");
             }
 
             Console.ReadLine();
         }
 
+        /// <summary>
+        /// Удаляет сотрудника из системы
+        /// </summary>
         static void DeleteEmployee()
         {
             Console.Clear();
@@ -209,11 +272,22 @@ namespace ConsoleApp
             Console.Write("Введите индекс сотрудника для удаления: ");
             int index = int.Parse(Console.ReadLine());
 
-            logic.DeleteEmployee(index);
-            Console.WriteLine("Сотрудник удален!");
+            try
+            {
+                logic.DeleteEmployee(index);
+                Console.WriteLine("Сотрудник удален!");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Ошибка: {ex.Message}");
+            }
+
             Console.ReadLine();
         }
 
+        /// <summary>
+        /// Рассчитывает зарплату для выбранного сотрудника
+        /// </summary>
         static void CalculateSalary()
         {
             Console.Clear();
@@ -243,20 +317,28 @@ namespace ConsoleApp
 
             Console.ReadLine();
         }
+
+        /// <summary>
+        /// Добавляет один год стажа выбранному сотруднику
+        /// </summary>
         static void AddWorkExp()
         {
             Console.Clear();
             Console.WriteLine("Введите индекс сотрудника");
             int index = int.Parse(Console.ReadLine());
-            var employees = logic.GetEmployees();
-            if (index >= 0 && index <= employees.Count)
+
+            try
             {
-                logic.AddWorkExp(employees[index]);
-                Console.WriteLine($"Сотруднику {employees[index].Name} добавлен 1 год стажа"); Console.ReadLine();
+                var employee = logic.GetEmployeeByIndex(index);
+                int oldExp = employee.WorkExp;
+                logic.AddWorkExp(employee);
+                Console.WriteLine($"Сотруднику {employee.Name} добавлен 1 год стажа");
+                Console.ReadLine();
             }
-            else
+            catch (Exception ex)
             {
-                Console.WriteLine("Несуществующий индекс"); Console.ReadLine();
+                Console.WriteLine($"Ошибка: {ex.Message}");
+                Console.ReadLine();
             }
         }
     }
