@@ -70,12 +70,13 @@
     <Compile Include="DapperRepository.cs" />
     <Compile Include="EntityRepository.cs" />
     <Compile Include="EmployeeContext.cs" />
+    <Compile Include="IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LogicAndModel\LogicAndModel.csproj">
-      <Project>{f12970a2-8cf3-4226-968c-4ff6c3083c57}</Project>
-      <Name>LogicAndModel</Name>
+    <ProjectReference Include="..\DomainModel\DomainModel.csproj">
+      <Project>{64529b2b-4958-4dd4-af30-5bba04ce2397}</Project>
+      <Name>DomainModel</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

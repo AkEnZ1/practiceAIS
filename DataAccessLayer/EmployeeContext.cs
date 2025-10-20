@@ -1,6 +1,7 @@
-﻿using System.Data.Entity;
+﻿// DataAccessLayer/EmployeeContext.cs
+using System.Data.Entity;
 using System.Data.SQLite;
-using LogicAndModel;
+using DomainModel;
 
 namespace DataAccessLayer
 {

@@ -1,0 +1,6 @@
+C:\Users\neart\source\repos\App\DomainModel\bin\Debug\DomainModel.dll
+C:\Users\neart\source\repos\App\DomainModel\bin\Debug\DomainModel.pdb
+C:\Users\neart\source\repos\App\DomainModel\obj\Debug\DomainModel.csproj.AssemblyReference.cache
+C:\Users\neart\source\repos\App\DomainModel\obj\Debug\DomainModel.csproj.CoreCompileInputs.cache
+C:\Users\neart\source\repos\App\DomainModel\obj\Debug\DomainModel.dll
+C:\Users\neart\source\repos\App\DomainModel\obj\Debug\DomainModel.pdb

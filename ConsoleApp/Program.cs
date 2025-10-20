@@ -1,22 +1,17 @@
-﻿using System;
+﻿// ConsoleApp/Program.cs
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using LogicAndModel;
+using DomainModel;
+using BusinessLogic;
 using DataAccessLayer;
 
 namespace ConsoleApp
 {
-    /// <summary>
-    /// Главный класс консольного приложения для управления сотрудниками
-    /// </summary>
     class Program
     {
         static Logic logic;
 
-        /// <summary>
-        /// Точка входа в приложение
-        /// </summary>
-        /// <param name="args">Аргументы командной строки</param>
         static void Main(string[] args)
         {
             IRepository<Employee> repository = new DapperRepository();
@@ -73,9 +68,6 @@ namespace ConsoleApp
             }
         }
 
-        /// <summary>
-        /// Добавляет нового сотрудника в систему
-        /// </summary>
         static void AddEmployee()
         {
             Console.Clear();
@@ -130,9 +122,6 @@ namespace ConsoleApp
             Console.ReadLine();
         }
 
-        /// <summary>
-        /// Отображает список всех сотрудников
-        /// </summary>
         static void ShowAllEmployees()
         {
             Console.Clear();
@@ -151,10 +140,7 @@ namespace ConsoleApp
                     Console.WriteLine($"{i}. {employees[i]}");
                 }
 
-                // Дополнительная информация о БД
                 Console.WriteLine($"\nВсего сотрудников в базе: {employees.Count}");
-
-                // Проверка ID сотрудников (должны быть уникальными)
                 var ids = employees.Select(e => e.ID).ToList();
                 Console.WriteLine($"ID сотрудников: {string.Join(", ", ids)}");
             }
@@ -162,9 +148,6 @@ namespace ConsoleApp
             Console.ReadLine();
         }
 
-        /// <summary>
-        /// Находит сотрудника по индексу в списке
-        /// </summary>
         static void FindEmployeeByIndex()
         {
             Console.Clear();
@@ -194,9 +177,6 @@ namespace ConsoleApp
             Console.ReadLine();
         }
 
-        /// <summary>
-        /// Обновляет данные существующего сотрудника
-        /// </summary>
         static void UpdateEmployee()
         {
             Console.Clear();
@@ -253,9 +233,6 @@ namespace ConsoleApp
             Console.ReadLine();
         }
 
-        /// <summary>
-        /// Удаляет сотрудника из системы
-        /// </summary>
         static void DeleteEmployee()
         {
             Console.Clear();
@@ -285,9 +262,6 @@ namespace ConsoleApp
             Console.ReadLine();
         }
 
-        /// <summary>
-        /// Рассчитывает зарплату для выбранного сотрудника
-        /// </summary>
         static void CalculateSalary()
         {
             Console.Clear();
@@ -318,9 +292,6 @@ namespace ConsoleApp
             Console.ReadLine();
         }
 
-        /// <summary>
-        /// Добавляет один год стажа выбранному сотруднику
-        /// </summary>
         static void AddWorkExp()
         {
             Console.Clear();

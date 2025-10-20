@@ -1,5 +1,6 @@
 ﻿using DataAccessLayer;
-using LogicAndModel;
+using BusinessLogic;
+using DomainModel;
 using System;
 using System.Data.SQLite;
 using System.Linq;

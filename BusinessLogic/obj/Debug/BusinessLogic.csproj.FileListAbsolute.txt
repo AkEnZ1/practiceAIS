@@ -1,0 +1,17 @@
+C:\Users\neart\source\repos\App\BusinessLogic\bin\Debug\BusinessLogic.dll
+C:\Users\neart\source\repos\App\BusinessLogic\bin\Debug\BusinessLogic.pdb
+C:\Users\neart\source\repos\App\BusinessLogic\bin\Debug\DataAccessLayer.dll
+C:\Users\neart\source\repos\App\BusinessLogic\bin\Debug\DomainModel.dll
+C:\Users\neart\source\repos\App\BusinessLogic\bin\Debug\System.Data.SQLite.dll
+C:\Users\neart\source\repos\App\BusinessLogic\bin\Debug\EntityFramework.dll
+C:\Users\neart\source\repos\App\BusinessLogic\bin\Debug\Dapper.dll
+C:\Users\neart\source\repos\App\BusinessLogic\bin\Debug\DataAccessLayer.pdb
+C:\Users\neart\source\repos\App\BusinessLogic\bin\Debug\DomainModel.pdb
+C:\Users\neart\source\repos\App\BusinessLogic\bin\Debug\System.Data.SQLite.xml
+C:\Users\neart\source\repos\App\BusinessLogic\bin\Debug\EntityFramework.xml
+C:\Users\neart\source\repos\App\BusinessLogic\bin\Debug\Dapper.xml
+C:\Users\neart\source\repos\App\BusinessLogic\obj\Debug\BusinessLogic.csproj.AssemblyReference.cache
+C:\Users\neart\source\repos\App\BusinessLogic\obj\Debug\BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\neart\source\repos\App\BusinessLogic\obj\Debug\Business.CF5D6E35.Up2Date
+C:\Users\neart\source\repos\App\BusinessLogic\obj\Debug\BusinessLogic.dll
+C:\Users\neart\source\repos\App\BusinessLogic\obj\Debug\BusinessLogic.pdb

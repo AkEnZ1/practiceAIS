@@ -1,7 +1,8 @@
-﻿using System;
+﻿// DataAccessLayer/EntityRepository.cs
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using LogicAndModel;
+using DomainModel;
 
 namespace DataAccessLayer
 {

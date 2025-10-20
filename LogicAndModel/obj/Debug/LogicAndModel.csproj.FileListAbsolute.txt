@@ -1,6 +1,0 @@
-C:\Users\neart\source\repos\App\LogicAndModel\bin\Debug\LogicAndModel.dll
-C:\Users\neart\source\repos\App\LogicAndModel\bin\Debug\LogicAndModel.pdb
-C:\Users\neart\source\repos\App\LogicAndModel\obj\Debug\LogicAndModel.csproj.AssemblyReference.cache
-C:\Users\neart\source\repos\App\LogicAndModel\obj\Debug\LogicAndModel.csproj.CoreCompileInputs.cache
-C:\Users\neart\source\repos\App\LogicAndModel\obj\Debug\LogicAndModel.dll
-C:\Users\neart\source\repos\App\LogicAndModel\obj\Debug\LogicAndModel.pdb

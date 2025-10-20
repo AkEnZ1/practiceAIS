@@ -1,5 +1,6 @@
-﻿using Dapper;
-using LogicAndModel;
+﻿// DataAccessLayer/DapperRepository.cs
+using Dapper;
+using DomainModel;
 using System;
 using System.Collections.Generic;
 using System.Data.SQLite;

@@ -88,13 +88,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BusinessLogic\BusinessLogic.csproj">
+      <Project>{876d134f-7509-4eed-9649-e8c7a279e0e6}</Project>
+      <Name>BusinessLogic</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
       <Project>{c40ca3de-34aa-4d6d-b588-f4c509e0684a}</Project>
       <Name>DataAccessLayer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\LogicAndModel\LogicAndModel.csproj">
-      <Project>{f12970a2-8cf3-4226-968c-4ff6c3083c57}</Project>
-      <Name>LogicAndModel</Name>
+    <ProjectReference Include="..\DomainModel\DomainModel.csproj">
+      <Project>{64529b2b-4958-4dd4-af30-5bba04ce2397}</Project>
+      <Name>DomainModel</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
