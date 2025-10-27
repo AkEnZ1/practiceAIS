@@ -15,3 +15,5 @@ C:\Users\neart\source\repos\App\BusinessLogic\obj\Debug\BusinessLogic.csproj.Cor
 C:\Users\neart\source\repos\App\BusinessLogic\obj\Debug\Business.CF5D6E35.Up2Date
 C:\Users\neart\source\repos\App\BusinessLogic\obj\Debug\BusinessLogic.dll
 C:\Users\neart\source\repos\App\BusinessLogic\obj\Debug\BusinessLogic.pdb
+C:\Users\neart\source\repos\App\BusinessLogic\bin\Debug\Ninject.dll
+C:\Users\neart\source\repos\App\BusinessLogic\bin\Debug\Ninject.xml

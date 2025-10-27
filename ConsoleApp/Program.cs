@@ -1,21 +1,41 @@
-﻿// ConsoleApp/Program.cs
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using DomainModel;
 using BusinessLogic;
 using DataAccessLayer;
+using Ninject;
 
 namespace ConsoleApp
 {
+    /// <summary>
+    /// Консольное приложение для управления сотрудниками
+    /// </summary>
+    /// <remarks>
+    /// Реализует пользовательский интерфейс для работы с системой управления сотрудниками.
+    /// Использует Dependency Injection через Ninject для управления зависимостями.
+    /// </remarks>
     class Program
     {
+        /// <summary>
+        /// Экземпляр бизнес-логики для работы с сотрудниками
+        /// </summary>
         static Logic logic;
 
+        /// <summary>
+        /// Точка входа в приложение
+        /// </summary>
+        /// <param name="args">Аргументы командной строки</param>
+        /// <remarks>
+        /// Инициализирует DI-контейнер, настраивает зависимости и запускает главное меню приложения.
+        /// </remarks>
         static void Main(string[] args)
         {
-            IRepository<Employee> repository = new DapperRepository();
-            logic = new Logic(repository);
+            // Создаем IoC контейнер и настраиваем зависимости
+            IKernel ninjectKernel = new StandardKernel(new SimpleConfigModule());
+
+            // Получаем экземпляр Logic через DI контейнер
+            logic = ninjectKernel.Get<Logic>();
 
             bool exit = false;
             while (!exit)
@@ -68,6 +88,13 @@ namespace ConsoleApp
             }
         }
 
+        /// <summary>
+        /// Добавляет нового сотрудника в систему
+        /// </summary>
+        /// <remarks>
+        /// Запрашивает у пользователя данные сотрудника: имя, опыт работы и должность.
+        /// Валидирует введенные данные перед сохранением.
+        /// </remarks>
         static void AddEmployee()
         {
             Console.Clear();
@@ -122,6 +149,13 @@ namespace ConsoleApp
             Console.ReadLine();
         }
 
+        /// <summary>
+        /// Отображает список всех сотрудников в системе
+        /// </summary>
+        /// <remarks>
+        /// Показывает таблицу с ID, именами, должностями и опытом работы всех сотрудников.
+        /// Также отображает общее количество сотрудников и список их ID.
+        /// </remarks>
         static void ShowAllEmployees()
         {
             Console.Clear();
@@ -148,6 +182,13 @@ namespace ConsoleApp
             Console.ReadLine();
         }
 
+        /// <summary>
+        /// Находит сотрудника по его индексу в списке
+        /// </summary>
+        /// <remarks>
+        /// Запрашивает у пользователя индекс сотрудника и отображает его данные.
+        /// Проверяет корректность введенного индекса и наличие сотрудников в системе.
+        /// </remarks>
         static void FindEmployeeByIndex()
         {
             Console.Clear();
@@ -162,7 +203,12 @@ namespace ConsoleApp
             }
 
             Console.Write("Введите индекс: ");
-            int index = int.Parse(Console.ReadLine());
+            if (!int.TryParse(Console.ReadLine(), out int index))
+            {
+                Console.WriteLine("Неверный формат индекса!");
+                Console.ReadLine();
+                return;
+            }
 
             try
             {
@@ -177,6 +223,13 @@ namespace ConsoleApp
             Console.ReadLine();
         }
 
+        /// <summary>
+        /// Обновляет данные существующего сотрудника
+        /// </summary>
+        /// <remarks>
+        /// Позволяет изменить имя, опыт работы и должность выбранного сотрудника.
+        /// Проверяет корректность введенных данных перед обновлением.
+        /// </remarks>
         static void UpdateEmployee()
         {
             Console.Clear();
@@ -191,13 +244,23 @@ namespace ConsoleApp
             }
 
             Console.Write("Введите индекс сотрудника для изменения: ");
-            int index = int.Parse(Console.ReadLine());
+            if (!int.TryParse(Console.ReadLine(), out int index))
+            {
+                Console.WriteLine("Неверный формат индекса!");
+                Console.ReadLine();
+                return;
+            }
 
             Console.Write("Введите новое имя: ");
             string name = Console.ReadLine();
 
             Console.Write("Введите новый опыт работы (лет): ");
-            int workExp = int.Parse(Console.ReadLine());
+            if (!int.TryParse(Console.ReadLine(), out int workExp))
+            {
+                Console.WriteLine("Неверный формат опыта работы!");
+                Console.ReadLine();
+                return;
+            }
 
             Console.WriteLine("Выберите новую должность:");
             Console.WriteLine("1. Руководитель");
@@ -211,7 +274,10 @@ namespace ConsoleApp
                 case "1": vacancy = VacancyType.Head; break;
                 case "2": vacancy = VacancyType.Manager; break;
                 case "3": vacancy = VacancyType.Intern; break;
-                default: vacancy = VacancyType.Intern; break;
+                default:
+                    Console.WriteLine("Неверный выбор должности!");
+                    Console.ReadLine();
+                    return;
             }
 
             try
@@ -233,6 +299,13 @@ namespace ConsoleApp
             Console.ReadLine();
         }
 
+        /// <summary>
+        /// Удаляет сотрудника из системы
+        /// </summary>
+        /// <remarks>
+        /// Удаляет сотрудника по указанному индексу после подтверждения пользователя.
+        /// Проверяет наличие сотрудников в системе и корректность индекса.
+        /// </remarks>
         static void DeleteEmployee()
         {
             Console.Clear();
@@ -247,7 +320,12 @@ namespace ConsoleApp
             }
 
             Console.Write("Введите индекс сотрудника для удаления: ");
-            int index = int.Parse(Console.ReadLine());
+            if (!int.TryParse(Console.ReadLine(), out int index))
+            {
+                Console.WriteLine("Неверный формат индекса!");
+                Console.ReadLine();
+                return;
+            }
 
             try
             {
@@ -262,6 +340,13 @@ namespace ConsoleApp
             Console.ReadLine();
         }
 
+        /// <summary>
+        /// Рассчитывает зарплату для выбранного сотрудника
+        /// </summary>
+        /// <remarks>
+        /// Расчет зарплаты основан на опыте работы и должности сотрудника.
+        /// Формула: опыт_работы × коэффициент_должности × 10000
+        /// </remarks>
         static void CalculateSalary()
         {
             Console.Clear();
@@ -276,7 +361,12 @@ namespace ConsoleApp
             }
 
             Console.Write("Введите индекс сотрудника: ");
-            int index = int.Parse(Console.ReadLine());
+            if (!int.TryParse(Console.ReadLine(), out int index))
+            {
+                Console.WriteLine("Неверный формат индекса!");
+                Console.ReadLine();
+                return;
+            }
 
             try
             {
@@ -292,11 +382,23 @@ namespace ConsoleApp
             Console.ReadLine();
         }
 
+        /// <summary>
+        /// Добавляет один год стажа выбранному сотруднику
+        /// </summary>
+        /// <remarks>
+        /// Увеличивает опыт работы сотрудника на 1 год и сохраняет изменения в базе данных.
+        /// Показывает предыдущее и новое значение опыта работы.
+        /// </remarks>
         static void AddWorkExp()
         {
             Console.Clear();
             Console.WriteLine("Введите индекс сотрудника");
-            int index = int.Parse(Console.ReadLine());
+            if (!int.TryParse(Console.ReadLine(), out int index))
+            {
+                Console.WriteLine("Неверный формат индекса!");
+                Console.ReadLine();
+                return;
+            }
 
             try
             {

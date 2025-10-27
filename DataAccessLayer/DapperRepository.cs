@@ -52,8 +52,7 @@ namespace DataAccessLayer
                 using (var connection = new SQLiteConnection(_connectionString))
                 {
                     connection.Open();
-
-                    // Создаем таблицу если она не существует
+                  
                     var createTableSql = @"
                         CREATE TABLE IF NOT EXISTS Employees (
                             ID INTEGER PRIMARY KEY AUTOINCREMENT,

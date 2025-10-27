@@ -1,18 +1,19 @@
-﻿// DataAccessLayer/EntityRepository.cs
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using DomainModel;
 
 namespace DataAccessLayer
 {
     /// <summary>
-    /// Репозиторий для работы с сотрудниками using Entity Framework
+    /// Репозиторий для работы с сущностями using Entity Framework
     /// </summary>
     /// <typeparam name="T">Тип сущности</typeparam>
     public class EntityRepository<T> : IRepository<T> where T : class, IDomainObject
     {
-        private readonly EmployeeContext _context;
+        private readonly DbContext _context;
+        private readonly DbSet<T> _dbSet;
 
         /// <summary>
         /// Инициализирует новый экземпляр EntityRepository
@@ -20,72 +21,72 @@ namespace DataAccessLayer
         public EntityRepository()
         {
             _context = new EmployeeContext();
+            _dbSet = _context.Set<T>();
         }
 
         /// <summary>
-        /// Добавляет нового сотрудника в базу данных
+        /// Добавляет новую сущность в базу данных
         /// </summary>
-        /// <param name="entity">Сотрудник для добавления</param>
+        /// <param name="entity">Сущность для добавления</param>
         public void Add(T entity)
         {
-            // Приводим к конкретному типу для SQLite
-            if (entity is Employee employee)
-            {
-                _context.Employees.Add(employee);
-                _context.SaveChanges();
-            }
+            _dbSet.Add(entity);
+            _context.SaveChanges();
         }
 
         /// <summary>
-        /// Удаляет сотрудника по идентификатору
+        /// Удаляет сущность по идентификатору
         /// </summary>
-        /// <param name="id">Идентификатор сотрудника</param>
+        /// <param name="id">Идентификатор сущности</param>
         public void Delete(int id)
         {
-            var entity = _context.Employees.FirstOrDefault(e => e.ID == id);
+            var entity = _dbSet.FirstOrDefault(e => e.ID == id);
             if (entity != null)
             {
-                _context.Employees.Remove(entity);
+                _dbSet.Remove(entity);
                 _context.SaveChanges();
             }
         }
 
         /// <summary>
-        /// Обновляет данные сотрудника
+        /// Обновляет данные сущности
         /// </summary>
-        /// <param name="entity">Сотрудник с обновленными данными</param>
+        /// <param name="entity">Сущность с обновленными данными</param>
         public void Update(T entity)
         {
-            if (entity is Employee employee)
+            var existing = _dbSet.Find(entity.ID);
+            if (existing != null)
             {
-                var existing = _context.Employees.FirstOrDefault(e => e.ID == employee.ID);
-                if (existing != null)
-                {
-                    existing.Name = employee.Name;
-                    existing.Vacancy = employee.Vacancy;
-                    existing.WorkExp = employee.WorkExp;
-                    _context.SaveChanges();
-                }
+                _context.Entry(existing).CurrentValues.SetValues(entity);
+                _context.SaveChanges();
             }
         }
 
         /// <summary>
-        /// Получает сотрудника по идентификатору
+        /// Получает сущность по идентификатору
         /// </summary>
-        /// <param name="id">Идентификатор сотрудника</param>
-        /// <returns>Найденный сотрудник или null</returns>
+        /// <param name="id">Идентификатор сущности</param>
+        /// <returns>Найденная сущность или null</returns>
         public T GetById(int id)
         {
-            return _context.Employees.FirstOrDefault(e => e.ID == id) as T;
+            return _dbSet.FirstOrDefault(e => e.ID == id);
         }
 
         /// <summary>
-        /// Получает всех сотрудников из базы данных
+        /// Получает все сущности из базы данных
         /// </summary>
-        /// <returns>Коллекция всех сотрудников</returns>
+        /// <returns>Коллекция всех сущностей</returns>
         public IEnumerable<T> GetAll()
         {
-            return _context.Employees.ToList() as IEnumerable<T>;
+            return _dbSet.ToList();
+        }
+
+        /// <summary>
+        /// Освобождает ресурсы
+        /// </summary>
+        public void Dispose()
+        {
+            _context?.Dispose();
         }
     }
 }

@@ -22,3 +22,5 @@ C:\Users\neart\source\repos\App\WindowsFormsApp1\bin\Debug\BusinessLogic.dll
 C:\Users\neart\source\repos\App\WindowsFormsApp1\bin\Debug\DomainModel.dll
 C:\Users\neart\source\repos\App\WindowsFormsApp1\bin\Debug\BusinessLogic.pdb
 C:\Users\neart\source\repos\App\WindowsFormsApp1\bin\Debug\DomainModel.pdb
+C:\Users\neart\source\repos\App\WindowsFormsApp1\bin\Debug\Ninject.dll
+C:\Users\neart\source\repos\App\WindowsFormsApp1\bin\Debug\Ninject.xml

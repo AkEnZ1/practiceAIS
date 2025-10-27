@@ -11,7 +11,7 @@ namespace BusinessLogic
     /// </summary>
     public class Logic
     {
-        private IRepository<Employee> _repository;
+        private readonly IRepository<Employee> _repository;
 
         /// <summary>
         /// Инициализирует новый экземпляр Logic с указанным репозиторием
@@ -19,24 +19,7 @@ namespace BusinessLogic
         /// <param name="repository">Репозиторий для работы с данными</param>
         public Logic(IRepository<Employee> repository)
         {
-            _repository = repository;
-        }
-
-        /// <summary>
-        /// Инициализирует новый экземпляр Logic без репозитория
-        /// </summary>
-        public Logic()
-        {
-            _repository = null;
-        }
-
-        /// <summary>
-        /// Устанавливает репозиторий для работы с данными
-        /// </summary>
-        /// <param name="repository">Репозиторий для работы с данными</param>
-        public void SetRepository(IRepository<Employee> repository)
-        {
-            _repository = repository;
+            _repository = repository ?? throw new ArgumentNullException(nameof(repository));
         }
 
         /// <summary>
@@ -47,9 +30,6 @@ namespace BusinessLogic
         /// <param name="vacancy">Должность</param>
         public void AddEmployee(string name, int workExp, VacancyType vacancy)
         {
-            if (_repository == null)
-                throw new InvalidOperationException("Репозиторий не установлен");
-
             Employee employee = new Employee()
             {
                 Name = name,
@@ -65,9 +45,6 @@ namespace BusinessLogic
         /// <returns>Список сотрудников</returns>
         public List<Employee> GetEmployees()
         {
-            if (_repository == null)
-                throw new InvalidOperationException("Репозиторий не установлен");
-
             return _repository.GetAll().ToList();
         }
 
@@ -78,15 +55,12 @@ namespace BusinessLogic
         /// <returns>Найденный сотрудник</returns>
         public Employee GetEmployeeByIndex(int index)
         {
-            if (_repository == null)
-                throw new InvalidOperationException("Репозиторий не установлен");
-
             var employees = _repository.GetAll().ToList();
             if (index >= 0 && index < employees.Count)
             {
                 return employees[index];
             }
-            throw new Exception("Нет сотрудника с заданным индексом");
+            throw new ArgumentOutOfRangeException(nameof(index), "Нет сотрудника с заданным индексом");
         }
 
         /// <summary>
@@ -96,9 +70,6 @@ namespace BusinessLogic
         /// <returns>Найденный сотрудник или null</returns>
         public Employee GetEmployeeById(int id)
         {
-            if (_repository == null)
-                throw new InvalidOperationException("Репозиторий не установлен");
-
             return _repository.GetById(id);
         }
 
@@ -112,9 +83,6 @@ namespace BusinessLogic
         /// <returns>True если обновление успешно, иначе False</returns>
         public bool UpdateEmployee(int index, string name, VacancyType vacancy, int workExp)
         {
-            if (_repository == null)
-                throw new InvalidOperationException("Репозиторий не установлен");
-
             var employees = _repository.GetAll().ToList();
             if (index >= 0 && index < employees.Count)
             {
@@ -125,7 +93,7 @@ namespace BusinessLogic
                 _repository.Update(employee);
                 return true;
             }
-            throw new Exception("Такого индекса нет");
+            throw new ArgumentOutOfRangeException(nameof(index), "Неверный индекс сотрудника");
         }
 
         /// <summary>
@@ -134,9 +102,6 @@ namespace BusinessLogic
         /// <param name="index">Индекс сотрудника в списке</param>
         public void DeleteEmployee(int index)
         {
-            if (_repository == null)
-                throw new InvalidOperationException("Репозиторий не установлен");
-
             var employees = _repository.GetAll().ToList();
             if (index >= 0 && index < employees.Count)
             {
@@ -145,7 +110,7 @@ namespace BusinessLogic
             }
             else
             {
-                throw new Exception("Неверный индекс для удаления");
+                throw new ArgumentOutOfRangeException(nameof(index), "Неверный индекс для удаления");
             }
         }
 
@@ -180,9 +145,6 @@ namespace BusinessLogic
         /// <returns>Список сотрудников с указанной должностью</returns>
         public List<Employee> GetEmployeesByVacancy(VacancyType vacancy)
         {
-            if (_repository == null)
-                throw new InvalidOperationException("Репозиторий не установлен");
-
             return _repository.GetAll().Where(e => e.Vacancy == vacancy).ToList();
         }
 
@@ -192,9 +154,6 @@ namespace BusinessLogic
         /// <param name="employee">Сотрудник</param>
         public void AddWorkExp(Employee employee)
         {
-            if (_repository == null)
-                throw new InvalidOperationException("Репозиторий не установлен");
-
             employee.WorkExp++;
             _repository.Update(employee);
         }
