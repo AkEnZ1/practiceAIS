@@ -305,6 +305,55 @@ namespace WindowsFormsApp1
                 MessageBox.Show($"Ошибка при фильтрации: {ex.Message}");
             }
         }
+        /// <summary>
+        /// Показывает статистику по сотрудникам
+        /// </summary>
+        private void ShowStatistics()
+        {
+            try
+            {
+                var totalEmployees = logic.GetTotalEmployees();
+                var avgExperience = logic.GetAverageExperience();
+                var totalBudget = logic.GetTotalSalaryBudget();
+                var distribution = logic.GetVacancyDistribution();
+                var mostExperienced = logic.GetMostExperiencedEmployee();
+
+                string statistics = $"=== СТАТИСТИКА ПО СОТРУДНИКАМ ===\n\n" +
+                                   $"Общее количество сотрудников: {totalEmployees}\n" +
+                                   $"Средний опыт работы: {avgExperience:F1} лет\n" +
+                                   $"Общий фонд зарплат: {totalBudget:F2} руб.\n\n" +
+                                   $"Распределение по должностям:\n";
+
+                foreach (var item in distribution)
+                {
+                    statistics += $"  {GetVacancyRussianName(item.Key)}: {item.Value} чел.\n";
+                }
+
+                statistics += $"\n";
+
+                if (mostExperienced != null)
+                {
+                    statistics += $"Самый опытный сотрудник: {mostExperienced.Name}\n" +
+                                 $"  Должность: {GetVacancyRussianName(mostExperienced.Vacancy)}\n" +
+                                 $"  Опыт работы: {mostExperienced.WorkExp} лет\n" +
+                                 $"  Зарплата: {logic.CalculateSalary(mostExperienced):F2} руб.";
+                }
+                else
+                {
+                    statistics += "В системе нет сотрудников";
+                }
+
+                MessageBox.Show(statistics, "Статистика", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка при получении статистики: {ex.Message}", "Ошибка",
+                               MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        /// <summary>
+        /// Обработчик кнопки для показа статистики
+        /// </summary>
 
         private void btnShowAll_Click(object sender, EventArgs e)
         {
@@ -314,5 +363,10 @@ namespace WindowsFormsApp1
 
         private void lblIndex_Click(object sender, EventArgs e) { }
         private void txtIndex_TextChanged(object sender, EventArgs e) { }
+
+        private void btnStatistics_Click_1(object sender, EventArgs e)
+        {
+            ShowStatistics();
+        }
     }
 }

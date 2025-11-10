@@ -44,7 +44,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\IEmployeeService.cs" />
+    <Compile Include="Interfaces\ISalaryCalculator.cs" />
+    <Compile Include="Interfaces\IStatisticsService.cs" />
     <Compile Include="Logic.cs" />
+    <Compile Include="Services\EmployeeService.cs" />
+    <Compile Include="Services\SalaryCalculator.cs" />
+    <Compile Include="Services\StatisticsService.cs" />
     <Compile Include="SimpleConfigModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -61,5 +67,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

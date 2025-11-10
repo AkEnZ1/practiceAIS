@@ -28,11 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridViewEmployees = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -42,53 +37,16 @@
             this.txtIndex = new System.Windows.Forms.TextBox();
             this.btnFindByIndex = new System.Windows.Forms.Button();
             this.lblIndex = new System.Windows.Forms.Label();
-            this.btnFilterManagers = new System.Windows.Forms.Button();
             this.btnShowAll = new System.Windows.Forms.Button();
+            this.btnFilterManagers = new System.Windows.Forms.Button();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewEmployees = new System.Windows.Forms.DataGridView();
+            this.btnStatistics = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmployees)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dataGridViewEmployees
-            // 
-            this.dataGridViewEmployees.AllowUserToAddRows = false;
-            this.dataGridViewEmployees.AllowUserToDeleteRows = false;
-            this.dataGridViewEmployees.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewEmployees.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4});
-            this.dataGridViewEmployees.Location = new System.Drawing.Point(12, 12);
-            this.dataGridViewEmployees.MultiSelect = false;
-            this.dataGridViewEmployees.Name = "dataGridViewEmployees";
-            this.dataGridViewEmployees.ReadOnly = true;
-            this.dataGridViewEmployees.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewEmployees.Size = new System.Drawing.Size(640, 200);
-            this.dataGridViewEmployees.TabIndex = 12;
-            this.dataGridViewEmployees.SelectionChanged += new System.EventHandler(this.dataGridViewEmployees_SelectionChanged);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Имя";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Должность";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Опыт работы (лет)";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // btnAdd
             // 
@@ -132,7 +90,7 @@
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(86, 260);
+            this.btnRefresh.Location = new System.Drawing.Point(98, 259);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(120, 30);
             this.btnRefresh.TabIndex = 6;
@@ -176,16 +134,6 @@
             this.lblIndex.TabIndex = 9;
             this.lblIndex.Text = "Индекс:";
             // 
-            // btnFilterManagers
-            // 
-            this.btnFilterManagers.Location = new System.Drawing.Point(348, 259);
-            this.btnFilterManagers.Name = "btnFilterManagers";
-            this.btnFilterManagers.Size = new System.Drawing.Size(133, 30);
-            this.btnFilterManagers.TabIndex = 10;
-            this.btnFilterManagers.Text = "Показать менеджеров";
-            this.btnFilterManagers.UseVisualStyleBackColor = true;
-            this.btnFilterManagers.Click += new System.EventHandler(this.btnFilterManagers_Click);
-            // 
             // btnShowAll
             // 
             this.btnShowAll.Location = new System.Drawing.Point(487, 260);
@@ -196,11 +144,75 @@
             this.btnShowAll.UseVisualStyleBackColor = true;
             this.btnShowAll.Click += new System.EventHandler(this.btnShowAll_Click);
             // 
+            // btnFilterManagers
+            // 
+            this.btnFilterManagers.Location = new System.Drawing.Point(330, 259);
+            this.btnFilterManagers.Name = "btnFilterManagers";
+            this.btnFilterManagers.Size = new System.Drawing.Size(151, 30);
+            this.btnFilterManagers.TabIndex = 10;
+            this.btnFilterManagers.Text = "Показать менеджеров";
+            this.btnFilterManagers.UseVisualStyleBackColor = true;
+            this.btnFilterManagers.Click += new System.EventHandler(this.btnFilterManagers_Click);
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Опыт работы (лет)";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Должность";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Имя";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewEmployees
+            // 
+            this.dataGridViewEmployees.AllowUserToAddRows = false;
+            this.dataGridViewEmployees.AllowUserToDeleteRows = false;
+            this.dataGridViewEmployees.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewEmployees.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+            this.dataGridViewEmployees.Location = new System.Drawing.Point(12, 12);
+            this.dataGridViewEmployees.MultiSelect = false;
+            this.dataGridViewEmployees.Name = "dataGridViewEmployees";
+            this.dataGridViewEmployees.ReadOnly = true;
+            this.dataGridViewEmployees.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewEmployees.Size = new System.Drawing.Size(640, 200);
+            this.dataGridViewEmployees.TabIndex = 12;
+            this.dataGridViewEmployees.SelectionChanged += new System.EventHandler(this.dataGridViewEmployees_SelectionChanged);
+            // 
+            // btnStatistics
+            // 
+            this.btnStatistics.Location = new System.Drawing.Point(12, 260);
+            this.btnStatistics.Name = "btnStatistics";
+            this.btnStatistics.Size = new System.Drawing.Size(76, 30);
+            this.btnStatistics.TabIndex = 13;
+            this.btnStatistics.Text = "Статистика\r\n";
+            this.btnStatistics.UseVisualStyleBackColor = true;
+            this.btnStatistics.Click += new System.EventHandler(this.btnStatistics_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(664, 301);
+            this.Controls.Add(this.btnStatistics);
             this.Controls.Add(this.btnShowAll);
             this.Controls.Add(this.btnFilterManagers);
             this.Controls.Add(this.lblIndex);
@@ -222,8 +234,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridViewEmployees;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
@@ -233,11 +243,13 @@
         private System.Windows.Forms.TextBox txtIndex;
         private System.Windows.Forms.Button btnFindByIndex;
         private System.Windows.Forms.Label lblIndex;
-        private System.Windows.Forms.Button btnFilterManagers;
         private System.Windows.Forms.Button btnShowAll;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.Button btnFilterManagers;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridView dataGridViewEmployees;
+        private System.Windows.Forms.Button btnStatistics;
     }
 }

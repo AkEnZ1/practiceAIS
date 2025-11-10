@@ -31,10 +31,7 @@ namespace ConsoleApp
         /// </remarks>
         static void Main(string[] args)
         {
-            // Создаем IoC контейнер и настраиваем зависимости
             IKernel ninjectKernel = new StandardKernel(new SimpleConfigModule());
-
-            // Получаем экземпляр Logic через DI контейнер
             logic = ninjectKernel.Get<Logic>();
 
             bool exit = false;
@@ -49,7 +46,8 @@ namespace ConsoleApp
                 Console.WriteLine("5. Удалить сотрудника");
                 Console.WriteLine("6. Рассчитать зарплату");
                 Console.WriteLine("7. Добавить стаж");
-                Console.WriteLine("8. Выход");
+                Console.WriteLine("8. Вывести статистику");
+                Console.WriteLine("9. Выход");
                 Console.Write("Выберите действие: ");
 
                 string choice = Console.ReadLine();
@@ -78,6 +76,9 @@ namespace ConsoleApp
                         AddWorkExp();
                         break;
                     case "8":
+                        ShowStatistics();
+                        break;
+                    case "9":
                         exit = true;
                         break;
                     default:
@@ -412,6 +413,79 @@ namespace ConsoleApp
             {
                 Console.WriteLine($"Ошибка: {ex.Message}");
                 Console.ReadLine();
+            }
+        }
+        // Добавляем этот метод в класс Program ConsoleApp
+
+        /// <summary>
+        /// Отображает статистику по сотрудникам
+        /// </summary>
+        /// <remarks>
+        /// Демонстрирует работу нового функционала статистики и отчетности.
+        /// Показывает ключевые метрики компании: количество сотрудников, распределение по должностям,
+        /// финансовые показатели и аналитику по опыту работы.
+        /// </remarks>
+        static void ShowStatistics()
+        {
+            Console.Clear();
+            Console.WriteLine("=== СТАТИСТИКА ПО СОТРУДНИКАМ ===");
+
+            try
+            {
+                var totalEmployees = logic.GetTotalEmployees();
+                var avgExperience = logic.GetAverageExperience();
+                var totalBudget = logic.GetTotalSalaryBudget();
+                var distribution = logic.GetVacancyDistribution();
+                var mostExperienced = logic.GetMostExperiencedEmployee();
+                Console.WriteLine($"Общее количество сотрудников: {totalEmployees}");
+                Console.WriteLine($"Средний опыт работы: {avgExperience:F1} лет");
+                Console.WriteLine($"Общий фонд зарплат: {totalBudget:F2} руб.");
+                Console.WriteLine();
+                Console.WriteLine("Распределение по должностям:");
+                foreach (var item in distribution)
+                {
+                    Console.WriteLine($"  {GetVacancyRussianName(item.Key)}: {item.Value} чел.");
+                }
+
+                Console.WriteLine();
+                if (mostExperienced != null)
+                {
+                    Console.WriteLine($"Самый опытный сотрудник: {mostExperienced.Name}");
+                    Console.WriteLine($"  Должность: {GetVacancyRussianName(mostExperienced.Vacancy)}");
+                    Console.WriteLine($"  Опыт работы: {mostExperienced.WorkExp} лет");
+                    Console.WriteLine($"  Зарплата: {logic.CalculateSalary(mostExperienced):F2} руб.");
+                }
+                else
+                {
+                    Console.WriteLine("В системе нет сотрудников");
+                }
+
+                Console.WriteLine("\nНажмите любую клавишу для возврата в меню...");
+                Console.ReadLine();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Ошибка при получении статистики: {ex.Message}");
+                Console.ReadLine();
+            }
+        }
+        /// <summary>
+        /// Преобразует тип должности в русскоязычное название
+        /// </summary>
+        /// <param name="vacancy">Тип должности</param>
+        /// <returns>Русскоязычное название должности</returns>
+        /// <remarks>
+        /// Вспомогательный метод для локализации отображения должностей в пользовательском интерфейсе.
+        /// Обеспечивает удобство восприятия информации для русскоязычных пользователей.
+        /// </remarks>
+        static string GetVacancyRussianName(VacancyType vacancy)
+        {
+            switch (vacancy)
+            {
+                case VacancyType.Head: return "Руководитель";
+                case VacancyType.Manager: return "Менеджер";
+                case VacancyType.Intern: return "Стажер";
+                default: return "Неизвестно";
             }
         }
     }

@@ -1,4 +1,6 @@
 ﻿using Ninject.Modules;
+using BusinessLogic.Interfaces;
+using BusinessLogic.Services;
 using DataAccessLayer;
 using DomainModel;
 
@@ -10,6 +12,7 @@ namespace BusinessLogic
     /// <remarks>
     /// Реализует принцип инверсии зависимостей (DIP) путем связывания абстракций с конкретными реализациями.
     /// Позволяет централизованно управлять зависимостями в приложении.
+    /// Определяет жизненный цикл объектов (Singleton) для оптимального использования ресурсов.
     /// </remarks>
     public class SimpleConfigModule : NinjectModule
     {
@@ -18,21 +21,16 @@ namespace BusinessLogic
         /// </summary>
         /// <remarks>
         /// Определяет сопоставления между интерфейсами и их реализациями.
-        /// Использует Singleton scope для обеспечения единственного экземпляра репозитория на все приложение.
-        /// Выбор реализации репозитория (Dapper или Entity Framework) осуществляется здесь.
+        /// Использует Singleton scope для обеспечения единственного экземпляра сервисов на все приложение.
+        /// Централизованная точка управления зависимостями всей бизнес-логики.
         /// </remarks>
         public override void Load()
         {
-            // Регистрируем зависимости как Singleton для обеспечения единственного экземпляра
-
-            // Для использования Dapper в качестве ORM:
             Bind<IRepository<Employee>>().To<DapperRepository>().InSingletonScope();
-
-            // Альтернативная реализация через Entity Framework:
-            // Bind<IRepository<Employee>>().To<EntityRepository<Employee>>().InSingletonScope();
-
-            // Регистрируем бизнес-логику
-            Bind<Logic>().ToSelf();
+            Bind<IEmployeeService>().To<EmployeeService>().InSingletonScope();
+            Bind<ISalaryCalculator>().To<SalaryCalculator>().InSingletonScope();
+            Bind<IStatisticsService>().To<StatisticsService>().InSingletonScope();
+            Bind<Logic>().ToSelf().InSingletonScope();
         }
     }
 }
