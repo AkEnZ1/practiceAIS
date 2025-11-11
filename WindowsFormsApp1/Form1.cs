@@ -12,7 +12,7 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
-        private Logic logic;
+        private ILogic logic;
 
         public Form1()
         {
@@ -21,7 +21,7 @@ namespace WindowsFormsApp1
             InitializeDatabase();
 
             IKernel ninjectKernel = new StandardKernel(new SimpleConfigModule());
-            logic = ninjectKernel.Get<Logic>();
+            logic = ninjectKernel.Get<ILogic>();
 
             RefreshEmployeeList();
             ApplyStyling();
