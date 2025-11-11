@@ -20,7 +20,7 @@ namespace ConsoleApp
         /// <summary>
         /// Экземпляр бизнес-логики для работы с сотрудниками
         /// </summary>
-        static Logic logic;
+        static ILogic logic;
 
         /// <summary>
         /// Точка входа в приложение
@@ -32,7 +32,7 @@ namespace ConsoleApp
         static void Main(string[] args)
         {
             IKernel ninjectKernel = new StandardKernel(new SimpleConfigModule());
-            logic = ninjectKernel.Get<Logic>();
+            logic = ninjectKernel.Get<ILogic>();
 
             bool exit = false;
             while (!exit)
