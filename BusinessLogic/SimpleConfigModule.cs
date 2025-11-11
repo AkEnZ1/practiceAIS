@@ -30,7 +30,7 @@ namespace BusinessLogic
             Bind<IEmployeeService>().To<EmployeeService>().InSingletonScope();
             Bind<ISalaryCalculator>().To<SalaryCalculator>().InSingletonScope();
             Bind<IStatisticsService>().To<StatisticsService>().InSingletonScope();
-            Bind<Logic>().ToSelf().InSingletonScope();
+            Bind<ILogic>().To<Logic>().InSingletonScope(); 
         }
     }
 }
