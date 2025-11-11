@@ -19,7 +19,7 @@ namespace BusinessLogic
         private readonly IEmployeeService _employeeService;
         private readonly ISalaryCalculator _salaryCalculator;
         private readonly IStatisticsService _statisticsService;
-
+    }
         /// <summary>
         /// Инициализирует новый экземпляр Logic с указанным репозиторием
         /// </summary>
