@@ -24,11 +24,14 @@ namespace BusinessLogic
         /// Инициализирует новый экземпляр Logic с указанным репозиторием
         /// </summary>
         /// <param name="repository">Репозиторий для работы с данными сотрудников</param>
-        public Logic(IRepository<Employee> repository)
+        public Logic(
+            IEmployeeService employeeService, 
+            ISalaryCalculator salaryCalculator,
+            IStatisticsService statisticsService)
         {
-            _employeeService = new EmployeeService(repository);
-            _salaryCalculator = new SalaryCalculator();
-            _statisticsService = new StatisticsService(repository);
+            _employeeService = employeeService;     
+            _salaryCalculator = salaryCalculator;   
+            _statisticsService = statisticsService;  
         }
 
         // === МЕТОДЫ ДЛЯ РАБОТЫ С СОТРУДНИКАМИ ===
