@@ -17,10 +17,14 @@ C:\Users\neart\source\repos\App\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.cspr
 C:\Users\neart\source\repos\App\WindowsFormsApp1\obj\Debug\WindowsF.A1EEDF9B.Up2Date
 C:\Users\neart\source\repos\App\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 C:\Users\neart\source\repos\App\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
-C:\Users\neart\source\repos\App\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe.config
 C:\Users\neart\source\repos\App\WindowsFormsApp1\bin\Debug\BusinessLogic.dll
 C:\Users\neart\source\repos\App\WindowsFormsApp1\bin\Debug\DomainModel.dll
 C:\Users\neart\source\repos\App\WindowsFormsApp1\bin\Debug\BusinessLogic.pdb
 C:\Users\neart\source\repos\App\WindowsFormsApp1\bin\Debug\DomainModel.pdb
 C:\Users\neart\source\repos\App\WindowsFormsApp1\bin\Debug\Ninject.dll
 C:\Users\neart\source\repos\App\WindowsFormsApp1\bin\Debug\Ninject.xml
+C:\Users\neart\source\repos\App\WindowsFormsApp1\bin\Debug\Presenters.dll
+C:\Users\neart\source\repos\App\WindowsFormsApp1\bin\Debug\Shared.dll
+C:\Users\neart\source\repos\App\WindowsFormsApp1\bin\Debug\Presenters.pdb
+C:\Users\neart\source\repos\App\WindowsFormsApp1\bin\Debug\Shared.pdb
+C:\Users\neart\source\repos\App\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe.config

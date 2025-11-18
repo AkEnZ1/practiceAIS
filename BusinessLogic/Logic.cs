@@ -1,4 +1,6 @@
 using BusinessLogic.Interfaces;
+using BusinessLogic.Services;
+using DataAccessLayer;
 using DomainModel;
 using System.Collections.Generic;
 
@@ -10,16 +12,19 @@ namespace BusinessLogic
         private readonly ISalaryCalculator _salaryCalculator;
         private readonly IStatisticsService _statisticsService;
 
-        public Logic(
-            IEmployeeService employeeService, 
-            ISalaryCalculator salaryCalculator,
-            IStatisticsService statisticsService)
+        public Logic(IRepository<Employee> repository)
         {
-            _employeeService = employeeService;
-            _salaryCalculator = salaryCalculator;
-            _statisticsService = statisticsService;
+            _employeeService = new EmployeeService(repository);
+            _salaryCalculator = new SalaryCalculator();
+            _statisticsService = new StatisticsService(repository);
         }
 
+        // Services for Presenter
+        public IEmployeeService EmployeeService => _employeeService;
+        public ISalaryCalculator SalaryCalculator => _salaryCalculator;
+        public IStatisticsService StatisticsService => _statisticsService;
+
+        // Employee operations
         public void AddEmployee(string name, int workExp, VacancyType vacancy)
             => _employeeService.AddEmployee(name, workExp, vacancy);
 
@@ -41,9 +46,11 @@ namespace BusinessLogic
         public void AddWorkExp(Employee employee)
             => _employeeService.AddWorkExp(employee);
 
+        // Salary operations
         public double CalculateSalary(Employee employee)
             => _salaryCalculator.CalculateSalary(employee);
 
+        // Statistics operations
         public int GetTotalEmployees()
             => _statisticsService.GetTotalEmployees();
 

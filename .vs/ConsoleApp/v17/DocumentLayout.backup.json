@@ -3,28 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\neart\\source\\repos\\App\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A37334CB-FE11-43EC-A6A9-895303272BD2}|WindowsFormsApp1\\WindowsFormsApp1.csproj|c:\\users\\neart\\source\\repos\\app\\windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{12383C31-B855-4801-9E37-EE8BE433D3DB}|Presenters\\Presenters.csproj|c:\\users\\neart\\source\\repos\\app\\presenters\\employeepresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12383C31-B855-4801-9E37-EE8BE433D3DB}|Presenters\\Presenters.csproj|solutionrelative:presenters\\employeepresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64529B2B-4958-4DD4-AF30-5BBA04CE2397}|DomainModel\\DomainModel.csproj|C:\\Users\\neart\\source\\repos\\App\\domainmodel\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64529B2B-4958-4DD4-AF30-5BBA04CE2397}|DomainModel\\DomainModel.csproj|solutionrelative:domainmodel\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A37334CB-FE11-43EC-A6A9-895303272BD2}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\neart\\source\\repos\\App\\windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A37334CB-FE11-43EC-A6A9-895303272BD2}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A37334CB-FE11-43EC-A6A9-895303272BD2}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\neart\\source\\repos\\App\\windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{A37334CB-FE11-43EC-A6A9-895303272BD2}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A37334CB-FE11-43EC-A6A9-895303272BD2}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\neart\\source\\repos\\App\\windowsformsapp1\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A37334CB-FE11-43EC-A6A9-895303272BD2}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C575483C-43BF-45AF-998E-ECCC854B0BDD}|ConsoleApp\\ConsoleApp.csproj|C:\\Users\\neart\\source\\repos\\App\\consoleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C575483C-43BF-45AF-998E-ECCC854B0BDD}|ConsoleApp\\ConsoleApp.csproj|c:\\users\\neart\\source\\repos\\app\\consoleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C575483C-43BF-45AF-998E-ECCC854B0BDD}|ConsoleApp\\ConsoleApp.csproj|solutionrelative:consoleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{876D134F-7509-4EED-9649-E8C7A279E0E6}|BusinessLogic\\BusinessLogic.csproj|C:\\Users\\neart\\source\\repos\\App\\businesslogic\\services\\statisticsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{876D134F-7509-4EED-9649-E8C7A279E0E6}|BusinessLogic\\BusinessLogic.csproj|solutionrelative:businesslogic\\services\\statisticsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{876D134F-7509-4EED-9649-E8C7A279E0E6}|BusinessLogic\\BusinessLogic.csproj|C:\\Users\\neart\\source\\repos\\App\\businesslogic\\interfaces\\istatisticsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{876D134F-7509-4EED-9649-E8C7A279E0E6}|BusinessLogic\\BusinessLogic.csproj|solutionrelative:businesslogic\\interfaces\\istatisticsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{12383C31-B855-4801-9E37-EE8BE433D3DB}|Presenters\\Presenters.csproj|c:\\users\\neart\\source\\repos\\app\\presenters\\presentersconfigmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12383C31-B855-4801-9E37-EE8BE433D3DB}|Presenters\\Presenters.csproj|solutionrelative:presenters\\presentersconfigmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{876D134F-7509-4EED-9649-E8C7A279E0E6}|BusinessLogic\\BusinessLogic.csproj|C:\\Users\\neart\\source\\repos\\App\\businesslogic\\simpleconfigmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -35,12 +31,24 @@
       "RelativeMoniker": "D:0:0:{876D134F-7509-4EED-9649-E8C7A279E0E6}|BusinessLogic\\BusinessLogic.csproj|solutionrelative:businesslogic\\logic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{876D134F-7509-4EED-9649-E8C7A279E0E6}|BusinessLogic\\BusinessLogic.csproj|C:\\Users\\neart\\source\\repos\\App\\businesslogic\\services\\salarycalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{876D134F-7509-4EED-9649-E8C7A279E0E6}|BusinessLogic\\BusinessLogic.csproj|solutionrelative:businesslogic\\services\\salarycalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{876D134F-7509-4EED-9649-E8C7A279E0E6}|BusinessLogic\\BusinessLogic.csproj|C:\\Users\\neart\\source\\repos\\App\\businesslogic\\interfaces\\ilogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{876D134F-7509-4EED-9649-E8C7A279E0E6}|BusinessLogic\\BusinessLogic.csproj|solutionrelative:businesslogic\\interfaces\\ilogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{08619A47-B140-4578-B5ED-E0583EEB743A}|Shared\\Shared.csproj|c:\\users\\neart\\source\\repos\\app\\shared\\interfaces\\iemployeeview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{08619A47-B140-4578-B5ED-E0583EEB743A}|Shared\\Shared.csproj|solutionrelative:shared\\interfaces\\iemployeeview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{08619A47-B140-4578-B5ED-E0583EEB743A}|Shared\\Shared.csproj|c:\\users\\neart\\source\\repos\\app\\shared\\interfaces\\iview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{08619A47-B140-4578-B5ED-E0583EEB743A}|Shared\\Shared.csproj|solutionrelative:shared\\interfaces\\iview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{876D134F-7509-4EED-9649-E8C7A279E0E6}|BusinessLogic\\BusinessLogic.csproj|C:\\Users\\neart\\source\\repos\\App\\businesslogic\\services\\employeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{876D134F-7509-4EED-9649-E8C7A279E0E6}|BusinessLogic\\BusinessLogic.csproj|solutionrelative:businesslogic\\services\\employeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{876D134F-7509-4EED-9649-E8C7A279E0E6}|BusinessLogic\\BusinessLogic.csproj|C:\\Users\\neart\\source\\repos\\App\\businesslogic\\interfaces\\istatisticsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{876D134F-7509-4EED-9649-E8C7A279E0E6}|BusinessLogic\\BusinessLogic.csproj|solutionrelative:businesslogic\\interfaces\\istatisticsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{876D134F-7509-4EED-9649-E8C7A279E0E6}|BusinessLogic\\BusinessLogic.csproj|C:\\Users\\neart\\source\\repos\\App\\businesslogic\\interfaces\\isalarycalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -51,20 +59,32 @@
       "RelativeMoniker": "D:0:0:{876D134F-7509-4EED-9649-E8C7A279E0E6}|BusinessLogic\\BusinessLogic.csproj|solutionrelative:businesslogic\\interfaces\\iemployeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A37334CB-FE11-43EC-A6A9-895303272BD2}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\neart\\source\\repos\\App\\windowsformsapp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A37334CB-FE11-43EC-A6A9-895303272BD2}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C40CA3DE-34AA-4D6D-B588-F4C509E0684A}|DataAccessLayer\\DataAccessLayer.csproj|C:\\Users\\neart\\source\\repos\\App\\dataaccesslayer\\entityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C40CA3DE-34AA-4D6D-B588-F4C509E0684A}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\entityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{64529B2B-4958-4DD4-AF30-5BBA04CE2397}|DomainModel\\DomainModel.csproj|C:\\Users\\neart\\source\\repos\\App\\domainmodel\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{64529B2B-4958-4DD4-AF30-5BBA04CE2397}|DomainModel\\DomainModel.csproj|solutionrelative:domainmodel\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A37334CB-FE11-43EC-A6A9-895303272BD2}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\neart\\source\\repos\\App\\windowsformsapp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A37334CB-FE11-43EC-A6A9-895303272BD2}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C40CA3DE-34AA-4D6D-B588-F4C509E0684A}|DataAccessLayer\\DataAccessLayer.csproj|C:\\Users\\neart\\source\\repos\\App\\dataaccesslayer\\employeecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C40CA3DE-34AA-4D6D-B588-F4C509E0684A}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\employeecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C40CA3DE-34AA-4D6D-B588-F4C509E0684A}|DataAccessLayer\\DataAccessLayer.csproj|C:\\Users\\neart\\source\\repos\\App\\dataaccesslayer\\entityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C40CA3DE-34AA-4D6D-B588-F4C509E0684A}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\entityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{876D134F-7509-4EED-9649-E8C7A279E0E6}|BusinessLogic\\BusinessLogic.csproj|C:\\Users\\neart\\source\\repos\\App\\businesslogic\\services\\statisticsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{876D134F-7509-4EED-9649-E8C7A279E0E6}|BusinessLogic\\BusinessLogic.csproj|solutionrelative:businesslogic\\services\\statisticsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{876D134F-7509-4EED-9649-E8C7A279E0E6}|BusinessLogic\\BusinessLogic.csproj|C:\\Users\\neart\\source\\repos\\App\\businesslogic\\services\\salarycalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{876D134F-7509-4EED-9649-E8C7A279E0E6}|BusinessLogic\\BusinessLogic.csproj|solutionrelative:businesslogic\\services\\salarycalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A37334CB-FE11-43EC-A6A9-895303272BD2}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\neart\\source\\repos\\App\\windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A37334CB-FE11-43EC-A6A9-895303272BD2}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A37334CB-FE11-43EC-A6A9-895303272BD2}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\neart\\source\\repos\\App\\windowsformsapp1\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A37334CB-FE11-43EC-A6A9-895303272BD2}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|ConsoleApp||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
@@ -89,7 +109,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -97,64 +117,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "DocumentMoniker": "C:\\Users\\neart\\source\\repos\\App\\WindowsFormsApp1\\Form1.cs",
-              "RelativeDocumentMoniker": "WindowsFormsApp1\\Form1.cs",
-              "ToolTip": "C:\\Users\\neart\\source\\repos\\App\\WindowsFormsApp1\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "RelativeToolTip": "WindowsFormsApp1\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-10T19:06:17.903Z",
-              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\neart\\source\\repos\\App\\WindowsFormsApp1\\Form1.cs",
-              "RelativeDocumentMoniker": "WindowsFormsApp1\\Form1.cs",
-              "ToolTip": "C:\\Users\\neart\\source\\repos\\App\\WindowsFormsApp1\\Form1.cs",
-              "RelativeToolTip": "WindowsFormsApp1\\Form1.cs",
-              "ViewState": "AgIAAF4BAAAAAAAAAAAhwHABAAAdAAAAAAAAAA==",
+              "Title": "EmployeePresenter.cs",
+              "DocumentMoniker": "C:\\Users\\neart\\source\\repos\\App\\Presenters\\EmployeePresenter.cs",
+              "RelativeDocumentMoniker": "Presenters\\EmployeePresenter.cs",
+              "ToolTip": "C:\\Users\\neart\\source\\repos\\App\\Presenters\\EmployeePresenter.cs*",
+              "RelativeToolTip": "Presenters\\EmployeePresenter.cs*",
+              "ViewState": "AgIAANQAAAAAAAAAAAAowOYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-10T19:04:06.482Z",
+              "WhenOpened": "2025-11-17T20:06:17.649Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "StatisticsService.cs",
-              "DocumentMoniker": "C:\\Users\\neart\\source\\repos\\App\\BusinessLogic\\Services\\StatisticsService.cs",
-              "RelativeDocumentMoniker": "BusinessLogic\\Services\\StatisticsService.cs",
-              "ToolTip": "C:\\Users\\neart\\source\\repos\\App\\BusinessLogic\\Services\\StatisticsService.cs",
-              "RelativeToolTip": "BusinessLogic\\Services\\StatisticsService.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAowEgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-10T18:55:02.404Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Form1.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\neart\\source\\repos\\App\\WindowsFormsApp1\\Form1.Designer.cs",
-              "RelativeDocumentMoniker": "WindowsFormsApp1\\Form1.Designer.cs",
-              "ToolTip": "C:\\Users\\neart\\source\\repos\\App\\WindowsFormsApp1\\Form1.Designer.cs",
-              "RelativeToolTip": "WindowsFormsApp1\\Form1.Designer.cs",
-              "ViewState": "AgIAAPEAAAAAAAAAAAAgwBYAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-13T21:16:17.739Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "IStatisticsService.cs",
-              "DocumentMoniker": "C:\\Users\\neart\\source\\repos\\App\\BusinessLogic\\Interfaces\\IStatisticsService.cs",
-              "RelativeDocumentMoniker": "BusinessLogic\\Interfaces\\IStatisticsService.cs",
-              "ToolTip": "C:\\Users\\neart\\source\\repos\\App\\BusinessLogic\\Interfaces\\IStatisticsService.cs",
-              "RelativeToolTip": "BusinessLogic\\Interfaces\\IStatisticsService.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAwwCYAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-10T18:54:38.024Z"
             },
             {
               "$type": "Document",
@@ -164,61 +136,136 @@
               "RelativeDocumentMoniker": "ConsoleApp\\Program.cs",
               "ToolTip": "C:\\Users\\neart\\source\\repos\\App\\ConsoleApp\\Program.cs",
               "RelativeToolTip": "ConsoleApp\\Program.cs",
-              "ViewState": "AgIAAKsBAAAAAAAAAAAgwLkBAABQAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T16:44:31.136Z"
+              "WhenOpened": "2025-10-27T16:44:31.136Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "SimpleConfigModule.cs",
               "DocumentMoniker": "C:\\Users\\neart\\source\\repos\\App\\BusinessLogic\\SimpleConfigModule.cs",
               "RelativeDocumentMoniker": "BusinessLogic\\SimpleConfigModule.cs",
               "ToolTip": "C:\\Users\\neart\\source\\repos\\App\\BusinessLogic\\SimpleConfigModule.cs",
               "RelativeToolTip": "BusinessLogic\\SimpleConfigModule.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAB8AAABSAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-27T16:30:10.617Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "Logic.cs",
               "DocumentMoniker": "C:\\Users\\neart\\source\\repos\\App\\BusinessLogic\\Logic.cs",
               "RelativeDocumentMoniker": "BusinessLogic\\Logic.cs",
               "ToolTip": "C:\\Users\\neart\\source\\repos\\App\\BusinessLogic\\Logic.cs",
               "RelativeToolTip": "BusinessLogic\\Logic.cs",
-              "ViewState": "AgIAAIMAAAAAAAAAAAAiwJAAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-20T19:20:27.82Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "SalaryCalculator.cs",
-              "DocumentMoniker": "C:\\Users\\neart\\source\\repos\\App\\BusinessLogic\\Services\\SalaryCalculator.cs",
-              "RelativeDocumentMoniker": "BusinessLogic\\Services\\SalaryCalculator.cs",
-              "ToolTip": "C:\\Users\\neart\\source\\repos\\App\\BusinessLogic\\Services\\SalaryCalculator.cs",
-              "RelativeToolTip": "BusinessLogic\\Services\\SalaryCalculator.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAIwCMAAAABAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\neart\\source\\repos\\App\\WindowsFormsApp1\\Form1.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\Form1.cs",
+              "ToolTip": "C:\\Users\\neart\\source\\repos\\App\\WindowsFormsApp1\\Form1.cs",
+              "RelativeToolTip": "WindowsFormsApp1\\Form1.cs",
+              "ViewState": "AgIAAEUBAAAAAAAAAAAqwFABAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-10T18:44:18.765Z"
+              "WhenOpened": "2025-11-10T19:04:06.482Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Employee.cs",
+              "DocumentMoniker": "C:\\Users\\neart\\source\\repos\\App\\DomainModel\\Employee.cs",
+              "RelativeDocumentMoniker": "DomainModel\\Employee.cs",
+              "ToolTip": "C:\\Users\\neart\\source\\repos\\App\\DomainModel\\Employee.cs",
+              "RelativeToolTip": "DomainModel\\Employee.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAA2wDEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-20T19:17:51.621Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PresentersConfigModule.cs",
+              "DocumentMoniker": "C:\\Users\\neart\\source\\repos\\App\\Presenters\\PresentersConfigModule.cs",
+              "RelativeDocumentMoniker": "Presenters\\PresentersConfigModule.cs",
+              "ToolTip": "C:\\Users\\neart\\source\\repos\\App\\Presenters\\PresentersConfigModule.cs",
+              "RelativeToolTip": "Presenters\\PresentersConfigModule.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T20:15:07.472Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ILogic.cs",
+              "DocumentMoniker": "C:\\Users\\neart\\source\\repos\\App\\BusinessLogic\\Interfaces\\ILogic.cs",
+              "RelativeDocumentMoniker": "BusinessLogic\\Interfaces\\ILogic.cs",
+              "ToolTip": "C:\\Users\\neart\\source\\repos\\App\\BusinessLogic\\Interfaces\\ILogic.cs",
+              "RelativeToolTip": "BusinessLogic\\Interfaces\\ILogic.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAgwB8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T20:12:05.869Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IEmployeeView.cs",
+              "DocumentMoniker": "C:\\Users\\neart\\source\\repos\\App\\Shared\\Interfaces\\IEmployeeView.cs",
+              "RelativeDocumentMoniker": "Shared\\Interfaces\\IEmployeeView.cs",
+              "ToolTip": "C:\\Users\\neart\\source\\repos\\App\\Shared\\Interfaces\\IEmployeeView.cs",
+              "RelativeToolTip": "Shared\\Interfaces\\IEmployeeView.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T20:09:12.584Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
+              "Title": "IView.cs",
+              "DocumentMoniker": "C:\\Users\\neart\\source\\repos\\App\\Shared\\Interfaces\\IView.cs",
+              "RelativeDocumentMoniker": "Shared\\Interfaces\\IView.cs",
+              "ToolTip": "C:\\Users\\neart\\source\\repos\\App\\Shared\\Interfaces\\IView.cs",
+              "RelativeToolTip": "Shared\\Interfaces\\IView.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T20:06:00.034Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "EmployeeService.cs",
               "DocumentMoniker": "C:\\Users\\neart\\source\\repos\\App\\BusinessLogic\\Services\\EmployeeService.cs",
               "RelativeDocumentMoniker": "BusinessLogic\\Services\\EmployeeService.cs",
               "ToolTip": "C:\\Users\\neart\\source\\repos\\App\\BusinessLogic\\Services\\EmployeeService.cs",
               "RelativeToolTip": "BusinessLogic\\Services\\EmployeeService.cs",
-              "ViewState": "AgIAAFcAAAAAAAAAAAAIwGEAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-10T18:42:43.176Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
+              "Title": "IStatisticsService.cs",
+              "DocumentMoniker": "C:\\Users\\neart\\source\\repos\\App\\BusinessLogic\\Interfaces\\IStatisticsService.cs",
+              "RelativeDocumentMoniker": "BusinessLogic\\Interfaces\\IStatisticsService.cs",
+              "ToolTip": "C:\\Users\\neart\\source\\repos\\App\\BusinessLogic\\Interfaces\\IStatisticsService.cs",
+              "RelativeToolTip": "BusinessLogic\\Interfaces\\IStatisticsService.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAUwCYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-10T18:54:38.024Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "ISalaryCalculator.cs",
               "DocumentMoniker": "C:\\Users\\neart\\source\\repos\\App\\BusinessLogic\\Interfaces\\ISalaryCalculator.cs",
               "RelativeDocumentMoniker": "BusinessLogic\\Interfaces\\ISalaryCalculator.cs",
@@ -230,55 +277,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "IEmployeeService.cs",
-              "DocumentMoniker": "C:\\Users\\neart\\source\\repos\\App\\BusinessLogic\\Interfaces\\IEmployeeService.cs",
-              "RelativeDocumentMoniker": "BusinessLogic\\Interfaces\\IEmployeeService.cs",
-              "ToolTip": "C:\\Users\\neart\\source\\repos\\App\\BusinessLogic\\Interfaces\\IEmployeeService.cs",
-              "RelativeToolTip": "BusinessLogic\\Interfaces\\IEmployeeService.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAgwEAAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-10T18:41:50.154Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 14,
-              "Title": "EmployeeContext.cs",
-              "DocumentMoniker": "C:\\Users\\neart\\source\\repos\\App\\DataAccessLayer\\EmployeeContext.cs",
-              "RelativeDocumentMoniker": "DataAccessLayer\\EmployeeContext.cs",
-              "ToolTip": "C:\\Users\\neart\\source\\repos\\App\\DataAccessLayer\\EmployeeContext.cs",
-              "RelativeToolTip": "DataAccessLayer\\EmployeeContext.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAACcAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T16:37:58.471Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Employee.cs",
-              "DocumentMoniker": "C:\\Users\\neart\\source\\repos\\App\\DomainModel\\Employee.cs",
-              "RelativeDocumentMoniker": "DomainModel\\Employee.cs",
-              "ToolTip": "C:\\Users\\neart\\source\\repos\\App\\DomainModel\\Employee.cs",
-              "RelativeToolTip": "DomainModel\\Employee.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAiwDEAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-20T19:17:51.621Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\neart\\source\\repos\\App\\WindowsFormsApp1\\Program.cs",
-              "RelativeDocumentMoniker": "WindowsFormsApp1\\Program.cs",
-              "ToolTip": "C:\\Users\\neart\\source\\repos\\App\\WindowsFormsApp1\\Program.cs",
-              "RelativeToolTip": "WindowsFormsApp1\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T16:12:41.379Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
               "Title": "EntityRepository.cs",
               "DocumentMoniker": "C:\\Users\\neart\\source\\repos\\App\\DataAccessLayer\\EntityRepository.cs",
               "RelativeDocumentMoniker": "DataAccessLayer\\EntityRepository.cs",
@@ -290,7 +289,92 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "IEmployeeService.cs",
+              "DocumentMoniker": "C:\\Users\\neart\\source\\repos\\App\\BusinessLogic\\Interfaces\\IEmployeeService.cs",
+              "RelativeDocumentMoniker": "BusinessLogic\\Interfaces\\IEmployeeService.cs",
+              "ToolTip": "C:\\Users\\neart\\source\\repos\\App\\BusinessLogic\\Interfaces\\IEmployeeService.cs",
+              "RelativeToolTip": "BusinessLogic\\Interfaces\\IEmployeeService.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAqwEAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-10T18:41:50.154Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\neart\\source\\repos\\App\\WindowsFormsApp1\\Program.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\Program.cs",
+              "ToolTip": "C:\\Users\\neart\\source\\repos\\App\\WindowsFormsApp1\\Program.cs",
+              "RelativeToolTip": "WindowsFormsApp1\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-27T16:12:41.379Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 16,
+              "Title": "EmployeeContext.cs",
+              "DocumentMoniker": "C:\\Users\\neart\\source\\repos\\App\\DataAccessLayer\\EmployeeContext.cs",
+              "RelativeDocumentMoniker": "DataAccessLayer\\EmployeeContext.cs",
+              "ToolTip": "C:\\Users\\neart\\source\\repos\\App\\DataAccessLayer\\EmployeeContext.cs",
+              "RelativeToolTip": "DataAccessLayer\\EmployeeContext.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-27T16:37:58.471Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "StatisticsService.cs",
+              "DocumentMoniker": "C:\\Users\\neart\\source\\repos\\App\\BusinessLogic\\Services\\StatisticsService.cs",
+              "RelativeDocumentMoniker": "BusinessLogic\\Services\\StatisticsService.cs",
+              "ToolTip": "C:\\Users\\neart\\source\\repos\\App\\BusinessLogic\\Services\\StatisticsService.cs",
+              "RelativeToolTip": "BusinessLogic\\Services\\StatisticsService.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAQwEgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-10T18:55:02.404Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "SalaryCalculator.cs",
+              "DocumentMoniker": "C:\\Users\\neart\\source\\repos\\App\\BusinessLogic\\Services\\SalaryCalculator.cs",
+              "RelativeDocumentMoniker": "BusinessLogic\\Services\\SalaryCalculator.cs",
+              "ToolTip": "C:\\Users\\neart\\source\\repos\\App\\BusinessLogic\\Services\\SalaryCalculator.cs",
+              "RelativeToolTip": "BusinessLogic\\Services\\SalaryCalculator.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAQwCMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-10T18:44:18.765Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\neart\\source\\repos\\App\\WindowsFormsApp1\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\Form1.Designer.cs",
+              "ToolTip": "C:\\Users\\neart\\source\\repos\\App\\WindowsFormsApp1\\Form1.Designer.cs",
+              "RelativeToolTip": "WindowsFormsApp1\\Form1.Designer.cs",
+              "ViewState": "AgIAAPEAAAAAAAAAAAAgwBYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-13T21:16:17.739Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "C:\\Users\\neart\\source\\repos\\App\\WindowsFormsApp1\\Form1.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\Form1.cs",
+              "ToolTip": "C:\\Users\\neart\\source\\repos\\App\\WindowsFormsApp1\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "WindowsFormsApp1\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-10T19:06:17.903Z",
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
               "Title": "ConsoleApp",
               "DocumentMoniker": "C:\\Users\\neart\\source\\repos\\App\\ConsoleApp\\ConsoleApp.csproj",
               "RelativeDocumentMoniker": "ConsoleApp\\ConsoleApp.csproj",
@@ -301,18 +385,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 24,
               "Title": "Form1.resx",
               "DocumentMoniker": "C:\\Users\\neart\\source\\repos\\App\\WindowsFormsApp1\\Form1.resx",
               "RelativeDocumentMoniker": "WindowsFormsApp1\\Form1.resx",
               "ToolTip": "C:\\Users\\neart\\source\\repos\\App\\WindowsFormsApp1\\Form1.resx",
               "RelativeToolTip": "WindowsFormsApp1\\Form1.resx",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2025-10-27T16:12:39.86Z"
+              "WhenOpened": "2025-10-27T16:12:39.86Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 23,
               "Title": "AddForm.Designer.cs",
               "DocumentMoniker": "C:\\Users\\neart\\source\\repos\\App\\WindowsFormsApp1\\AddForm.Designer.cs",
               "RelativeDocumentMoniker": "WindowsFormsApp1\\AddForm.Designer.cs",
@@ -324,7 +409,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 22,
               "Title": "AddForm.cs",
               "DocumentMoniker": "C:\\Users\\neart\\source\\repos\\App\\WindowsFormsApp1\\AddForm.cs",
               "RelativeDocumentMoniker": "WindowsFormsApp1\\AddForm.cs",

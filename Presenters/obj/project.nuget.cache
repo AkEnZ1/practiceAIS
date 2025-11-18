@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "IwDEHuETKnU=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\neart\\source\\repos\\App\\Presenters\\Presenters.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\neart\\.nuget\\packages\\ninject\\3.3.6\\ninject.3.3.6.nupkg.sha512"
+  ],
+  "logs": []
+}

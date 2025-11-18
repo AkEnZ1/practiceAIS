@@ -47,6 +47,7 @@
     <Compile Include="Interfaces\IEmployeeService.cs" />
     <Compile Include="Interfaces\ISalaryCalculator.cs" />
     <Compile Include="Interfaces\IStatisticsService.cs" />
+    <Compile Include="Interfaces\ILogic.cs" />
     <Compile Include="Logic.cs" />
     <Compile Include="Services\EmployeeService.cs" />
     <Compile Include="Services\SalaryCalculator.cs" />
