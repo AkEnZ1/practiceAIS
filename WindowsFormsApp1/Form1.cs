@@ -26,42 +26,14 @@ namespace WindowsFormsApp1
     /// </remarks>
     public partial class Form1 : Form, IEmployeeView
     {
-        private EmployeePresenter _presenter;
 
         public Form1()
         {
             InitializeComponent();
-            InitializePresenter();
             ApplyStyling();
         }
 
-        /// <summary>
-        /// Инициализация Presenter с внедрением зависимостей
-        /// </summary>
-        private void InitializePresenter()
-        {
-            try
-            {
-                InitializeDatabase();
 
-                // Настройка DI контейнера
-                IKernel ninjectKernel = new StandardKernel(new SimpleConfigModule());
-                var logic = ninjectKernel.Get<ILogic>();
-
-                // Создание Presenter с передачей зависимостей
-                _presenter = new EmployeePresenter(
-                    this,
-                    logic.EmployeeService,
-                    logic.SalaryCalculator,
-                    logic.StatisticsService
-                ); 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Ошибка инициализации: {ex.Message}", "Ошибка",
-                              MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
 
         /// <summary>
         /// Инициализация базы данных

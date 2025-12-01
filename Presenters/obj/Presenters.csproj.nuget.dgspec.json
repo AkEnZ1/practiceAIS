@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\neart\\source\\repos\\App\\Presenters\\Presenters.csproj": {}
+    "D:\\source\\practiceAIS\\Presenters\\Presenters.csproj": {}
   },
   "projects": {
-    "C:\\Users\\neart\\source\\repos\\App\\BusinessLogic\\BusinessLogic.csproj": {
+    "D:\\source\\practiceAIS\\BusinessLogic\\BusinessLogic.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\neart\\source\\repos\\App\\BusinessLogic\\BusinessLogic.csproj",
+        "projectUniqueName": "D:\\source\\practiceAIS\\BusinessLogic\\BusinessLogic.csproj",
         "projectName": "BusinessLogic",
-        "projectPath": "C:\\Users\\neart\\source\\repos\\App\\BusinessLogic\\BusinessLogic.csproj",
+        "projectPath": "D:\\source\\practiceAIS\\BusinessLogic\\BusinessLogic.csproj",
         "UsingMicrosoftNETSdk": false,
         "frameworks": {
           "net472": {
             "projectReferences": {
-              "C:\\Users\\neart\\source\\repos\\App\\DataAccessLayer\\DataAccessLayer.csproj": {
-                "projectPath": "C:\\Users\\neart\\source\\repos\\App\\DataAccessLayer\\DataAccessLayer.csproj"
+              "D:\\source\\practiceAIS\\DataAccessLayer\\DataAccessLayer.csproj": {
+                "projectPath": "D:\\source\\practiceAIS\\DataAccessLayer\\DataAccessLayer.csproj"
               },
-              "C:\\Users\\neart\\source\\repos\\App\\DomainModel\\DomainModel.csproj": {
-                "projectPath": "C:\\Users\\neart\\source\\repos\\App\\DomainModel\\DomainModel.csproj"
+              "D:\\source\\practiceAIS\\DomainModel\\DomainModel.csproj": {
+                "projectPath": "D:\\source\\practiceAIS\\DomainModel\\DomainModel.csproj"
               }
             }
           }
@@ -27,17 +27,17 @@
         "net472": {}
       }
     },
-    "C:\\Users\\neart\\source\\repos\\App\\DataAccessLayer\\DataAccessLayer.csproj": {
+    "D:\\source\\practiceAIS\\DataAccessLayer\\DataAccessLayer.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\neart\\source\\repos\\App\\DataAccessLayer\\DataAccessLayer.csproj",
+        "projectUniqueName": "D:\\source\\practiceAIS\\DataAccessLayer\\DataAccessLayer.csproj",
         "projectName": "DataAccessLayer",
-        "projectPath": "C:\\Users\\neart\\source\\repos\\App\\DataAccessLayer\\DataAccessLayer.csproj",
+        "projectPath": "D:\\source\\practiceAIS\\DataAccessLayer\\DataAccessLayer.csproj",
         "UsingMicrosoftNETSdk": false,
         "frameworks": {
           "net472": {
             "projectReferences": {
-              "C:\\Users\\neart\\source\\repos\\App\\DomainModel\\DomainModel.csproj": {
-                "projectPath": "C:\\Users\\neart\\source\\repos\\App\\DomainModel\\DomainModel.csproj"
+              "D:\\source\\practiceAIS\\DomainModel\\DomainModel.csproj": {
+                "projectPath": "D:\\source\\practiceAIS\\DomainModel\\DomainModel.csproj"
               }
             }
           }
@@ -47,11 +47,11 @@
         "net472": {}
       }
     },
-    "C:\\Users\\neart\\source\\repos\\App\\DomainModel\\DomainModel.csproj": {
+    "D:\\source\\practiceAIS\\DomainModel\\DomainModel.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\neart\\source\\repos\\App\\DomainModel\\DomainModel.csproj",
+        "projectUniqueName": "D:\\source\\practiceAIS\\DomainModel\\DomainModel.csproj",
         "projectName": "DomainModel",
-        "projectPath": "C:\\Users\\neart\\source\\repos\\App\\DomainModel\\DomainModel.csproj",
+        "projectPath": "D:\\source\\practiceAIS\\DomainModel\\DomainModel.csproj",
         "UsingMicrosoftNETSdk": false,
         "frameworks": {
           "net472": {
@@ -63,21 +63,17 @@
         "net472": {}
       }
     },
-    "C:\\Users\\neart\\source\\repos\\App\\Presenters\\Presenters.csproj": {
+    "D:\\source\\practiceAIS\\Presenters\\Presenters.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\neart\\source\\repos\\App\\Presenters\\Presenters.csproj",
+        "projectUniqueName": "D:\\source\\practiceAIS\\Presenters\\Presenters.csproj",
         "projectName": "Presenters",
-        "projectPath": "C:\\Users\\neart\\source\\repos\\App\\Presenters\\Presenters.csproj",
+        "projectPath": "D:\\source\\practiceAIS\\Presenters\\Presenters.csproj",
         "packagesPath": "C:\\Users\\neart\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\neart\\source\\repos\\App\\Presenters\\obj\\",
+        "outputPath": "D:\\source\\practiceAIS\\Presenters\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
           "C:\\Users\\neart\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -91,11 +87,11 @@
           "net472": {
             "targetAlias": "net472",
             "projectReferences": {
-              "C:\\Users\\neart\\source\\repos\\App\\BusinessLogic\\BusinessLogic.csproj": {
-                "projectPath": "C:\\Users\\neart\\source\\repos\\App\\BusinessLogic\\BusinessLogic.csproj"
+              "D:\\source\\practiceAIS\\BusinessLogic\\BusinessLogic.csproj": {
+                "projectPath": "D:\\source\\practiceAIS\\BusinessLogic\\BusinessLogic.csproj"
               },
-              "C:\\Users\\neart\\source\\repos\\App\\Shared\\Shared.csproj": {
-                "projectPath": "C:\\Users\\neart\\source\\repos\\App\\Shared\\Shared.csproj"
+              "D:\\source\\practiceAIS\\Shared\\Shared.csproj": {
+                "projectPath": "D:\\source\\practiceAIS\\Shared\\Shared.csproj"
               }
             }
           }
@@ -110,7 +106,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "10.0.100"
       },
       "frameworks": {
         "net472": {
@@ -121,25 +117,21 @@
               "version": "[3.3.6, )"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\neart\\source\\repos\\App\\Shared\\Shared.csproj": {
+    "D:\\source\\practiceAIS\\Shared\\Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\neart\\source\\repos\\App\\Shared\\Shared.csproj",
+        "projectUniqueName": "D:\\source\\practiceAIS\\Shared\\Shared.csproj",
         "projectName": "Shared",
-        "projectPath": "C:\\Users\\neart\\source\\repos\\App\\Shared\\Shared.csproj",
+        "projectPath": "D:\\source\\practiceAIS\\Shared\\Shared.csproj",
         "packagesPath": "C:\\Users\\neart\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\neart\\source\\repos\\App\\Shared\\obj\\",
+        "outputPath": "D:\\source\\practiceAIS\\Shared\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
           "C:\\Users\\neart\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -153,8 +145,8 @@
           "net472": {
             "targetAlias": "net472",
             "projectReferences": {
-              "C:\\Users\\neart\\source\\repos\\App\\DomainModel\\DomainModel.csproj": {
-                "projectPath": "C:\\Users\\neart\\source\\repos\\App\\DomainModel\\DomainModel.csproj"
+              "D:\\source\\practiceAIS\\DomainModel\\DomainModel.csproj": {
+                "projectPath": "D:\\source\\practiceAIS\\DomainModel\\DomainModel.csproj"
               }
             }
           }
@@ -169,12 +161,12 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "10.0.100"
       },
       "frameworks": {
         "net472": {
           "targetAlias": "net472",
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

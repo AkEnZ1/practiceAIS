@@ -18,13 +18,11 @@ namespace BusinessLogic
             _salaryCalculator = new SalaryCalculator();
             _statisticsService = new StatisticsService(repository);
         }
-
-        // Services for Presenter
         public IEmployeeService EmployeeService => _employeeService;
         public ISalaryCalculator SalaryCalculator => _salaryCalculator;
         public IStatisticsService StatisticsService => _statisticsService;
 
-        // Employee operations
+
         public void AddEmployee(string name, int workExp, VacancyType vacancy)
             => _employeeService.AddEmployee(name, workExp, vacancy);
 

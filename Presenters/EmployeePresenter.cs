@@ -5,31 +5,58 @@ using BusinessLogic.Interfaces;
 using DomainModel;
 using Shared.Interfaces;
 
-namespace Presenters { 
+namespace Presenters {
+    /// <summary>
+    /// Presenter для управления сотрудниками - View передается через AttachView
+    /// </summary>
     public class EmployeePresenter
     {
-        private readonly IEmployeeView _view;
+        private IEmployeeView _view;
         private readonly IEmployeeService _employeeService;
         private readonly ISalaryCalculator _salaryCalculator;
         private readonly IStatisticsService _statisticsService;
 
+        /// <summary>
+        /// Конструктор Presenter (View не передается)
+        /// </summary>
         public EmployeePresenter(
-            IEmployeeView view,
             IEmployeeService employeeService,
             ISalaryCalculator salaryCalculator,
             IStatisticsService statisticsService)
         {
-            _view = view;
             _employeeService = employeeService;
             _salaryCalculator = salaryCalculator;
             _statisticsService = statisticsService;
+        }
 
+        /// <summary>
+        /// Присоединяет View к Presenter (вызывается из ApplicationController)
+        /// </summary>
+        public void AttachView(IEmployeeView view)
+        {
+            if (_view != null)
+                throw new InvalidOperationException("View уже присоединен к Presenter");
+
+            _view = view;
             SubscribeToViewEvents();
 
         }
 
+        /// <summary>
+        /// Отсоединяет View от Presenter
+        /// </summary>
+        public void DetachView()
+        {
+            if (_view == null) return;
+
+            UnsubscribeFromViewEvents();
+            _view = null;
+        }
+
         private void SubscribeToViewEvents()
         {
+            if (_view == null) return;
+
             _view.OnAddEmployee += HandleAddEmployee;
             _view.OnUpdateEmployee += HandleUpdateEmployee;
             _view.OnDeleteEmployee += HandleDeleteEmployee;
@@ -41,6 +68,23 @@ namespace Presenters {
             _view.OnShowAllEmployees += HandleShowAllEmployees;
             _view.OnFindByIndex += HandleFindByIndex;
         }
+
+        private void UnsubscribeFromViewEvents()
+        {
+            if (_view == null) return;
+
+            _view.OnAddEmployee -= HandleAddEmployee;
+            _view.OnUpdateEmployee -= HandleUpdateEmployee;
+            _view.OnDeleteEmployee -= HandleDeleteEmployee;
+            _view.OnEmployeeSelected -= HandleEmployeeSelected;
+            _view.OnCalculateSalary -= HandleCalculateSalary;
+            _view.OnAddWorkExperience -= HandleAddWorkExperience;
+            _view.OnShowStatistics -= HandleShowStatistics;
+            _view.OnFilterByVacancy -= HandleFilterByVacancy;
+            _view.OnShowAllEmployees -= HandleShowAllEmployees;
+            _view.OnFindByIndex -= HandleFindByIndex;
+        }
+
 
         private void RefreshEmployeeList()
         {
@@ -189,8 +233,8 @@ namespace Presenters {
 
                 _view.ShowMessage(statistics);
             }
-            catch (Exception ex)
-            {
+            catch (Exception ex) 
+            { 
                 _view.ShowError($"Ошибка при получении статистики: {ex.Message}");
             }
         }

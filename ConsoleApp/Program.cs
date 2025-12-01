@@ -11,18 +11,8 @@ namespace ConsoleApp
 {
     public class ConsoleEmployeeView : IEmployeeView
     {
-        private EmployeePresenter _presenter;
         private List<Employee> _currentEmployees = new List<Employee>();
 
-        public ConsoleEmployeeView(ILogic logic)
-        {
-            _presenter = new EmployeePresenter(
-                this,
-                logic.EmployeeService,
-                logic.SalaryCalculator,
-                logic.StatisticsService
-            );
-        }
         public void RefreshEmployeeList(List<Employee> employees)
         {
             _currentEmployees = employees;
@@ -129,13 +119,16 @@ namespace ConsoleApp
 
         static void Main(string[] args)
         {
-            // Инициализация DI
-            IKernel ninjectKernel = new StandardKernel(new SimpleConfigModule());
-            var logic = ninjectKernel.Get<ILogic>();
+            using (var appController = new ApplicationController())
+            {      
+                _consoleView = new ConsoleEmployeeView();
+                appController.AttachView(_consoleView);
+                RunConsoleMenu();
+            }
+        }
 
-            // Создаем Console View
-            _consoleView = new ConsoleEmployeeView(logic);
-
+        static void RunConsoleMenu()
+        {
             bool exit = false;
             while (!exit)
             {

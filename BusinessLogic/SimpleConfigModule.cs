@@ -12,7 +12,6 @@ namespace BusinessLogic
         {
 
             Bind<IRepository<Employee>>().To<DapperRepository>().InSingletonScope();
-
             Bind<IEmployeeService>().To<EmployeeService>().InSingletonScope();
             Bind<ISalaryCalculator>().To<SalaryCalculator>().InSingletonScope();
             Bind<IStatisticsService>().To<StatisticsService>().InSingletonScope();

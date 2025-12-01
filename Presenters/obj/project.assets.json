@@ -109,24 +109,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\neart\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\neart\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\neart\\source\\repos\\App\\Presenters\\Presenters.csproj",
+      "projectUniqueName": "D:\\source\\practiceAIS\\Presenters\\Presenters.csproj",
       "projectName": "Presenters",
-      "projectPath": "C:\\Users\\neart\\source\\repos\\App\\Presenters\\Presenters.csproj",
+      "projectPath": "D:\\source\\practiceAIS\\Presenters\\Presenters.csproj",
       "packagesPath": "C:\\Users\\neart\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\neart\\source\\repos\\App\\Presenters\\obj\\",
+      "outputPath": "D:\\source\\practiceAIS\\Presenters\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
         "C:\\Users\\neart\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -140,11 +135,11 @@
         "net472": {
           "targetAlias": "net472",
           "projectReferences": {
-            "C:\\Users\\neart\\source\\repos\\App\\BusinessLogic\\BusinessLogic.csproj": {
-              "projectPath": "C:\\Users\\neart\\source\\repos\\App\\BusinessLogic\\BusinessLogic.csproj"
+            "D:\\source\\practiceAIS\\BusinessLogic\\BusinessLogic.csproj": {
+              "projectPath": "D:\\source\\practiceAIS\\BusinessLogic\\BusinessLogic.csproj"
             },
-            "C:\\Users\\neart\\source\\repos\\App\\Shared\\Shared.csproj": {
-              "projectPath": "C:\\Users\\neart\\source\\repos\\App\\Shared\\Shared.csproj"
+            "D:\\source\\practiceAIS\\Shared\\Shared.csproj": {
+              "projectPath": "D:\\source\\practiceAIS\\Shared\\Shared.csproj"
             }
           }
         }
@@ -159,7 +154,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.300"
+      "SdkAnalysisLevel": "10.0.100"
     },
     "frameworks": {
       "net472": {
@@ -170,7 +165,7 @@
             "version": "[3.3.6, )"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
