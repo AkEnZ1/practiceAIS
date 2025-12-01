@@ -1,9 +1,11 @@
 ﻿using BusinessLogic.Interfaces;
+using BusinessLogic.Validators;
 using DataAccessLayer;
 using DomainModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using FluentValidation;
 
 namespace BusinessLogic.Services
 {
@@ -17,6 +19,7 @@ namespace BusinessLogic.Services
     public class EmployeeService : IEmployeeService
     {
         private readonly IRepository<Employee> _repository;
+        private readonly EmployeeCreateDtoValidator _validator;
 
         /// <summary>
         /// Инициализирует новый экземпляр EmployeeService
@@ -25,6 +28,7 @@ namespace BusinessLogic.Services
         public EmployeeService(IRepository<Employee> repository)
         {
             _repository = repository;
+            _validator = new EmployeeCreateDtoValidator();
         }
 
         /// <summary>
@@ -32,6 +36,12 @@ namespace BusinessLogic.Services
         /// </summary>
         public void AddEmployee(string name, int workExp, VacancyType vacancy)
         {
+            var validationResult = _validator.Validate((name, workExp, vacancy));
+            if (!validationResult.IsValid)
+            {
+                var errors = string.Join(", ", validationResult.Errors.Select(e => e.ErrorMessage));
+                throw new ValidationException($"Ошибка валидации: {errors}");
+            }
             var employee = new Employee()
             {
                 Name = name,

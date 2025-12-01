@@ -1,9 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using BusinessLogic.Interfaces;
+﻿using BusinessLogic.Interfaces;
+using BusinessLogic.Logging;
 using DomainModel;
 using Shared.Interfaces;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using BusinessLogic.Validators;
+
 
 namespace Presenters {
     /// <summary>
@@ -114,13 +117,20 @@ namespace Presenters {
                     _view.ShowError("Опыт работы должен быть неотрицательным числом!");
                     return;
                 }
-
+                string logMessage = $"{DateTime.Now}: Добавляем сотрудника {name}\n";
+                System.IO.File.AppendAllText("log.txt", logMessage);
                 _employeeService.AddEmployee(name, workExp, vacancy);
                 RefreshEmployeeList();
+                string successLog = $"{DateTime.Now}: Сотрудник {name} добавлен успешно\n";
+                System.IO.File.AppendAllText("log.txt", successLog);
+
                 _view.ShowMessage("Сотрудник добавлен!");
             }
             catch (Exception ex)
             {
+                string errorLog = $"{DateTime.Now}: ОШИБКА при добавлении {name} - {ex.Message}\n";
+                System.IO.File.AppendAllText("log.txt", errorLog);
+
                 _view.ShowError($"Ошибка при добавлении сотрудника: {ex.Message}");
             }
         }

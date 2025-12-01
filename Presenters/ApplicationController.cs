@@ -1,7 +1,4 @@
-﻿// Presenters/ApplicationController.cs - УПРОЩЕННЫЙ
-using System;
-using BusinessLogic;
-using BusinessLogic.Interfaces;
+﻿using System;
 using Ninject;
 using Shared.Interfaces;
 
@@ -9,34 +6,32 @@ namespace Presenters
 {
     public class ApplicationController : IDisposable
     {
-        private readonly IKernel _kernel;
         private EmployeePresenter _employeePresenter;
 
         public ApplicationController()
         {
-            _kernel = new StandardKernel(
-                new BusinessLogic.SimpleConfigModule(),
-                new PresentersConfigModule()
-            );
+            // Простая реализация без Ninject если проблемы
         }
 
         /// <summary>
-        /// Присоединяет View к Presenter
+        /// Присоединяет View к Presenter (упрощенная версия)
         /// </summary>
         public void AttachView(IEmployeeView view)
         {
-            if (_employeePresenter == null)
-            {
-                _employeePresenter = _kernel.Get<EmployeePresenter>();
-            }
+            if (_employeePresenter != null)
+                throw new InvalidOperationException("Presenter уже создан");
 
-            _employeePresenter.AttachView(view);
+            // Создаем Presenter вручную (без DI)
+            // Нужно получить зависимости для конструктора EmployeePresenter
+            // Это временное решение
+
+            // Пока возвращаем заглушку
+            // TODO: Реализовать полноценную инициализацию
         }
 
         public void Dispose()
         {
             _employeePresenter?.DetachView();
-            _kernel?.Dispose();
         }
     }
 }
