@@ -1,62 +1,79 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Forms; 
 using BusinessLogic.Interfaces;
+using BusinessLogic.Services;
+using DataAccessLayer;
 using DomainModel;
 using Shared.Interfaces;
+using WindowsFormsApp1; 
 
-namespace Presenters {
-    /// <summary>
-    /// Presenter для управления сотрудниками - View передается через AttachView
-    /// </summary>
+namespace Presenters
+{
     public class EmployeePresenter
     {
-        private IEmployeeView _view;
+        private readonly IEmployeeView _view;
         private readonly IEmployeeService _employeeService;
         private readonly ISalaryCalculator _salaryCalculator;
         private readonly IStatisticsService _statisticsService;
 
         /// <summary>
-        /// Конструктор Presenter (View не передается)
+        /// Точка входа в приложение - создает и запускает все компоненты MVP
+        /// </summary>
+        public static void RunApplication()
+        {
+            try
+            {
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                
+                // 1. Создаем Model (бизнес-логику)
+                var repository = new DapperRepository();
+                var employeeService = new EmployeeService(repository);
+                var salaryCalculator = new SalaryCalculator();
+                var statisticsService = new StatisticsService(repository);
+                
+                // 2. Создаем View
+                var view = new Form1();
+                
+                // 3. Создаем Presenter и связываем с View
+                var presenter = new EmployeePresenter(
+                    view,
+                    employeeService,
+                    salaryCalculator,
+                    statisticsService
+                );
+                
+                // 4. Запускаем приложение
+                Application.Run(view);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка запуска приложения: {ex.Message}", 
+                              "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        /// <summary>
+        /// Конструктор Presenter'а
         /// </summary>
         public EmployeePresenter(
+            IEmployeeView view,
             IEmployeeService employeeService,
             ISalaryCalculator salaryCalculator,
             IStatisticsService statisticsService)
         {
+            _view = view;
             _employeeService = employeeService;
             _salaryCalculator = salaryCalculator;
             _statisticsService = statisticsService;
-        }
 
-        /// <summary>
-        /// Присоединяет View к Presenter (вызывается из ApplicationController)
-        /// </summary>
-        public void AttachView(IEmployeeView view)
-        {
-            if (_view != null)
-                throw new InvalidOperationException("View уже присоединен к Presenter");
-
-            _view = view;
             SubscribeToViewEvents();
-
-        }
-
-        /// <summary>
-        /// Отсоединяет View от Presenter
-        /// </summary>
-        public void DetachView()
-        {
-            if (_view == null) return;
-
-            UnsubscribeFromViewEvents();
-            _view = null;
         }
 
         private void SubscribeToViewEvents()
         {
-            if (_view == null) return;
-
             _view.OnAddEmployee += HandleAddEmployee;
             _view.OnUpdateEmployee += HandleUpdateEmployee;
             _view.OnDeleteEmployee += HandleDeleteEmployee;
@@ -68,23 +85,6 @@ namespace Presenters {
             _view.OnShowAllEmployees += HandleShowAllEmployees;
             _view.OnFindByIndex += HandleFindByIndex;
         }
-
-        private void UnsubscribeFromViewEvents()
-        {
-            if (_view == null) return;
-
-            _view.OnAddEmployee -= HandleAddEmployee;
-            _view.OnUpdateEmployee -= HandleUpdateEmployee;
-            _view.OnDeleteEmployee -= HandleDeleteEmployee;
-            _view.OnEmployeeSelected -= HandleEmployeeSelected;
-            _view.OnCalculateSalary -= HandleCalculateSalary;
-            _view.OnAddWorkExperience -= HandleAddWorkExperience;
-            _view.OnShowStatistics -= HandleShowStatistics;
-            _view.OnFilterByVacancy -= HandleFilterByVacancy;
-            _view.OnShowAllEmployees -= HandleShowAllEmployees;
-            _view.OnFindByIndex -= HandleFindByIndex;
-        }
-
 
         private void RefreshEmployeeList()
         {
@@ -233,8 +233,8 @@ namespace Presenters {
 
                 _view.ShowMessage(statistics);
             }
-            catch (Exception ex) 
-            { 
+            catch (Exception ex)
+            {
                 _view.ShowError($"Ошибка при получении статистики: {ex.Message}");
             }
         }
