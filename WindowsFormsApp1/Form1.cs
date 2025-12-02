@@ -1,29 +1,13 @@
-﻿using BusinessLogic;
-using BusinessLogic.Interfaces;
-using DataAccessLayer;
-using DomainModel;
-using Ninject;
-using Presenters;
-using Shared.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using DomainModel;
+using Shared.Interfaces;
 
 namespace WindowsFormsApp1
 {
-    /// <summary>
-    /// Главная форма приложения - реализует IEmployeeView для МУР архитектуры
-    /// </summary>
-    /// <remarks>
-    /// View в архитектуре МУР:
-    /// - Генерирует события пользовательского интерфейса
-    /// - Отображает данные, полученные от Presenter
-    /// - Не содержит бизнес-логики
-    /// - Реализует интерфейсы из Shared библиотеки
-    /// </remarks>
     public partial class Form1 : Form, IEmployeeView
     {
 
@@ -33,47 +17,8 @@ namespace WindowsFormsApp1
             ApplyStyling();
         }
 
-
-
-        /// <summary>
-        /// Инициализация базы данных
-        /// </summary>
-        private void InitializeDatabase()
-        {
-            try
-            {
-                if (!System.IO.File.Exists("EmployeeDatabase.sqlite"))
-                {
-                    SQLiteConnection.CreateFile("EmployeeDatabase.sqlite");
-                }
-
-                using (var connection = new SQLiteConnection("Data Source=EmployeeDatabase.sqlite"))
-                {
-                    connection.Open();
-
-                    using (var command = new SQLiteCommand(@"
-                        CREATE TABLE IF NOT EXISTS Employees (
-                            ID INTEGER PRIMARY KEY AUTOINCREMENT,
-                            Name TEXT NOT NULL,
-                            Vacancy INTEGER NOT NULL,
-                            WorkExp INTEGER NOT NULL
-                        )", connection))
-                    {
-                        command.ExecuteNonQuery();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception($"Ошибка инициализации БД: {ex.Message}");
-            }
-        }
-
         #region Реализация IEmployeeView
 
-        /// <summary>
-        /// Обновляет список сотрудников в DataGridView
-        /// </summary>
         public void RefreshEmployeeList(List<Employee> employees)
         {
             if (dataGridViewEmployees.InvokeRequired)
@@ -94,35 +39,21 @@ namespace WindowsFormsApp1
             }
         }
 
-        /// <summary>
-        /// Показывает детальную информацию о сотруднике
-        /// </summary>
         public void ShowEmployeeDetails(Employee employee)
         {
-            // Можно добавить отображение в отдельном контроле
-            // Показываем в сообщении для демонстрации
             ShowMessage($"Детали сотрудника:\n{employee}");
         }
 
-        /// <summary>
-        /// Очищает детальную информацию о сотруднике
-        /// </summary>
         public void ClearEmployeeDetails()
         {
             // Реализация при наличии отдельного контрола для деталей
         }
 
-        /// <summary>
-        /// Показывает информационное сообщение
-        /// </summary>
         public void ShowMessage(string message)
         {
             MessageBox.Show(message, "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        /// <summary>
-        /// Показывает сообщение об ошибке
-        /// </summary>
         public void ShowError(string error)
         {
             MessageBox.Show(error, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -147,9 +78,6 @@ namespace WindowsFormsApp1
 
         #region Обработчики событий формы
 
-        /// <summary>
-        /// Обработчик кнопки добавления сотрудника
-        /// </summary>
         private void btnAdd_Click(object sender, EventArgs e)
         {
             using (var form = new AddForm())
@@ -161,9 +89,6 @@ namespace WindowsFormsApp1
             }
         }
 
-        /// <summary>
-        /// Обработчик кнопки обновления сотрудника
-        /// </summary>
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             int selectedIndex = GetSelectedEmployeeIndex();
@@ -186,9 +111,6 @@ namespace WindowsFormsApp1
             }
         }
 
-        /// <summary>
-        /// Обработчик кнопки удаления сотрудника
-        /// </summary>
         private void btnDelete_Click(object sender, EventArgs e)
         {
             int selectedIndex = GetSelectedEmployeeIndex();
@@ -212,9 +134,6 @@ namespace WindowsFormsApp1
             }
         }
 
-        /// <summary>
-        /// Обработчик кнопки расчета зарплаты
-        /// </summary>
         private void btnCalculateSalary_Click(object sender, EventArgs e)
         {
             int selectedIndex = GetSelectedEmployeeIndex();
@@ -228,9 +147,6 @@ namespace WindowsFormsApp1
             }
         }
 
-        /// <summary>
-        /// Обработчик кнопки добавления стажа
-        /// </summary>
         private void btnAddExperience_Click(object sender, EventArgs e)
         {
             int selectedIndex = GetSelectedEmployeeIndex();
@@ -244,17 +160,11 @@ namespace WindowsFormsApp1
             }
         }
 
-        /// <summary>
-        /// Обработчик кнопки показа статистики
-        /// </summary>
         private void btnStatistics_Click_1(object sender, EventArgs e)
         {
             OnShowStatistics?.Invoke();
         }
 
-        /// <summary>
-        /// Обработчик кнопки поиска по индексу
-        /// </summary>
         private void btnFindByIndex_Click(object sender, EventArgs e)
         {
             if (int.TryParse(txtIndex.Text, out int index))
@@ -275,33 +185,21 @@ namespace WindowsFormsApp1
             }
         }
 
-        /// <summary>
-        /// Обработчик кнопки обновления списка
-        /// </summary>
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             OnShowAllEmployees?.Invoke();
         }
 
-        /// <summary>
-        /// Обработчик кнопки фильтрации менеджеров
-        /// </summary>
         private void btnFilterManagers_Click(object sender, EventArgs e)
         {
             OnFilterByVacancy?.Invoke(VacancyType.Manager);
         }
 
-        /// <summary>
-        /// Обработчик кнопки показа всех сотрудников
-        /// </summary>
         private void btnShowAll_Click(object sender, EventArgs e)
         {
             OnShowAllEmployees?.Invoke();
         }
 
-        /// <summary>
-        /// Обработчик изменения выбора в DataGridView
-        /// </summary>
         private void dataGridViewEmployees_SelectionChanged(object sender, EventArgs e)
         {
             if (dataGridViewEmployees.SelectedRows.Count > 0)
@@ -315,9 +213,6 @@ namespace WindowsFormsApp1
 
         #region Вспомогательные методы
 
-        /// <summary>
-        /// Получает индекс выбранного сотрудника
-        /// </summary>
         private int GetSelectedEmployeeIndex()
         {
             return dataGridViewEmployees.SelectedRows.Count > 0
@@ -325,9 +220,6 @@ namespace WindowsFormsApp1
                 : -1;
         }
 
-        /// <summary>
-        /// Получает сотрудника из DataGridView по индексу
-        /// </summary>
         private Employee GetEmployeeFromGrid(int index)
         {
             if (index >= 0 && index < dataGridViewEmployees.Rows.Count)
@@ -344,9 +236,6 @@ namespace WindowsFormsApp1
             return null;
         }
 
-        /// <summary>
-        /// Преобразует тип должности в русское название
-        /// </summary>
         private string GetVacancyRussianName(VacancyType vacancy)
         {
             switch (vacancy)
@@ -358,9 +247,6 @@ namespace WindowsFormsApp1
             }
         }
 
-        /// <summary>
-        /// Преобразует русское название в тип должности
-        /// </summary>
         private VacancyType GetVacancyFromRussianName(string name)
         {
             switch (name)
@@ -372,9 +258,6 @@ namespace WindowsFormsApp1
             }
         }
 
-        /// <summary>
-        /// Применяет стилизацию к элементам управления
-        /// </summary>
         private void ApplyStyling()
         {
             this.BackColor = Color.FromArgb(250, 250, 250);
