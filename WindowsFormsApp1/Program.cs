@@ -1,23 +1,19 @@
-﻿using System;
+using System;
 using System.Windows.Forms;
-using Presenters;
-
+using Presenter;
 namespace WindowsFormsApp1
 {
     internal static class Program
     {
+        /// <summary>
+        /// Главная точка входа для приложения.
+        /// Делегирует запуск Presenter'у как точке входа.
+        /// </summary>
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-
-            using (var appController = new ApplicationController())
-            {
-                var form = new Form1();
-                appController.AttachView(form); 
-                Application.Run(form);
-            }
+            // Presenter - единая точка входа в приложение
+            Presenters.EmployeePresenter.RunApplication();
         }
     }
 }
