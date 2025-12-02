@@ -1,59 +1,20 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Windows.Forms; 
 using BusinessLogic.Interfaces;
-using BusinessLogic.Services;
-using DataAccessLayer;
 using DomainModel;
 using Shared.Interfaces;
-using WindowsFormsApp1; 
 
 namespace Presenters
 {
+    /// <summary>
+    /// Presenter для связки View и Model
+    /// </summary>
     public class EmployeePresenter
     {
         private readonly IEmployeeView _view;
         private readonly IEmployeeService _employeeService;
         private readonly ISalaryCalculator _salaryCalculator;
         private readonly IStatisticsService _statisticsService;
-
-        /// <summary>
-        /// Точка входа в приложение - создает и запускает все компоненты MVP
-        /// </summary>
-        public static void RunApplication()
-        {
-            try
-            {
-                Application.EnableVisualStyles();
-                Application.SetCompatibleTextRenderingDefault(false);
-                
-                // 1. Создаем Model (бизнес-логику)
-                var repository = new DapperRepository();
-                var employeeService = new EmployeeService(repository);
-                var salaryCalculator = new SalaryCalculator();
-                var statisticsService = new StatisticsService(repository);
-                
-                // 2. Создаем View
-                var view = new Form1();
-                
-                // 3. Создаем Presenter и связываем с View
-                var presenter = new EmployeePresenter(
-                    view,
-                    employeeService,
-                    salaryCalculator,
-                    statisticsService
-                );
-                
-                // 4. Запускаем приложение
-                Application.Run(view);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Ошибка запуска приложения: {ex.Message}", 
-                              "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
 
         /// <summary>
         /// Конструктор Presenter'а
@@ -70,6 +31,7 @@ namespace Presenters
             _statisticsService = statisticsService;
 
             SubscribeToViewEvents();
+            RefreshEmployeeList(); // Загружаем данные при создании
         }
 
         private void SubscribeToViewEvents()
