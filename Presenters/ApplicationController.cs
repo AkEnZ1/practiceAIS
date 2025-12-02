@@ -6,85 +6,16 @@ using DataAccessLayer;
 
 namespace Presenters
 {
-    /// <summary>
-    /// Единая точка входа в приложение - управляет запуском всех компонентов
-    /// </summary>
     public class ApplicationController : IDisposable
     {
-        private IEmployeeService _employeeService;
-        private ISalaryCalculator _salaryCalculator;
-        private IStatisticsService _statisticsService;
-        private EmployeePresenter _presenter;
+        private readonly IEmployeeService _employeeService;
+        private readonly ISalaryCalculator _salaryCalculator;
+        private readonly IStatisticsService _statisticsService;
+        private EmployeePresenter _employeePresenter;
 
-        /// <summary>
-        /// Запуск приложения с Windows Forms интерфейсом
-        /// </summary>
-        [STAThread]
-        public static void RunWindowsApplication()
+        public ApplicationController()
         {
-            try
-            {
-                Application.EnableVisualStyles();
-                Application.SetCompatibleTextRenderingDefault(false);
-                
-                using (var controller = new ApplicationController())
-                {
-                    controller.Initialize();
-                    
-                    // Создаем Windows Forms View
-                    var viewType = Type.GetType("WindowsFormsApp1.Form1, WindowsFormsApp1");
-                    if (viewType == null)
-                        throw new TypeLoadException("Не удалось загрузить Windows Forms приложение");
-                    
-                    var view = (IEmployeeView)Activator.CreateInstance(viewType);
-                    
-                    // Присоединяем View к Presenter
-                    controller.AttachView(view);
-                    
-                    // Запускаем приложение
-                    Application.Run((Form)view);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Ошибка запуска приложения: {ex.Message}", 
-                              "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        /// <summary>
-        /// Запуск приложения с консольным интерфейсом
-        /// </summary>
-        public static void RunConsoleApplication()
-        {
-            try
-            {
-                using (var controller = new ApplicationController())
-                {
-                    controller.Initialize();
-                    
-                    // Создаем консольное View
-                    var view = new ConsoleEmployeeView();
-                    
-                    // Присоединяем View к Presenter
-                    controller.AttachView(view);
-                    
-                    // Запускаем консольное меню
-                    ConsoleMenuRunner.Run(view);
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Ошибка запуска приложения: {ex.Message}");
-                Console.ReadLine();
-            }
-        }
-
-        /// <summary>
-        /// Инициализация сервисов
-        /// </summary>
-        private void Initialize()
-        {
+            // Создаем зависимости
             var repository = new DapperRepository();
             _employeeService = new EmployeeService(repository);
             _salaryCalculator = new SalaryCalculator();
@@ -92,44 +23,51 @@ namespace Presenters
         }
 
         /// <summary>
+        /// ЕДИНАЯ ТОЧКА ВХОДА - запуск Windows Forms приложения
+        /// </summary>
+        [STAThread]
+        public static void RunWindowsApplication()
+        {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+
+            using (var controller = new ApplicationController())
+            {
+                var form = new WindowsFormsApp1.Form1();
+                controller.AttachView(form);
+                Application.Run(form);
+            }
+        }
+
+        /// <summary>
+        /// ЕДИНАЯ ТОЧКА ВХОДА - запуск консольного приложения
+        /// </summary>
+        public static void RunConsoleApplication()
+        {
+            using (var controller = new ApplicationController())
+            {
+                var consoleView = new ConsoleApp.ConsoleEmployeeView();
+                controller.AttachView(consoleView);
+                ConsoleApp.Program.RunConsoleMenu(consoleView);
+            }
+        }
+
+        /// <summary>
         /// Присоединяет View к Presenter
         /// </summary>
         public void AttachView(IEmployeeView view)
         {
-            if (_presenter != null)
+            if (_employeePresenter == null)
             {
-                // Если уже есть Presenter, отвязываем его
-                DetachView();
+                _employeePresenter = new EmployeePresenter(_employeeService, _salaryCalculator, _statisticsService);
             }
-            
-            _presenter = new EmployeePresenter(view, _employeeService, _salaryCalculator, _statisticsService);
+
+            _employeePresenter.AttachView(view);
         }
 
-        /// <summary>
-        /// Отсоединяет View от Presenter
-        /// </summary>
-        public void DetachView()
-        {
-            if (_presenter != null)
-            {
-                // Здесь можно добавить логику отписки от событий, если нужно
-                _presenter = null;
-            }
-        }
-
-        /// <summary>
-        /// Освобождение ресурсов
-        /// </summary>
         public void Dispose()
         {
-            DetachView();
-            
-            // Освобождаем сервисы, если они реализуют IDisposable
-            if (_employeeService is IDisposable disposableEmployeeService)
-                disposableEmployeeService.Dispose();
-                
-            if (_statisticsService is IDisposable disposableStatisticsService)
-                disposableStatisticsService.Dispose();
+            _employeePresenter?.DetachView();
         }
     }
 }
