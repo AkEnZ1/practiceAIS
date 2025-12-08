@@ -50,3 +50,4 @@ D:\source\practiceAIS\Presenters\obj\Debug\net472\Presenters.sourcelink.json
 D:\source\practiceAIS\Presenters\obj\Debug\net472\Presenters.csproj.Up2Date
 D:\source\practiceAIS\Presenters\obj\Debug\net472\Presenters.dll
 D:\source\practiceAIS\Presenters\obj\Debug\net472\Presenters.pdb
+D:\source\practiceAIS\Presenters\bin\Debug\net472\BusinessLogic.dll.config

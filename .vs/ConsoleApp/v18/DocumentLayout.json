@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "D:\\source\\practiceAIS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{12383C31-B855-4801-9E37-EE8BE433D3DB}|Presenters\\Presenters.csproj|d:\\source\\practiceais\\presenters\\employeepresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12383C31-B855-4801-9E37-EE8BE433D3DB}|Presenters\\Presenters.csproj|solutionrelative:presenters\\employeepresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A37334CB-FE11-43EC-A6A9-895303272BD2}|WindowsFormsApp1\\WindowsFormsApp1.csproj|D:\\source\\practiceAIS\\windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A37334CB-FE11-43EC-A6A9-895303272BD2}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A37334CB-FE11-43EC-A6A9-895303272BD2}|WindowsFormsApp1\\WindowsFormsApp1.csproj|D:\\source\\practiceAIS\\windowsformsapp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A37334CB-FE11-43EC-A6A9-895303272BD2}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C575483C-43BF-45AF-998E-ECCC854B0BDD}|ConsoleApp\\ConsoleApp.csproj|D:\\source\\practiceAIS\\consoleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C575483C-43BF-45AF-998E-ECCC854B0BDD}|ConsoleApp\\ConsoleApp.csproj|solutionrelative:consoleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A37334CB-FE11-43EC-A6A9-895303272BD2}|WindowsFormsApp1\\WindowsFormsApp1.csproj|D:\\source\\practiceAIS\\windowsformsapp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A37334CB-FE11-43EC-A6A9-895303272BD2}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{12383C31-B855-4801-9E37-EE8BE433D3DB}|Presenters\\Presenters.csproj|d:\\source\\practiceais\\presenters\\employeepresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12383C31-B855-4801-9E37-EE8BE433D3DB}|Presenters\\Presenters.csproj|solutionrelative:presenters\\employeepresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{12383C31-B855-4801-9E37-EE8BE433D3DB}|Presenters\\Presenters.csproj|d:\\source\\practiceais\\presenters\\applicationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -21,10 +25,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{12383C31-B855-4801-9E37-EE8BE433D3DB}|Presenters\\Presenters.csproj|d:\\source\\practiceais\\presenters\\presentersconfigmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{12383C31-B855-4801-9E37-EE8BE433D3DB}|Presenters\\Presenters.csproj|solutionrelative:presenters\\presentersconfigmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A37334CB-FE11-43EC-A6A9-895303272BD2}|WindowsFormsApp1\\WindowsFormsApp1.csproj|D:\\source\\practiceAIS\\windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A37334CB-FE11-43EC-A6A9-895303272BD2}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{08619A47-B140-4578-B5ED-E0583EEB743A}|Shared\\Shared.csproj|d:\\source\\practiceais\\shared\\interfaces\\iview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -113,37 +113,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "Form1.cs",
               "DocumentMoniker": "D:\\source\\practiceAIS\\WindowsFormsApp1\\Form1.cs",
               "RelativeDocumentMoniker": "WindowsFormsApp1\\Form1.cs",
               "ToolTip": "D:\\source\\practiceAIS\\WindowsFormsApp1\\Form1.cs",
               "RelativeToolTip": "WindowsFormsApp1\\Form1.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAiwCMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAANoAAAAAAAAAAAAswCMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-01T20:10:17.553Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\source\\practiceAIS\\ConsoleApp\\Program.cs",
               "RelativeDocumentMoniker": "ConsoleApp\\Program.cs",
               "ToolTip": "D:\\source\\practiceAIS\\ConsoleApp\\Program.cs",
               "RelativeToolTip": "ConsoleApp\\Program.cs",
-              "ViewState": "AgIAAHMAAAAAAAAAAAA1wHwAAAA3AAAAAAAAAA==",
+              "ViewState": "AgIAACsBAAAAAAAAAAAmwEABAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-01T20:10:17.55Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\source\\practiceAIS\\WindowsFormsApp1\\Program.cs",
               "RelativeDocumentMoniker": "WindowsFormsApp1\\Program.cs",
@@ -156,7 +156,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "PresentersConfigModule.cs",
               "DocumentMoniker": "D:\\source\\practiceAIS\\Presenters\\PresentersConfigModule.cs",
               "RelativeDocumentMoniker": "Presenters\\PresentersConfigModule.cs",
@@ -164,25 +164,24 @@
               "RelativeToolTip": "Presenters\\PresentersConfigModule.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAywAgAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T20:10:17.556Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-01T20:10:17.556Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "EmployeePresenter.cs",
               "DocumentMoniker": "D:\\source\\practiceAIS\\Presenters\\EmployeePresenter.cs",
               "RelativeDocumentMoniker": "Presenters\\EmployeePresenter.cs",
               "ToolTip": "D:\\source\\practiceAIS\\Presenters\\EmployeePresenter.cs",
               "RelativeToolTip": "Presenters\\EmployeePresenter.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAgwCkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-01T20:10:17.48Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "ApplicationController.cs",
               "DocumentMoniker": "D:\\source\\practiceAIS\\Presenters\\ApplicationController.cs",
               "RelativeDocumentMoniker": "Presenters\\ApplicationController.cs",
@@ -190,8 +189,7 @@
               "RelativeToolTip": "Presenters\\ApplicationController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAmwCkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T20:39:36.589Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-01T20:39:36.589Z"
             },
             {
               "$type": "Document",
@@ -203,8 +201,7 @@
               "RelativeToolTip": "Shared\\Interfaces\\IView.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T20:10:17.559Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-01T20:10:17.559Z"
             },
             {
               "$type": "Document",
@@ -216,8 +213,7 @@
               "RelativeToolTip": "Shared\\Interfaces\\IEmployeeView.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T20:10:17.558Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-01T20:10:17.558Z"
             },
             {
               "$type": "Document",
@@ -229,8 +225,7 @@
               "RelativeToolTip": "DomainModel\\Employee.cs",
               "ViewState": "AgIAABUAAAAAAAAAAAAQwDEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T20:10:17.553Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-01T20:10:17.553Z"
             },
             {
               "$type": "Document",
@@ -242,8 +237,7 @@
               "RelativeToolTip": "DataAccessLayer\\EntityRepository.cs",
               "ViewState": "AgIAAD0AAAAAAAAAAAAowFsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T20:10:17.562Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-01T20:10:17.562Z"
             },
             {
               "$type": "Document",
@@ -255,8 +249,7 @@
               "RelativeToolTip": "DataAccessLayer\\EmployeeContext.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAA5wCcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T20:10:17.565Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-01T20:10:17.565Z"
             },
             {
               "$type": "Document",
@@ -268,8 +261,7 @@
               "RelativeToolTip": "BusinessLogic\\SimpleConfigModule.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T20:10:17.552Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-01T20:10:17.552Z"
             },
             {
               "$type": "Document",
@@ -281,8 +273,7 @@
               "RelativeToolTip": "BusinessLogic\\Logic.cs",
               "ViewState": "AgIAAC8AAAAAAAAAAAAAAEoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T20:10:17.552Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-01T20:10:17.552Z"
             },
             {
               "$type": "Document",
@@ -402,8 +393,7 @@
               "ToolTip": "D:\\source\\practiceAIS\\ConsoleApp\\ConsoleApp.csproj",
               "RelativeToolTip": "ConsoleApp\\ConsoleApp.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-10-27T16:44:29.402Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-27T16:44:29.402Z"
             },
             {
               "$type": "Document",
