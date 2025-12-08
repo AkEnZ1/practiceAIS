@@ -1,20 +1,15 @@
 ﻿using Ninject.Modules;
-using BusinessLogic.Interfaces;
 
 namespace Presenters
 {
     public class PresentersConfigModule : NinjectModule
     {
-        public PresentersConfigModule()
-        {
-        }
-
         public override void Load()
         {
-            // Presenter регистрируем без View (View передается через AttachView)
-            Bind<EmployeePresenter>().ToSelf().InSingletonScope();
+            // Регистрируем презентер как главный координатор приложения
+            Bind<IApplicationPresenter>().To<EmployeePresenter>().InSingletonScope();
 
-            // ApplicationController для управления приложением
+            // Контроллер приложения
             Bind<ApplicationController>().ToSelf().InSingletonScope();
         }
     }

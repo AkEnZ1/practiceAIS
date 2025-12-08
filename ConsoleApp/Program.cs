@@ -116,13 +116,21 @@ namespace ConsoleApp
     class Program
     {
         static ConsoleEmployeeView _consoleView;
-
+        static IApplicationPresenter _presenter;
         static void Main(string[] args)
         {
             using (var appController = new ApplicationController())
-            {      
+            {
+                // Создаем презентер через контроллер
+                _presenter = appController.CreatePresenter();
+
+                // Создаем View
                 _consoleView = new ConsoleEmployeeView();
-                appController.AttachView(_consoleView);
+
+                // Привязываем View к презентеру
+                _presenter.AttachView(_consoleView);
+
+                // Запускаем главное меню
                 RunConsoleMenu();
             }
         }

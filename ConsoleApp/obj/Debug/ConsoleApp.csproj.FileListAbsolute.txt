@@ -50,3 +50,4 @@ D:\source\practiceAIS\ConsoleApp\obj\Debug\ConsoleApp.csproj.CoreCompileInputs.c
 D:\source\practiceAIS\ConsoleApp\obj\Debug\ConsoleApp.csproj.Up2Date
 D:\source\practiceAIS\ConsoleApp\obj\Debug\ConsoleApp.exe
 D:\source\practiceAIS\ConsoleApp\obj\Debug\ConsoleApp.pdb
+D:\source\practiceAIS\ConsoleApp\bin\Debug\BusinessLogic.dll.config

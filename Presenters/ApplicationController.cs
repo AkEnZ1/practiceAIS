@@ -1,16 +1,11 @@
-﻿// Presenters/ApplicationController.cs - УПРОЩЕННЫЙ
-using System;
-using BusinessLogic;
-using BusinessLogic.Interfaces;
+﻿using System;
 using Ninject;
-using Shared.Interfaces;
 
 namespace Presenters
 {
     public class ApplicationController : IDisposable
     {
         private readonly IKernel _kernel;
-        private EmployeePresenter _employeePresenter;
 
         public ApplicationController()
         {
@@ -20,22 +15,13 @@ namespace Presenters
             );
         }
 
-        /// <summary>
-        /// Присоединяет View к Presenter
-        /// </summary>
-        public void AttachView(IEmployeeView view)
+        public IApplicationPresenter CreatePresenter()
         {
-            if (_employeePresenter == null)
-            {
-                _employeePresenter = _kernel.Get<EmployeePresenter>();
-            }
-
-            _employeePresenter.AttachView(view);
+            return _kernel.Get<IApplicationPresenter>();
         }
 
         public void Dispose()
         {
-            _employeePresenter?.DetachView();
             _kernel?.Dispose();
         }
     }

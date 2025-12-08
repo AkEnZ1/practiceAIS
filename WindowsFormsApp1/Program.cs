@@ -14,9 +14,20 @@ namespace WindowsFormsApp1
 
             using (var appController = new ApplicationController())
             {
+                // Создаем презентер
+                var presenter = appController.CreatePresenter();
+
+                // Создаем форму
                 var form = new Form1();
-                appController.AttachView(form); 
+
+                // Привязываем View к презентеру
+                presenter.AttachView(form);
+
+                // Запускаем приложение
                 Application.Run(form);
+
+                // Отсоединяем View при закрытии
+                presenter.DetachView();
             }
         }
     }
