@@ -1,0 +1,98 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETFramework,Version=v4.7.2": {
+      "DomainModel/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/DomainModel.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DomainModel.dll": {}
+        }
+      },
+      "Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7.2",
+        "dependencies": {
+          "DomainModel": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Shared.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DomainModel/1.0.0": {
+      "type": "project",
+      "path": "../DomainModel/DomainModel.csproj",
+      "msbuildProject": "../DomainModel/DomainModel.csproj"
+    },
+    "Shared/1.0.0": {
+      "type": "project",
+      "path": "../Shared/Shared.csproj",
+      "msbuildProject": "../Shared/Shared.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETFramework,Version=v4.7.2": [
+      "Shared >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\neart\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "D:\\source\\practiceAIS\\Infrastructure\\Infrastructure.csproj",
+      "projectName": "Infrastructure",
+      "projectPath": "D:\\source\\practiceAIS\\Infrastructure\\Infrastructure.csproj",
+      "packagesPath": "C:\\Users\\neart\\.nuget\\packages\\",
+      "outputPath": "D:\\source\\practiceAIS\\Infrastructure\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\neart\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net472"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net472": {
+          "targetAlias": "net472",
+          "projectReferences": {
+            "D:\\source\\practiceAIS\\Shared\\Shared.csproj": {
+              "projectPath": "D:\\source\\practiceAIS\\Shared\\Shared.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "10.0.100"
+    },
+    "frameworks": {
+      "net472": {
+        "targetAlias": "net472",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\source\\practiceAIS\\Infrastructure\\Infrastructure.csproj": {}
+  },
+  "projects": {
+    "D:\\source\\practiceAIS\\DomainModel\\DomainModel.csproj": {
+      "restore": {
+        "projectUniqueName": "D:\\source\\practiceAIS\\DomainModel\\DomainModel.csproj",
+        "projectName": "DomainModel",
+        "projectPath": "D:\\source\\practiceAIS\\DomainModel\\DomainModel.csproj",
+        "UsingMicrosoftNETSdk": false,
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "D:\\source\\practiceAIS\\Infrastructure\\Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\source\\practiceAIS\\Infrastructure\\Infrastructure.csproj",
+        "projectName": "Infrastructure",
+        "projectPath": "D:\\source\\practiceAIS\\Infrastructure\\Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\neart\\.nuget\\packages\\",
+        "outputPath": "D:\\source\\practiceAIS\\Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\neart\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "targetAlias": "net472",
+            "projectReferences": {
+              "D:\\source\\practiceAIS\\Shared\\Shared.csproj": {
+                "projectPath": "D:\\source\\practiceAIS\\Shared\\Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.100"
+      },
+      "frameworks": {
+        "net472": {
+          "targetAlias": "net472",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\source\\practiceAIS\\Shared\\Shared.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\source\\practiceAIS\\Shared\\Shared.csproj",
+        "projectName": "Shared",
+        "projectPath": "D:\\source\\practiceAIS\\Shared\\Shared.csproj",
+        "packagesPath": "C:\\Users\\neart\\.nuget\\packages\\",
+        "outputPath": "D:\\source\\practiceAIS\\Shared\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\neart\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "targetAlias": "net472",
+            "projectReferences": {
+              "D:\\source\\practiceAIS\\DomainModel\\DomainModel.csproj": {
+                "projectPath": "D:\\source\\practiceAIS\\DomainModel\\DomainModel.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.100"
+      },
+      "frameworks": {
+        "net472": {
+          "targetAlias": "net472",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
