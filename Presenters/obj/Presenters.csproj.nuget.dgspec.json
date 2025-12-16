@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\source\\practiceAIS\\Presenters\\Presenters.csproj": {}
+    "D:\\practiceAIS\\Presenters\\Presenters.csproj": {}
   },
   "projects": {
-    "D:\\source\\practiceAIS\\BusinessLogic\\BusinessLogic.csproj": {
+    "D:\\practiceAIS\\BusinessLogic\\BusinessLogic.csproj": {
       "restore": {
-        "projectUniqueName": "D:\\source\\practiceAIS\\BusinessLogic\\BusinessLogic.csproj",
+        "projectUniqueName": "D:\\practiceAIS\\BusinessLogic\\BusinessLogic.csproj",
         "projectName": "BusinessLogic",
-        "projectPath": "D:\\source\\practiceAIS\\BusinessLogic\\BusinessLogic.csproj",
+        "projectPath": "D:\\practiceAIS\\BusinessLogic\\BusinessLogic.csproj",
         "UsingMicrosoftNETSdk": false,
         "frameworks": {
           "net472": {
             "projectReferences": {
-              "D:\\source\\practiceAIS\\DataAccessLayer\\DataAccessLayer.csproj": {
-                "projectPath": "D:\\source\\practiceAIS\\DataAccessLayer\\DataAccessLayer.csproj"
+              "D:\\practiceAIS\\DataAccessLayer\\DataAccessLayer.csproj": {
+                "projectPath": "D:\\practiceAIS\\DataAccessLayer\\DataAccessLayer.csproj"
               },
-              "D:\\source\\practiceAIS\\DomainModel\\DomainModel.csproj": {
-                "projectPath": "D:\\source\\practiceAIS\\DomainModel\\DomainModel.csproj"
+              "D:\\practiceAIS\\DomainModel\\DomainModel.csproj": {
+                "projectPath": "D:\\practiceAIS\\DomainModel\\DomainModel.csproj"
               }
             }
           }
@@ -27,17 +27,17 @@
         "net472": {}
       }
     },
-    "D:\\source\\practiceAIS\\DataAccessLayer\\DataAccessLayer.csproj": {
+    "D:\\practiceAIS\\DataAccessLayer\\DataAccessLayer.csproj": {
       "restore": {
-        "projectUniqueName": "D:\\source\\practiceAIS\\DataAccessLayer\\DataAccessLayer.csproj",
+        "projectUniqueName": "D:\\practiceAIS\\DataAccessLayer\\DataAccessLayer.csproj",
         "projectName": "DataAccessLayer",
-        "projectPath": "D:\\source\\practiceAIS\\DataAccessLayer\\DataAccessLayer.csproj",
+        "projectPath": "D:\\practiceAIS\\DataAccessLayer\\DataAccessLayer.csproj",
         "UsingMicrosoftNETSdk": false,
         "frameworks": {
           "net472": {
             "projectReferences": {
-              "D:\\source\\practiceAIS\\DomainModel\\DomainModel.csproj": {
-                "projectPath": "D:\\source\\practiceAIS\\DomainModel\\DomainModel.csproj"
+              "D:\\practiceAIS\\DomainModel\\DomainModel.csproj": {
+                "projectPath": "D:\\practiceAIS\\DomainModel\\DomainModel.csproj"
               }
             }
           }
@@ -47,11 +47,11 @@
         "net472": {}
       }
     },
-    "D:\\source\\practiceAIS\\DomainModel\\DomainModel.csproj": {
+    "D:\\practiceAIS\\DomainModel\\DomainModel.csproj": {
       "restore": {
-        "projectUniqueName": "D:\\source\\practiceAIS\\DomainModel\\DomainModel.csproj",
+        "projectUniqueName": "D:\\practiceAIS\\DomainModel\\DomainModel.csproj",
         "projectName": "DomainModel",
-        "projectPath": "D:\\source\\practiceAIS\\DomainModel\\DomainModel.csproj",
+        "projectPath": "D:\\practiceAIS\\DomainModel\\DomainModel.csproj",
         "UsingMicrosoftNETSdk": false,
         "frameworks": {
           "net472": {
@@ -63,14 +63,14 @@
         "net472": {}
       }
     },
-    "D:\\source\\practiceAIS\\Presenters\\Presenters.csproj": {
+    "D:\\practiceAIS\\Presenters\\Presenters.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\source\\practiceAIS\\Presenters\\Presenters.csproj",
+        "projectUniqueName": "D:\\practiceAIS\\Presenters\\Presenters.csproj",
         "projectName": "Presenters",
-        "projectPath": "D:\\source\\practiceAIS\\Presenters\\Presenters.csproj",
+        "projectPath": "D:\\practiceAIS\\Presenters\\Presenters.csproj",
         "packagesPath": "C:\\Users\\neart\\.nuget\\packages\\",
-        "outputPath": "D:\\source\\practiceAIS\\Presenters\\obj\\",
+        "outputPath": "D:\\practiceAIS\\Presenters\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\neart\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -87,11 +87,11 @@
           "net472": {
             "targetAlias": "net472",
             "projectReferences": {
-              "D:\\source\\practiceAIS\\BusinessLogic\\BusinessLogic.csproj": {
-                "projectPath": "D:\\source\\practiceAIS\\BusinessLogic\\BusinessLogic.csproj"
+              "D:\\practiceAIS\\BusinessLogic\\BusinessLogic.csproj": {
+                "projectPath": "D:\\practiceAIS\\BusinessLogic\\BusinessLogic.csproj"
               },
-              "D:\\source\\practiceAIS\\Shared\\Shared.csproj": {
-                "projectPath": "D:\\source\\practiceAIS\\Shared\\Shared.csproj"
+              "D:\\practiceAIS\\Shared\\Shared.csproj": {
+                "projectPath": "D:\\practiceAIS\\Shared\\Shared.csproj"
               }
             }
           }
@@ -121,14 +121,14 @@
         }
       }
     },
-    "D:\\source\\practiceAIS\\Shared\\Shared.csproj": {
+    "D:\\practiceAIS\\Shared\\Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\source\\practiceAIS\\Shared\\Shared.csproj",
+        "projectUniqueName": "D:\\practiceAIS\\Shared\\Shared.csproj",
         "projectName": "Shared",
-        "projectPath": "D:\\source\\practiceAIS\\Shared\\Shared.csproj",
+        "projectPath": "D:\\practiceAIS\\Shared\\Shared.csproj",
         "packagesPath": "C:\\Users\\neart\\.nuget\\packages\\",
-        "outputPath": "D:\\source\\practiceAIS\\Shared\\obj\\",
+        "outputPath": "D:\\practiceAIS\\Shared\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\neart\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -145,8 +145,8 @@
           "net472": {
             "targetAlias": "net472",
             "projectReferences": {
-              "D:\\source\\practiceAIS\\DomainModel\\DomainModel.csproj": {
-                "projectPath": "D:\\source\\practiceAIS\\DomainModel\\DomainModel.csproj"
+              "D:\\practiceAIS\\DomainModel\\DomainModel.csproj": {
+                "projectPath": "D:\\practiceAIS\\DomainModel\\DomainModel.csproj"
               }
             }
           }

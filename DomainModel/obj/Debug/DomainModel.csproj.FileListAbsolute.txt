@@ -4,3 +4,9 @@ C:\Users\neart\source\repos\App\DomainModel\obj\Debug\DomainModel.csproj.Assembl
 C:\Users\neart\source\repos\App\DomainModel\obj\Debug\DomainModel.csproj.CoreCompileInputs.cache
 C:\Users\neart\source\repos\App\DomainModel\obj\Debug\DomainModel.dll
 C:\Users\neart\source\repos\App\DomainModel\obj\Debug\DomainModel.pdb
+D:\practiceAIS\DomainModel\bin\Debug\DomainModel.dll
+D:\practiceAIS\DomainModel\bin\Debug\DomainModel.pdb
+D:\practiceAIS\DomainModel\obj\Debug\DomainModel.csproj.AssemblyReference.cache
+D:\practiceAIS\DomainModel\obj\Debug\DomainModel.csproj.CoreCompileInputs.cache
+D:\practiceAIS\DomainModel\obj\Debug\DomainModel.dll
+D:\practiceAIS\DomainModel\obj\Debug\DomainModel.pdb

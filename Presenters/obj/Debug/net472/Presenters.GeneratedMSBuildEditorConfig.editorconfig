@@ -1,6 +1,6 @@
 is_global = true
 build_property.RootNamespace = Presenters
-build_property.ProjectDir = D:\source\practiceAIS\Presenters\
+build_property.ProjectDir = D:\practiceAIS\Presenters\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.CsWinRTUseWindowsUIXamlProjections = false

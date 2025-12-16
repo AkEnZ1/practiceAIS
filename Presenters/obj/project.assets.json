@@ -114,11 +114,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\source\\practiceAIS\\Presenters\\Presenters.csproj",
+      "projectUniqueName": "D:\\practiceAIS\\Presenters\\Presenters.csproj",
       "projectName": "Presenters",
-      "projectPath": "D:\\source\\practiceAIS\\Presenters\\Presenters.csproj",
+      "projectPath": "D:\\practiceAIS\\Presenters\\Presenters.csproj",
       "packagesPath": "C:\\Users\\neart\\.nuget\\packages\\",
-      "outputPath": "D:\\source\\practiceAIS\\Presenters\\obj\\",
+      "outputPath": "D:\\practiceAIS\\Presenters\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\neart\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -135,11 +135,11 @@
         "net472": {
           "targetAlias": "net472",
           "projectReferences": {
-            "D:\\source\\practiceAIS\\BusinessLogic\\BusinessLogic.csproj": {
-              "projectPath": "D:\\source\\practiceAIS\\BusinessLogic\\BusinessLogic.csproj"
+            "D:\\practiceAIS\\BusinessLogic\\BusinessLogic.csproj": {
+              "projectPath": "D:\\practiceAIS\\BusinessLogic\\BusinessLogic.csproj"
             },
-            "D:\\source\\practiceAIS\\Shared\\Shared.csproj": {
-              "projectPath": "D:\\source\\practiceAIS\\Shared\\Shared.csproj"
+            "D:\\practiceAIS\\Shared\\Shared.csproj": {
+              "projectPath": "D:\\practiceAIS\\Shared\\Shared.csproj"
             }
           }
         }

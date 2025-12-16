@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{A37334CB-FE11-43EC-A6A9-895303272BD2}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Library</OutputType>
     <RootNamespace>WindowsFormsApp1</RootNamespace>
     <AssemblyName>WindowsFormsApp1</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -108,10 +108,6 @@
     <ProjectReference Include="..\DomainModel\DomainModel.csproj">
       <Project>{64529b2b-4958-4dd4-af30-5bba04ce2397}</Project>
       <Name>DomainModel</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Presenters\Presenters.csproj">
-      <Project>{12383c31-b855-4801-9e37-ee8be433d3db}</Project>
-      <Name>Presenters</Name>
     </ProjectReference>
     <ProjectReference Include="..\Shared\Shared.csproj">
       <Project>{08619a47-b140-4578-b5ed-e0583eeb743a}</Project>

@@ -24,3 +24,16 @@ D:\source\practiceAIS\Shared\obj\Debug\net472\Shared.sourcelink.json
 D:\source\practiceAIS\Shared\obj\Debug\net472\Shared.csproj.Up2Date
 D:\source\practiceAIS\Shared\obj\Debug\net472\Shared.dll
 D:\source\practiceAIS\Shared\obj\Debug\net472\Shared.pdb
+D:\practiceAIS\Shared\bin\Debug\net472\Shared.dll
+D:\practiceAIS\Shared\bin\Debug\net472\Shared.pdb
+D:\practiceAIS\Shared\bin\Debug\net472\DomainModel.dll
+D:\practiceAIS\Shared\bin\Debug\net472\DomainModel.pdb
+D:\practiceAIS\Shared\obj\Debug\net472\Shared.csproj.AssemblyReference.cache
+D:\practiceAIS\Shared\obj\Debug\net472\Shared.GeneratedMSBuildEditorConfig.editorconfig
+D:\practiceAIS\Shared\obj\Debug\net472\Shared.AssemblyInfoInputs.cache
+D:\practiceAIS\Shared\obj\Debug\net472\Shared.AssemblyInfo.cs
+D:\practiceAIS\Shared\obj\Debug\net472\Shared.csproj.CoreCompileInputs.cache
+D:\practiceAIS\Shared\obj\Debug\net472\Shared.sourcelink.json
+D:\practiceAIS\Shared\obj\Debug\net472\Shared.csproj.Up2Date
+D:\practiceAIS\Shared\obj\Debug\net472\Shared.dll
+D:\practiceAIS\Shared\obj\Debug\net472\Shared.pdb

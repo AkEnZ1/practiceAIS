@@ -1,14 +1,14 @@
 {
   "format": 1,
   "restore": {
-    "D:\\source\\practiceAIS\\Shared\\Shared.csproj": {}
+    "D:\\practiceAIS\\Shared\\Shared.csproj": {}
   },
   "projects": {
-    "D:\\source\\practiceAIS\\DomainModel\\DomainModel.csproj": {
+    "D:\\practiceAIS\\DomainModel\\DomainModel.csproj": {
       "restore": {
-        "projectUniqueName": "D:\\source\\practiceAIS\\DomainModel\\DomainModel.csproj",
+        "projectUniqueName": "D:\\practiceAIS\\DomainModel\\DomainModel.csproj",
         "projectName": "DomainModel",
-        "projectPath": "D:\\source\\practiceAIS\\DomainModel\\DomainModel.csproj",
+        "projectPath": "D:\\practiceAIS\\DomainModel\\DomainModel.csproj",
         "UsingMicrosoftNETSdk": false,
         "frameworks": {
           "net472": {
@@ -20,14 +20,14 @@
         "net472": {}
       }
     },
-    "D:\\source\\practiceAIS\\Shared\\Shared.csproj": {
+    "D:\\practiceAIS\\Shared\\Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\source\\practiceAIS\\Shared\\Shared.csproj",
+        "projectUniqueName": "D:\\practiceAIS\\Shared\\Shared.csproj",
         "projectName": "Shared",
-        "projectPath": "D:\\source\\practiceAIS\\Shared\\Shared.csproj",
+        "projectPath": "D:\\practiceAIS\\Shared\\Shared.csproj",
         "packagesPath": "C:\\Users\\neart\\.nuget\\packages\\",
-        "outputPath": "D:\\source\\practiceAIS\\Shared\\obj\\",
+        "outputPath": "D:\\practiceAIS\\Shared\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\neart\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -44,8 +44,8 @@
           "net472": {
             "targetAlias": "net472",
             "projectReferences": {
-              "D:\\source\\practiceAIS\\DomainModel\\DomainModel.csproj": {
-                "projectPath": "D:\\source\\practiceAIS\\DomainModel\\DomainModel.csproj"
+              "D:\\practiceAIS\\DomainModel\\DomainModel.csproj": {
+                "projectPath": "D:\\practiceAIS\\DomainModel\\DomainModel.csproj"
               }
             }
           }

@@ -3,7 +3,6 @@ using BusinessLogic.Interfaces;
 using DataAccessLayer;
 using DomainModel;
 using Ninject;
-using Presenters;
 using Shared.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -27,14 +26,27 @@ namespace WindowsFormsApp1
     public partial class Form1 : Form, IEmployeeView
     {
 
+        // Событие StartupEvent как у одногруппника
+        public event Action StartupEvent;
+
         public Form1()
         {
             InitializeComponent();
             ApplyStyling();
         }
 
+        // Метод Start() можно оставить пустым или удалить
+        public void Start()
+        {
+            // При загрузке формы вызываем StartupEvent
+            StartupEvent?.Invoke();
+        }
 
-
+        // Вызов StartupEvent при загрузке формы
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            StartupEvent?.Invoke();
+        }
         /// <summary>
         /// Инициализация базы данных
         /// </summary>
