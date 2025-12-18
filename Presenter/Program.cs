@@ -3,11 +3,10 @@ using BusinessLogic.Interfaces;
 using ConsoleApp;
 using DomainModel;
 using Ninject;
+using Shared.Interfaces;
 using System;
 using System.Text;
-using WindowsFormsApp1;
 using System.Windows.Forms;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace Presenter
 {
@@ -45,32 +44,41 @@ namespace Presenter
             }
         }
 
+        /// <summary>
+        /// Запуск WinForms-интерфейса
+        /// </summary>
         private static void RunWinForms()
         {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+
             var kernel = new StandardKernel(new SimpleConfigModule());
             var logic = kernel.Get<ILogic>();
 
-            // Создаем WinForms View
-            var view = new WindowsFormsApp1.Form1();
-            var presenter = new EmployeeWinFormsPresenter(view, logic);
+            // Form1 должен реализовывать IEmployeeView
+            IEmployeeView view = new WindowsFormsApp1.Form1();
 
-            // Вызываем Start() как у одногруппника
-            view.Start();
+            var presenter = new EmployeePresenter(view, logic);
 
             // Запуск формы
-            System.Windows.Forms.Application.Run(view);
+            Application.Run((Form)view);
         }
 
+        /// <summary>
+        /// Запуск консольного интерфейса
+        /// </summary>
         private static void RunConsole()
         {
             var kernel = new StandardKernel(new SimpleConfigModule());
             var logic = kernel.Get<ILogic>();
 
-            var view = new EmployeeConsoleView();
-            var presenter = new EmployeeConsolePresenter(view, logic);
+            // EmployeeConsoleView должен реализовывать IEmployeeView
+            IEmployeeView view = new EmployeeConsoleView();
 
-            // Запуск консольного приложения
-            view.Run();
+            var presenter = new EmployeePresenter(view, logic);
+
+            // Управление жизненным циклом — внутри View
+            ((EmployeeConsoleView)view).Run();
         }
     }
 }

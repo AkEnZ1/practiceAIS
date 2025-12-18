@@ -50,7 +50,7 @@ namespace ConsoleApp
                         OnAddEmployee?.Invoke(
                             ReadString("Имя:"),
                             ReadInt("Стаж (лет):", 0, 100),
-                            ReadVacancy()
+                            ReadVacancy("Должность:")
                         );
                         break;
 
@@ -62,7 +62,7 @@ namespace ConsoleApp
                         OnUpdateEmployee?.Invoke(
                             ReadInt("Индекс сотрудника:", 0, int.MaxValue),
                             ReadString("Новое имя:"),
-                            ReadVacancy(),
+                            ReadVacancy("Должность:"),
                             ReadInt("Новый стаж (лет):", 0, 100)
                         );
                         break;
@@ -84,8 +84,7 @@ namespace ConsoleApp
                         break;
 
                     case ConsoleKey.D9:
-                        Console.WriteLine("Должность: 1-Руководитель, 2-Менеджер, 3-Стажер");
-                        OnFilterByVacancy?.Invoke(ReadVacancy());
+                        OnFilterByVacancy?.Invoke(ReadVacancy("Фильтр по должности:"));
                         break;
 
                     case ConsoleKey.D0:
@@ -157,9 +156,13 @@ namespace ConsoleApp
             return value;
         }
 
-        private VacancyType ReadVacancy()
+        public VacancyType ReadVacancy(string prompt)
         {
-            Console.Write("Должность (1-Руководитель, 2-Менеджер, 3-Стажер): ");
+            Console.WriteLine(prompt);
+            Console.WriteLine("1. Руководитель");
+            Console.WriteLine("2. Менеджер");
+            Console.WriteLine("3. Стажер");
+            Console.Write("Выберите (1-3): ");
 
             while (true)
             {

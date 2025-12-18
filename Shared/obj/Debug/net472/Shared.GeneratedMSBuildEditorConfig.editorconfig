@@ -1,6 +1,6 @@
 is_global = true
 build_property.RootNamespace = Shared
-build_property.ProjectDir = D:\practiceAIS\Shared\
+build_property.ProjectDir = D:\s\practiceAIS\Shared\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.CsWinRTUseWindowsUIXamlProjections = false

@@ -31,11 +31,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\practiceAIS\\Shared\\Shared.csproj",
+      "projectUniqueName": "D:\\s\\practiceAIS\\Shared\\Shared.csproj",
       "projectName": "Shared",
-      "projectPath": "D:\\practiceAIS\\Shared\\Shared.csproj",
+      "projectPath": "D:\\s\\practiceAIS\\Shared\\Shared.csproj",
       "packagesPath": "C:\\Users\\neart\\.nuget\\packages\\",
-      "outputPath": "D:\\practiceAIS\\Shared\\obj\\",
+      "outputPath": "D:\\s\\practiceAIS\\Shared\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\neart\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -52,8 +52,8 @@
         "net472": {
           "targetAlias": "net472",
           "projectReferences": {
-            "D:\\practiceAIS\\DomainModel\\DomainModel.csproj": {
-              "projectPath": "D:\\practiceAIS\\DomainModel\\DomainModel.csproj"
+            "D:\\s\\practiceAIS\\DomainModel\\DomainModel.csproj": {
+              "projectPath": "D:\\s\\practiceAIS\\DomainModel\\DomainModel.csproj"
             }
           }
         }

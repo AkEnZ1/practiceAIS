@@ -6,33 +6,54 @@ using System.Collections.Generic;
 
 namespace Presenter
 {
-    public class EmployeeWinFormsPresenter
+    public class EmployeePresenter
     {
         private readonly IEmployeeView _view;
         private readonly ILogic _logic;
 
-        public EmployeeWinFormsPresenter(IEmployeeView view, ILogic logic)
+        /// <summary>
+        /// Инициализирует связи между View и Model.
+        /// </summary>
+        public EmployeePresenter(IEmployeeView view, ILogic logic)
         {
             _view = view;
             _logic = logic;
 
             // Подписываемся на события View
-            _view.OnAddEmployee += HandleAddEmployee;
-            _view.OnUpdateEmployee += HandleUpdateEmployee;
-            _view.OnDeleteEmployee += HandleDeleteEmployee;
-            _view.OnEmployeeSelected += HandleEmployeeSelected;
-            _view.OnCalculateSalary += HandleCalculateSalary;
-            _view.OnAddWorkExperience += HandleAddWorkExperience;
-            _view.OnShowStatistics += HandleShowStatistics;
-            _view.OnFilterByVacancy += HandleFilterByVacancy;
-            _view.OnShowAllEmployees += HandleShowAllEmployees;
-            _view.OnFindByIndex += HandleFindByIndex;
+            _view.StartupEvent += OnStartup;
+            _view.OnShowAllEmployees += OnShowAllEmployees;
+            _view.OnAddEmployee += OnAddEmployee;
+            _view.OnFindByIndex += OnFindByIndex;
+            _view.OnUpdateEmployee += OnUpdateEmployee;
+            _view.OnDeleteEmployee += OnDeleteEmployee;
+            _view.OnCalculateSalary += OnCalculateSalary;
+            _view.OnAddWorkExperience += OnAddWorkExperience;
+            _view.OnShowStatistics += OnShowStatistics;
+            _view.OnFilterByVacancy += OnFilterByVacancy;
+            _view.OnEmployeeSelected += OnEmployeeSelected;
+        }
 
-            // Инициализация - загружаем сотрудников
+        /// <summary>
+        /// Начальная загрузка данных.
+        /// </summary>
+        private void OnStartup()
+        {
             RefreshEmployeeList();
         }
 
-        private void HandleAddEmployee(string name, int workExp, VacancyType vacancy)
+        /// <summary>
+        /// Показать всех сотрудников.
+        /// </summary>
+        private void OnShowAllEmployees()
+        {
+            RefreshEmployeeList();
+            _view.ShowMessage("Показаны все сотрудники");
+        }
+
+        /// <summary>
+        /// Добавление нового сотрудника.
+        /// </summary>
+        private void OnAddEmployee(string name, int workExp, VacancyType vacancy)
         {
             try
             {
@@ -54,11 +75,31 @@ namespace Presenter
             }
             catch (Exception ex)
             {
-                _view.ShowError($"Ошибка при добавлении сотрудника: {ex.Message}");
+                _view.ShowError($"Ошибка при добавлении: {ex.Message}");
             }
         }
 
-        private void HandleUpdateEmployee(int index, string name, VacancyType vacancy, int workExp)
+        /// <summary>
+        /// Поиск сотрудника по индексу.
+        /// </summary>
+        private void OnFindByIndex(int index)
+        {
+            try
+            {
+                var employee = _logic.GetEmployeeByIndex(index);
+                _view.ShowMessage($"Найден сотрудник: {employee}");
+                _view.ShowEmployeeDetails(employee);
+            }
+            catch (Exception ex)
+            {
+                _view.ShowError($"Ошибка при поиске: {ex.Message}");
+            }
+        }
+
+        /// <summary>
+        /// Редактирование сотрудника.
+        /// </summary>
+        private void OnUpdateEmployee(int index, string name, VacancyType vacancy, int workExp)
         {
             try
             {
@@ -75,11 +116,14 @@ namespace Presenter
             }
             catch (Exception ex)
             {
-                _view.ShowError($"Ошибка при обновлении сотрудника: {ex.Message}");
+                _view.ShowError($"Ошибка при обновлении: {ex.Message}");
             }
         }
 
-        private void HandleDeleteEmployee(int index)
+        /// <summary>
+        /// Удаление сотрудника.
+        /// </summary>
+        private void OnDeleteEmployee(int index)
         {
             try
             {
@@ -89,24 +133,14 @@ namespace Presenter
             }
             catch (Exception ex)
             {
-                _view.ShowError($"Ошибка при удалении сотрудника: {ex.Message}");
+                _view.ShowError($"Ошибка при удалении: {ex.Message}");
             }
         }
 
-        private void HandleEmployeeSelected(int index)
-        {
-            try
-            {
-                var employee = _logic.GetEmployeeByIndex(index);
-                _view.ShowEmployeeDetails(employee);
-            }
-            catch (Exception ex)
-            {
-                _view.ShowError($"Ошибка при выборе сотрудника: {ex.Message}");
-            }
-        }
-
-        private void HandleCalculateSalary(int index)
+        /// <summary>
+        /// Расчет зарплаты.
+        /// </summary>
+        private void OnCalculateSalary(int index)
         {
             try
             {
@@ -120,7 +154,10 @@ namespace Presenter
             }
         }
 
-        private void HandleAddWorkExperience(int index)
+        /// <summary>
+        /// Добавление стажа.
+        /// </summary>
+        private void OnAddWorkExperience(int index)
         {
             try
             {
@@ -136,7 +173,10 @@ namespace Presenter
             }
         }
 
-        private void HandleShowStatistics()
+        /// <summary>
+        /// Показать статистику.
+        /// </summary>
+        private void OnShowStatistics()
         {
             try
             {
@@ -174,7 +214,10 @@ namespace Presenter
             }
         }
 
-        private void HandleFilterByVacancy(VacancyType vacancy)
+        /// <summary>
+        /// Фильтрация по должности.
+        /// </summary>
+        private void OnFilterByVacancy(VacancyType vacancy)
         {
             try
             {
@@ -188,26 +231,25 @@ namespace Presenter
             }
         }
 
-        private void HandleShowAllEmployees()
-        {
-            RefreshEmployeeList();
-            _view.ShowMessage("Показаны все сотрудники");
-        }
-
-        private void HandleFindByIndex(int index)
+        /// <summary>
+        /// Выбор сотрудника.
+        /// </summary>
+        private void OnEmployeeSelected(int index)
         {
             try
             {
                 var employee = _logic.GetEmployeeByIndex(index);
-                _view.ShowMessage($"Найден сотрудник: {employee}");
                 _view.ShowEmployeeDetails(employee);
             }
             catch (Exception ex)
             {
-                _view.ShowError($"Ошибка при поиске: {ex.Message}");
+                _view.ShowError($"Ошибка при выборе сотрудника: {ex.Message}");
             }
         }
 
+        /// <summary>
+        /// Обновление списка сотрудников.
+        /// </summary>
         private void RefreshEmployeeList()
         {
             try
@@ -221,6 +263,9 @@ namespace Presenter
             }
         }
 
+        /// <summary>
+        /// Получение русского названия должности.
+        /// </summary>
         private string GetVacancyRussianName(VacancyType vacancy)
         {
             switch (vacancy)

@@ -1,38 +1,38 @@
-﻿using BusinessLogic;
-using BusinessLogic.Interfaces;
-using DataAccessLayer;
-using DomainModel;
-using Ninject;
-using Shared.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using DomainModel;
+using Shared.Interfaces;
+using Microsoft.VisualBasic; // Для InputBox
 
 namespace WindowsFormsApp1
 {
-    /// <summary>
-    /// Главная форма приложения - реализует IEmployeeView для МУР архитектуры
-    /// </summary>
-    /// <remarks>
-    /// View в архитектуре МУР:
-    /// - Генерирует события пользовательского интерфейса
-    /// - Отображает данные, полученные от Presenter
-    /// - Не содержит бизнес-логики
-    /// - Реализует интерфейсы из Shared библиотеки
-    /// </remarks>
     public partial class Form1 : Form, IEmployeeView
     {
-
         // Событие StartupEvent как у одногруппника
         public event Action StartupEvent;
+
+        // События IEmployeeView
+        public event Action<string, int, VacancyType> OnAddEmployee;
+        public event Action<int, string, VacancyType, int> OnUpdateEmployee;
+        public event Action<int> OnDeleteEmployee;
+        public event Action<int> OnEmployeeSelected;
+        public event Action<int> OnCalculateSalary;
+        public event Action<int> OnAddWorkExperience;
+        public event Action OnShowStatistics;
+        public event Action<VacancyType> OnFilterByVacancy;
+        public event Action OnShowAllEmployees;
+        public event Action<int> OnFindByIndex;
 
         public Form1()
         {
             InitializeComponent();
             ApplyStyling();
+
+            // Подписываемся на событие загрузки формы
+            this.Load += Form1_Load;
         }
 
         // Метод Start() можно оставить пустым или удалить
@@ -47,45 +47,9 @@ namespace WindowsFormsApp1
         {
             StartupEvent?.Invoke();
         }
-        /// <summary>
-        /// Инициализация базы данных
-        /// </summary>
-        private void InitializeDatabase()
-        {
-            try
-            {
-                if (!System.IO.File.Exists("EmployeeDatabase.sqlite"))
-                {
-                    SQLiteConnection.CreateFile("EmployeeDatabase.sqlite");
-                }
-
-                using (var connection = new SQLiteConnection("Data Source=EmployeeDatabase.sqlite"))
-                {
-                    connection.Open();
-
-                    using (var command = new SQLiteCommand(@"
-                        CREATE TABLE IF NOT EXISTS Employees (
-                            ID INTEGER PRIMARY KEY AUTOINCREMENT,
-                            Name TEXT NOT NULL,
-                            Vacancy INTEGER NOT NULL,
-                            WorkExp INTEGER NOT NULL
-                        )", connection))
-                    {
-                        command.ExecuteNonQuery();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception($"Ошибка инициализации БД: {ex.Message}");
-            }
-        }
 
         #region Реализация IEmployeeView
 
-        /// <summary>
-        /// Обновляет список сотрудников в DataGridView
-        /// </summary>
         public void RefreshEmployeeList(List<Employee> employees)
         {
             if (dataGridViewEmployees.InvokeRequired)
@@ -106,62 +70,136 @@ namespace WindowsFormsApp1
             }
         }
 
-        /// <summary>
-        /// Показывает детальную информацию о сотруднике
-        /// </summary>
         public void ShowEmployeeDetails(Employee employee)
         {
-            // Можно добавить отображение в отдельном контроле
-            // Показываем в сообщении для демонстрации
             ShowMessage($"Детали сотрудника:\n{employee}");
         }
 
-        /// <summary>
-        /// Очищает детальную информацию о сотруднике
-        /// </summary>
         public void ClearEmployeeDetails()
         {
             // Реализация при наличии отдельного контрола для деталей
         }
 
-        /// <summary>
-        /// Показывает информационное сообщение
-        /// </summary>
         public void ShowMessage(string message)
         {
             MessageBox.Show(message, "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        /// <summary>
-        /// Показывает сообщение об ошибке
-        /// </summary>
         public void ShowError(string error)
         {
             MessageBox.Show(error, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        #endregion
+        // Реализация методов чтения данных для совместимости с интерфейсом
+        public string ReadString(string prompt)
+        {
+            // Создаем простейшую форму для ввода
+            using (var form = new Form())
+            {
+                form.Text = "Ввод";
+                form.Size = new Size(300, 120);
+                form.StartPosition = FormStartPosition.CenterScreen;
 
-        #region События IEmployeeView
+                var textBox = new TextBox
+                {
+                    Location = new Point(10, 30),
+                    Size = new Size(260, 20)
+                };
 
-        public event Action<string, int, VacancyType> OnAddEmployee;
-        public event Action<int, string, VacancyType, int> OnUpdateEmployee;
-        public event Action<int> OnDeleteEmployee;
-        public event Action<int> OnEmployeeSelected;
-        public event Action<int> OnCalculateSalary;
-        public event Action<int> OnAddWorkExperience;
-        public event Action OnShowStatistics;
-        public event Action<VacancyType> OnFilterByVacancy;
-        public event Action OnShowAllEmployees;
-        public event Action<int> OnFindByIndex;
+                var button = new Button
+                {
+                    Text = "OK",
+                    Location = new Point(100, 60),
+                    DialogResult = DialogResult.OK
+                };
+
+                form.Controls.Add(new Label
+                {
+                    Text = prompt,
+                    Location = new Point(10, 10)
+                });
+                form.Controls.Add(textBox);
+                form.Controls.Add(button);
+                form.AcceptButton = button;
+
+                return form.ShowDialog() == DialogResult.OK ? textBox.Text : "";
+            }
+        }
+
+        public int ReadInt(string prompt, int min, int max)
+        {
+            while (true)
+            {
+                string input = ReadString($"{prompt} (от {min} до {max}):");
+                if (int.TryParse(input, out int result) && result >= min && result <= max)
+                {
+                    return result;
+                }
+                ShowError($"Введите число от {min} до {max}");
+            }
+        }
+
+        public VacancyType ReadVacancy(string prompt)
+        {
+            // Создаем простую форму для выбора должности
+            using (var selectionForm = new Form())
+            {
+                selectionForm.Text = prompt;
+                selectionForm.Size = new Size(300, 150);
+                selectionForm.StartPosition = FormStartPosition.CenterParent;
+                selectionForm.FormBorderStyle = FormBorderStyle.FixedDialog;
+                selectionForm.MaximizeBox = false;
+                selectionForm.MinimizeBox = false;
+
+                var label = new Label
+                {
+                    Text = "Выберите должность:",
+                    Location = new Point(10, 20),
+                    Size = new Size(280, 20)
+                };
+
+                var comboBox = new ComboBox
+                {
+                    Location = new Point(10, 50),
+                    Size = new Size(260, 21),
+                    DropDownStyle = ComboBoxStyle.DropDownList
+                };
+                comboBox.Items.AddRange(new object[] { "Руководитель", "Менеджер", "Стажер" });
+                comboBox.SelectedIndex = 0;
+
+                var okButton = new Button
+                {
+                    Text = "OK",
+                    Location = new Point(100, 80),
+                    Size = new Size(75, 23),
+                    DialogResult = DialogResult.OK
+                };
+
+                selectionForm.Controls.Add(label);
+                selectionForm.Controls.Add(comboBox);
+                selectionForm.Controls.Add(okButton);
+                selectionForm.AcceptButton = okButton;
+
+                if (selectionForm.ShowDialog() == DialogResult.OK)
+                {
+                    switch (comboBox.SelectedItem.ToString())
+                    {
+                        case "Руководитель":
+                            return VacancyType.Head;
+                        case "Менеджер":
+                            return VacancyType.Manager;
+                        case "Стажер":
+                            return VacancyType.Intern;
+                    }
+                }
+            }
+            return VacancyType.Intern; // Значение по умолчанию
+        }
 
         #endregion
 
         #region Обработчики событий формы
 
-        /// <summary>
-        /// Обработчик кнопки добавления сотрудника
-        /// </summary>
         private void btnAdd_Click(object sender, EventArgs e)
         {
             using (var form = new AddForm())
@@ -173,9 +211,6 @@ namespace WindowsFormsApp1
             }
         }
 
-        /// <summary>
-        /// Обработчик кнопки обновления сотрудника
-        /// </summary>
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             int selectedIndex = GetSelectedEmployeeIndex();
@@ -198,9 +233,6 @@ namespace WindowsFormsApp1
             }
         }
 
-        /// <summary>
-        /// Обработчик кнопки удаления сотрудника
-        /// </summary>
         private void btnDelete_Click(object sender, EventArgs e)
         {
             int selectedIndex = GetSelectedEmployeeIndex();
@@ -224,9 +256,6 @@ namespace WindowsFormsApp1
             }
         }
 
-        /// <summary>
-        /// Обработчик кнопки расчета зарплаты
-        /// </summary>
         private void btnCalculateSalary_Click(object sender, EventArgs e)
         {
             int selectedIndex = GetSelectedEmployeeIndex();
@@ -240,9 +269,6 @@ namespace WindowsFormsApp1
             }
         }
 
-        /// <summary>
-        /// Обработчик кнопки добавления стажа
-        /// </summary>
         private void btnAddExperience_Click(object sender, EventArgs e)
         {
             int selectedIndex = GetSelectedEmployeeIndex();
@@ -256,17 +282,11 @@ namespace WindowsFormsApp1
             }
         }
 
-        /// <summary>
-        /// Обработчик кнопки показа статистики
-        /// </summary>
         private void btnStatistics_Click_1(object sender, EventArgs e)
         {
             OnShowStatistics?.Invoke();
         }
 
-        /// <summary>
-        /// Обработчик кнопки поиска по индексу
-        /// </summary>
         private void btnFindByIndex_Click(object sender, EventArgs e)
         {
             if (int.TryParse(txtIndex.Text, out int index))
@@ -287,33 +307,21 @@ namespace WindowsFormsApp1
             }
         }
 
-        /// <summary>
-        /// Обработчик кнопки обновления списка
-        /// </summary>
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             OnShowAllEmployees?.Invoke();
         }
 
-        /// <summary>
-        /// Обработчик кнопки фильтрации менеджеров
-        /// </summary>
         private void btnFilterManagers_Click(object sender, EventArgs e)
         {
             OnFilterByVacancy?.Invoke(VacancyType.Manager);
         }
 
-        /// <summary>
-        /// Обработчик кнопки показа всех сотрудников
-        /// </summary>
         private void btnShowAll_Click(object sender, EventArgs e)
         {
             OnShowAllEmployees?.Invoke();
         }
 
-        /// <summary>
-        /// Обработчик изменения выбора в DataGridView
-        /// </summary>
         private void dataGridViewEmployees_SelectionChanged(object sender, EventArgs e)
         {
             if (dataGridViewEmployees.SelectedRows.Count > 0)
@@ -327,9 +335,6 @@ namespace WindowsFormsApp1
 
         #region Вспомогательные методы
 
-        /// <summary>
-        /// Получает индекс выбранного сотрудника
-        /// </summary>
         private int GetSelectedEmployeeIndex()
         {
             return dataGridViewEmployees.SelectedRows.Count > 0
@@ -337,9 +342,6 @@ namespace WindowsFormsApp1
                 : -1;
         }
 
-        /// <summary>
-        /// Получает сотрудника из DataGridView по индексу
-        /// </summary>
         private Employee GetEmployeeFromGrid(int index)
         {
             if (index >= 0 && index < dataGridViewEmployees.Rows.Count)
@@ -356,9 +358,6 @@ namespace WindowsFormsApp1
             return null;
         }
 
-        /// <summary>
-        /// Преобразует тип должности в русское название
-        /// </summary>
         private string GetVacancyRussianName(VacancyType vacancy)
         {
             switch (vacancy)
@@ -370,9 +369,6 @@ namespace WindowsFormsApp1
             }
         }
 
-        /// <summary>
-        /// Преобразует русское название в тип должности
-        /// </summary>
         private VacancyType GetVacancyFromRussianName(string name)
         {
             switch (name)
@@ -384,9 +380,6 @@ namespace WindowsFormsApp1
             }
         }
 
-        /// <summary>
-        /// Применяет стилизацию к элементам управления
-        /// </summary>
         private void ApplyStyling()
         {
             this.BackColor = Color.FromArgb(250, 250, 250);

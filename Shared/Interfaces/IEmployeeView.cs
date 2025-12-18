@@ -10,6 +10,12 @@ namespace Shared.Interfaces
         void ShowEmployeeDetails(Employee employee);
         void ClearEmployeeDetails();
 
+        // Методы для чтения данных (нужны для консоли, для WinForms можно реализовать пустые)
+        string ReadString(string prompt);
+        int ReadInt(string prompt, int min, int max);
+        VacancyType ReadVacancy(string prompt);
+
+        // События
         event Action<string, int, VacancyType> OnAddEmployee;
         event Action<int, string, VacancyType, int> OnUpdateEmployee;
         event Action<int> OnDeleteEmployee;
@@ -20,5 +26,8 @@ namespace Shared.Interfaces
         event Action<VacancyType> OnFilterByVacancy;
         event Action OnShowAllEmployees;
         event Action<int> OnFindByIndex;
+
+        // StartupEvent как у одногруппника
+        event Action StartupEvent;
     }
 }

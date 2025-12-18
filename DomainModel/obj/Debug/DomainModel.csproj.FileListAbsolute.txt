@@ -10,3 +10,9 @@ D:\practiceAIS\DomainModel\obj\Debug\DomainModel.csproj.AssemblyReference.cache
 D:\practiceAIS\DomainModel\obj\Debug\DomainModel.csproj.CoreCompileInputs.cache
 D:\practiceAIS\DomainModel\obj\Debug\DomainModel.dll
 D:\practiceAIS\DomainModel\obj\Debug\DomainModel.pdb
+D:\s\practiceAIS\DomainModel\bin\Debug\DomainModel.dll
+D:\s\practiceAIS\DomainModel\bin\Debug\DomainModel.pdb
+D:\s\practiceAIS\DomainModel\obj\Debug\DomainModel.csproj.AssemblyReference.cache
+D:\s\practiceAIS\DomainModel\obj\Debug\DomainModel.csproj.CoreCompileInputs.cache
+D:\s\practiceAIS\DomainModel\obj\Debug\DomainModel.dll
+D:\s\practiceAIS\DomainModel\obj\Debug\DomainModel.pdb
