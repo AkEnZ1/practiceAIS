@@ -1,10 +1,18 @@
-﻿using DomainModel;
+using DomainModel;
 using Shared.Interfaces;
 using System;
 using System.Collections.Generic;
 
 namespace ConsoleApp
 {
+    /// <summary>
+    /// Консольное представление (View) для работы с сотрудниками.
+    /// Реализует интерфейс IEmployeeView и предоставляет текстовый интерфейс для взаимодействия с пользователем.
+    /// </summary>
+    /// <remarks>
+    /// Класс обрабатывает ввод пользователя через консоль, инициирует соответствующие события
+    /// и отображает данные о сотрудниках, полученные от презентера или контроллера.
+    /// </remarks>
     public class EmployeeConsoleView : IEmployeeView
     {
         // События IEmployeeView
@@ -19,9 +27,18 @@ namespace ConsoleApp
         public event Action OnShowAllEmployees;
         public event Action<int> OnFindByIndex;
 
-        // Добавляем StartupEvent как у одногруппника
+        /// <summary>
+        /// Событие, инициируемое при запуске приложения для первоначальной загрузки данных.
+        /// </summary>
         public event Action StartupEvent;
 
+        /// <summary>
+        /// Запускает главный цикл консольного приложения.
+        /// </summary>
+        /// <remarks>
+        /// Отображает меню, обрабатывает выбор пользователя и вызывает соответствующие события.
+        /// Цикл продолжается до выбора пользователем пункта "Выход".
+        /// </remarks>
         public void Run()
         {
             StartupEvent?.Invoke();
@@ -93,7 +110,10 @@ namespace ConsoleApp
             }
         }
 
-        // Реализация IEmployeeView
+        /// <summary>
+        /// Обновляет список сотрудников в консольном выводе.
+        /// </summary>
+        /// <param name="employees">Список сотрудников для отображения.</param>
         public void RefreshEmployeeList(List<Employee> employees)
         {
             Console.Clear();
@@ -114,36 +134,62 @@ namespace ConsoleApp
             Pause();
         }
 
+        /// <summary>
+        /// Отображает подробную информацию о выбранном сотруднике.
+        /// </summary>
+        /// <param name="employee">Сотрудник, детали которого нужно показать.</param>
         public void ShowEmployeeDetails(Employee employee)
         {
             Console.WriteLine($"\nДЕТАЛИ: {employee}");
             Pause();
         }
 
+        /// <summary>
+        /// Очищает область с деталями сотрудника. В консольной реализации не используется.
+        /// </summary>
         public void ClearEmployeeDetails()
         {
             // Не используется в консоли
         }
 
+        /// <summary>
+        /// Отображает информационное сообщение пользователю.
+        /// </summary>
+        /// <param name="message">Текст сообщения.</param>
         public void ShowMessage(string message)
         {
             Console.WriteLine($"\nℹ️ {message}");
             Pause();
         }
 
+        /// <summary>
+        /// Отображает сообщение об ошибке.
+        /// </summary>
+        /// <param name="error">Текст ошибки.</param>
         public void ShowError(string error)
         {
             Console.WriteLine($"\n❌ ОШИБКА: {error}");
             Pause();
         }
 
-        // Вспомогательные методы как у одногруппника
+        /// <summary>
+        /// Считывает строковое значение с консоли с выводом приглашения.
+        /// </summary>
+        /// <param name="prompt">Приглашение для ввода.</param>
+        /// <returns>Введённая пользователем строка.</returns>
         public string ReadString(string prompt)
         {
             Console.Write(prompt + " ");
             return Console.ReadLine() ?? string.Empty;
         }
 
+        /// <summary>
+        /// Считывает целое число в заданном диапазоне с консоли.
+        /// </summary>
+        /// <param name="prompt">Приглашение для ввода.</param>
+        /// <param name="min">Минимально допустимое значение.</param>
+        /// <param name="max">Максимально допустимое значение.</param>
+        /// <returns>Введённое пользователем целое число.</returns>
         public int ReadInt(string prompt, int min, int max)
         {
             int value;
@@ -156,6 +202,11 @@ namespace ConsoleApp
             return value;
         }
 
+        /// <summary>
+        /// Считывает с консоли выбор должности (VacancyType) из доступных вариантов.
+        /// </summary>
+        /// <param name="prompt">Приглашение для выбора.</param>
+        /// <returns>Выбранный тип вакансии.</returns>
         public VacancyType ReadVacancy(string prompt)
         {
             Console.WriteLine(prompt);
@@ -182,6 +233,9 @@ namespace ConsoleApp
             }
         }
 
+        /// <summary>
+        /// Приостанавливает выполнение программы до нажатия любой клавиши.
+        /// </summary>
         private static void Pause()
         {
             Console.WriteLine("\nНажмите любую клавишу...");
